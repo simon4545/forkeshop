@@ -1,0 +1,56 @@
+<div data-page="addressUpdate" class="page no-toolbar no-swipeback updateAddressPage myAddress-page">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a id="addAddressBack" href="#" class="link back icon-only"> <i class="icon icon-back"></i></a>
+            </div>
+            <div class="center color-40">我的收货地址</div>
+            <div class="right">
+                <a href="#" id="addressUpdateBtn" class="link color-80"><i class="icon icon-bars-blue">保存</i></a>
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+
+        <div class="list-block addressform color-999 mt07">
+            <ul>
+                <li class="goodsaditem "><input id="upAddressName" type="text" placeholder="收货人姓名"/></li>
+                <li class="goodsaditem "><input id="upAddressMobile" type="text" placeholder="手机号"/></li>
+                <li id="upAddressProvinceLi" class="goodsaditem">
+                    <input id="upAddressProvince" type="text" placeholder="所在省" readonly/>
+                    <div class="addressDec-after">&nbsp;</div>
+                </li>
+                <li id="upAddressCityLi" class="goodsaditem">
+                    <input id="upAddressCity" type="text" placeholder="所在市" readonly/>
+                    <div class="addressDec-after">&nbsp;</div>
+                </li>
+                <li id="upAddressCountyLi" class="goodsaditem">
+                    <input id="upAddressCounty" type="text" placeholder="所在地区" readonly/>
+                    <div class="addressDec-after">&nbsp;</div>
+                </li>
+
+                <li class="goodsaditem no-after-line "><input id="upAddressAdd" type="text" placeholder="详细地址"/></li>
+            </ul>
+        </div>
+
+        <div class="list-block addressform color-999 mt07">
+            <ul>
+                <li class="goodsaditem">
+                    <div class="item-content">
+                        <div class="item-inner addressdefault">
+                            <div class="addressdefault">
+                                <div class="item-title ">设为默认地址</div>
+                                <div class="item-after">
+                                    <label id="upDefaultAddressLab" class="label-switch abhcr1 color-yellow">
+                                        <input id="upAddressDefault" type="checkbox"/>
+                                        <div class="checkbox"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

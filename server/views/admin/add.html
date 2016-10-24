@@ -1,0 +1,193 @@
+<%- include('../header.html')%>
+<style>
+    #listTBody td {
+        vertical-align: middle;
+    }
+
+    #listTBody td img {
+        width: 100px;
+        height: 80px;
+    }
+
+    .btn.mini {
+        margin-left: 5px;
+    }
+
+    .portlet-title {
+        border: 0 !important;
+    }
+</style>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <h3 class="page-title">
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a id="mainModule" href="/admin/list">系统管理</a>
+                        <i class="icon-angle-right"></i>
+                        <a href="javascript:void(0);">添加管理员</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box blue tabbable">
+                        <div class="portlet-title">
+                            <h4>
+                                <i class="icon-reorder"></i>
+                                <span class="hidden-480">添加管理员</span>
+                                &nbsp;
+                            </h4>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="tabbable portlet-tabs">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="portlet_tab1">
+                                        <div action="#" class="form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">用户名</label>
+
+                                                <div class="controls">
+                                                    <input id="usernameInput" type="text"
+                                                           value=""
+                                                           class="m-wrap large"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">密码</label>
+
+                                                <div class="controls">
+                                                    <input id="newPass" type="password"
+                                                           required="true" placeholder="请输入新密码"
+                                                           class="m-wrap large"/>
+                                                    <span id="new_pass" class="help-inline"
+                                                          style="display: none;color: red">*请输入密码</span>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">再次确认密码</label>
+
+                                                <div class="controls">
+                                                    <input id="newPass2" type="password"
+                                                           required="true" placeholder="请输入确认密码"
+                                                           class="m-wrap large"/>
+                                                    <span id="check_same" class="help-inline"
+                                                          style="display: none;color: red">*密码输入不一致</span>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <div class="controls">
+                                                    <span class="help-inline"
+                                                          style="display: none;color: red">*密码确认两次输入不一致</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-actions">
+                                                <button id="btnConfirm" type="button" class="btn blue"><i
+                                                        class="icon-ok"></i>提交
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../footer.html')%>
+<script type="text/javascript" src="/javascripts/utils/common.js"></script>
+<script type="text/javascript" src="../javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="../javascripts/config.js"></script>
+<script>
+    var sellerId = common.QueryString('id');
+
+    function validateForm() {
+        var pass = true;
+        $("input").each(function () {
+            if (!$(this).val() && $(this).attr("required")) {
+                $(this).siblings(".help-inline").show();
+                pass = false;
+                layer.alert("请将信息填写完整后再提交。");
+            }
+        });
+        return pass;
+    }
+
+    $("#btnConfirm").click(function () {
+        var result = validateForm();
+        var check = checkSame();
+        if (result && check) {
+            sendUser();
+        }
+    });
+
+    /**
+     * 添加/编辑用户
+     * @param user
+     * @returns {*}
+     */
+    function sendUser() {
+        var url = "/admin/add";
+        var body = {
+            data: {
+                username: $("#usernameInput").val(),
+                newPass: $('#newPass').val(),
+                newPass2: $("#newPass2").val()
+            },
+            url: url,
+            type: 'POST',
+            success: function (res) {
+                if (200 === res.code) {
+                    layer.alert(res.msg, {closeBtn: false}, function () {
+                        window.location.href = '/admin/list';
+                    });
+                }else{
+                    layer.alert(res.msg);
+                }
+            },
+            error: function (err) {
+                console.error(err, "与服务器通信发生错误。");
+                layer.alert("与服务器通信发生错误。");
+            }
+        };
+
+        $.ajax(body);
+    }
+
+    //新密码和确认密码检验
+    function checkSame() {
+        var newPass = $("#newPass").val();
+        var newPass2 = $("#newPass2").val();
+        if (newPass && newPass2 && newPass == newPass2) {
+            return true;
+        } else {
+            $("#check_same").show();
+            return false;
+        }
+    }
+
+    //检测是否相同
+    $("#newPass2").on('blur', function () {
+        checkSame();
+    });
+
+    //新密码隐藏提示
+    $("#newPass").on('focus',function(){
+        $("#new_pass").hide();
+    });
+
+    //确认密码隐藏提示
+    $("#newPass2").on('focus',function(){
+        $("#check_same").hide();
+    });
+
+</script>

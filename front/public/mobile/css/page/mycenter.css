@@ -1,0 +1,201 @@
+.mycenter-page{
+    background-color: rgb(247,247,247);
+}
+
+.shoppingCartPage{
+    background-color: rgb(247,247,247);
+}
+.centertop-img{
+    background-image: url("../../img/newIcon/u_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 90px;
+    position: relative;
+}
+.mycenter-page .content-block{
+   background-color: #ffffff;
+}
+
+.centertop-img .headimgbox{
+    margin: 18px 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 2px solid white;
+    display: none;
+}
+.centertop-img .headimgbox img{
+    width:50px;
+    height:50px;
+    border-radius:100%
+}
+
+.centertop-img .usernamebox{
+    margin: 18px 10px;
+    height: 50px;
+    line-height: 50px;
+    color: #ffffff;
+    font-size: 1.1em;
+    display: none;
+    width:200px;
+}
+.centertop-img .editBtn{
+    background-image: url('../../img/newIcon/icon_10.png');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 50px;
+    background-position: 50% 50%;
+    background-size: 10px 20px;
+    top:18px;
+    right: 10px;
+    position: absolute;
+    display: none;
+}
+.centertop-img .loginAndregisterBox{
+    width: 172px;
+    margin: 0 auto;
+}
+.centertop-img .loginBtn{
+    margin: 33px 10px;
+    background-image: url('../../img/newIcon/login.png');
+}
+
+.centertop-img .registerBtn {
+    margin: 33px 10px;
+    background-image: url('../../img/newIcon/register.png');
+}
+.mycenter-page .centertop-img .btn {
+    width: 66px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    float: left;
+}
+
+.mycenter-page .order-tab{
+    margin: 10px 0 0 0;
+    padding: 1.2em 1em 1.2em 1em;
+    font-size: 0.8em;
+}
+.mycenter-page .order-tab a{
+    color: #5C5C5C;
+}
+.mycenter-page  .order-tab .tab-item {
+    text-align: center;
+    line-height: 21px;
+}
+.order-tab .tab-item img{
+    width: 32px;
+    margin: 0.5em auto;
+}
+.centerBox{
+    margin-top: 10px;
+}
+.centerBox .item-content .icon{
+    width: 22px;
+    height: 25px;
+}
+
+.centerBox  .item-content .icon1{
+    background-image: url("../../img/newIcon/mycenter/icon1.png");
+}
+.centerBox  .item-content .icon2{
+    background-image: url("../../img/newIcon/mycenter/icon2.png");
+}
+.centerBox  .item-content .icon3{
+    background-image: url("../../img/newIcon/mycenter/icon3.png");
+}
+.centerBox  .item-content .icon4{
+    background-image: url("../../img/newIcon/mycenter/icon4.png");
+}
+.centerBox  .item-content .icon5{
+    background-image: url("../../img/newIcon/mycenter/icon5.png");
+}
+.centerBox  .item-content .icon6{
+    background-image: url("../../img/newIcon/mycenter/icon6.png");
+}
+.centerBox  .item-content .icon7{
+    background-image: url("../../img/newIcon/mycenter/icon7.png");
+}
+.centerBox  .item-content .icon8{
+    background-image: url("../../img/newIcon/mycenter/icon8.png");
+}
+.centerBox  .item-content .icon9{
+    background-image: url("../../img/newIcon/mycenter/icon9.png");
+}
+.centerBox  .item-content .icon10{
+    background-image: url("../../img/newIcon/mycenter/icon10.png");
+}
+.centerBox .list-block li:after {
+    background-color: #ffffff;
+}
+.centerBox .list-block .item-inner:after {
+    background-color: #ffffff;
+}
+
+
+.centerBox .item-content .item-after {
+    background-image: url('../../img/newIcon/icon_10.png');
+    background-repeat: no-repeat;
+    width: 8px;
+    background-size: 100%;
+    background-position-y: 5px;
+    font-size: 20px;
+}
+/** 2015-11-09 zzsun add**/
+.mycenter-page #slideMySellerID .item-after,
+.mycenter-page #slideMyInCode .item-after
+{
+    background-image:none;
+    width: 100px;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.mycenter-page .pop-seller-dialog,
+.mycenter-page .pop-inCode-dialog
+{
+    display: none;
+}
+.mycenter-page .pop-seller-dialog .dialog-con,
+.mycenter-page .pop-inCode-dialog .dialog-con{
+    background: #efeff4;
+}
+
+.mycenter-page .pop-seller-dialog .submit-btn,
+.mycenter-page .pop-inCode-dialog .submit-btn
+{
+    width: 54px;
+}
+
+.mycenter-page .pop-seller-dialog input,
+.mycenter-page .pop-inCode-dialog input
+{
+    border: 1px solid #e6e6e6;
+    width: 175px;
+    height: 21px;
+    margin-top: 5px;
+}
+
+.mycenter-page .loading-mask-mycenter{
+    position: fixed;
+    left:0;
+    top: 0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    z-index:2;
+    background-color:#000000;
+    opacity: 0.8;
+    display: none;
+}
+
+.mycenter-page #userAccount
+{
+    background-image:none;
+    width: 100px;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+}

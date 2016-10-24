@@ -1,0 +1,67 @@
+<div data-page="shoppinglists" class="page no-toolbar  no-swipeback shoppinglists-page">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back icon-only"> <i class="icon icon-back"></i></a>
+            </div>
+            <div class="center">订单列表</div>
+            <div class="right"></div>
+        </div>
+        <div class="coupon-page-top-line"></div>
+        <!-- Sub navbar -->
+
+    </div>
+    <div class="subnavbar">
+        <div class="buttons-row">
+            <a id="tab1_click" href="#shoppinglist_tab1" class="button tab-link active">全部</a>
+            <a id="tab2_click" href="#shoppinglist_tab2" class="button tab-link">待付款</a>
+            <a id="tab3_click" href="#shoppinglist_tab3" class="button tab-link">待收货</a>
+            <a id="tab4_click" href="#shoppinglist_tab4" class="button tab-link">退款中</a>
+            <a id="tab5_click" href="#shoppinglist_tab5" class="button tab-link">已买到</a>
+        </div>
+    </div>
+    <div class="redpackImport active" style="display: none"></div>
+    <div class="loading-mask-shoppingList"></div>
+
+    <div class="pop-dialog raffle-reminder-dialog">
+        <div class="dialog-con">
+            <div class="show-text">
+                亲爱的香香会员，您有一次抽奖机会尚未使用
+            </div>
+            <div class="btn-con clearfix_after">
+                <div class="go-raffle-btn btn">立即前往</div>
+            </div>
+            <div class="pop-dialog-close"></div>
+        </div>
+    </div>
+    <div class="gotop" onclick="_scrollTop(0,10);return false;" style="display: none"></div>
+    <div class="page-content infinite-scroll" data-distance="0" style="padding-top: 85px">
+       <!--<marquee direction="left" style="background-color: #ffffff; margin-top: 20px;padding: 10px 0;">
+                <font style="color: #f60;font-weight: bold">重要通知：</font>亲爱的百宝香会员，您好！年关将至，从本日起，<font style="color: #f60;font-weight: bold">部分偏远地区</font>物流公司将停止发货，
+                故此期间购买的<font style="color: #f60;font-weight: bold">部分</font>商品可能无法正常发货，预计会推迟至2-15日发货，谢谢您的谅解！~
+        </marquee>-->
+        <section>
+            <div class="nav_mid">
+               <!-- <div class="tabs-animated-wrap">-->
+                    <div class="tabs">
+                        <div id="shoppinglist_tab1" class="tab active">
+                        </div>
+                        <div id="shoppinglist_tab2" class="tab">
+                        </div>
+                        <div id="shoppinglist_tab3" class="tab">
+                        </div>
+                        <div id="shoppinglist_tab4" class="tab">
+                        </div>
+                        <div id="shoppinglist_tab5" class="tab">
+                        </div>
+                    </div>
+                </div>
+            <!--</div>-->
+        </section>
+        <div class="infinite-scroll-preloader  index-infinite-preloader" contend-page="1" >
+            上拉查看更多订单
+        </div>
+    </div>
+</div>
+
+

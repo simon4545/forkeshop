@@ -1,0 +1,422 @@
+.redpack-page .page-content{
+    overflow-x: hidden;
+    color: #6a6a6a;
+}
+
+.redpack-page .loading-mask-redpack{
+    position: fixed;
+    left:0;
+    top: 0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    z-index:2;
+    background-color:#000000;
+    opacity: 0.8;
+    display: none;
+}
+
+.redpack-page .raffle-rule{
+    margin:20px 10px;
+    line-height: 25px;
+    /*text-indent: 10px;*/
+}
+.redpack-page .raffle-rule h4{
+    color: #6a6a6a;;
+}
+.redpack-page .raffle-rule p{
+    font-size: 12px;
+}
+.redpack-page .rotate{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+}
+.redpack-page .turnplate{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+}
+
+.redpack-page .turnplate img{
+    width: 100%;
+}
+
+.redpack-page .pointer{
+    position: absolute;
+    width: 80px;
+    margin: 88px 110px;
+    z-index: 2;
+}
+
+.redpack-page .pointer img{
+    width: 100%;
+}
+
+/*.redpack-page .result-con-pop{
+    background-color: #ffffff;
+    width: 80%;
+    height: 120px;
+    position: fixed;
+    left: 10%;
+    top:40%;
+    z-index: 5002;
+    border-radius: 10px;
+    display: none;
+}
+
+.redpack-page .result-con-pop .show-text{
+    width: 80%;
+    height: 40px;
+    margin: 0 10%;
+    padding-top: 20px;
+    text-align: center;
+}
+ .redpack-page .result-con-pop .show-text span{
+     color: orange;
+ }
+
+
+.redpack-page .result-con-pop .btn-con{
+    width: 200px;
+    height: 50px;
+    margin: 15px auto;
+}
+
+.redpack-page .result-con-pop .btn{
+    width: 80px;
+    height: 25px;
+    float: left;
+}*/
+
+.redpack-page .result-con-pop{
+    display: none;
+}
+
+.redpack-page .result-con-pop .view-btn{
+    background-image: url("../../img/newIcon/redpack/view.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-left: 24px;
+}
+.redpack-page .result-con-pop .use-btn{
+    margin-left: 40px;
+    background-image: url("../../img/newIcon/redpack/goshopping.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-left: 24px;
+}
+
+.redpack-page .recommend-container{
+    margin: 10px 0;
+    padding: 0 5px;
+    display: none;
+}
+
+/*
+.pointer.active{
+    animation:redpack 3s ease;
+    -webkit-animation: redpack 3s ease;
+}
+*/
+
+
+@keyframes redpack1{
+    0%{
+        transform:rotate(0);
+    }
+    100%{
+        transform:rotate(2160deg);
+    }
+}
+
+@-webkit-keyframes redpack1{
+    0%{
+        -webkit-transform:rotate(0);
+    }
+    100%{
+        -webkit-transform:rotate(2160deg);
+    }
+}
+@keyframes redpack2{
+    0%{
+        transform:rotate(0);
+    }
+    100%{
+        transform:rotate(2220deg);
+    }
+}
+
+@-webkit-keyframes redpack2{
+    0%{
+        -webkit-transform:rotate(0);
+    }
+    100%{
+        -webkit-transform:rotate(2220deg);
+    }
+}
+@keyframes redpack3{
+    0%{
+        transform:rotate(0);
+    }
+    100%{
+        transform:rotate(2280deg);
+    }
+}
+
+@-webkit-keyframes redpack3{
+    0%{
+        -webkit-transform:rotate(0);
+    }
+    100%{
+        -webkit-transform:rotate(2280deg);
+    }
+}
+@keyframes redpack4{
+    0%{
+        transform:rotate(0);
+    }
+    100%{
+        transform:rotate(2325deg);
+    }
+}
+
+@-webkit-keyframes redpack4{
+    0%{
+        -webkit-transform:rotate(0);
+    }
+    100%{
+        -webkit-transform:rotate(2325deg);
+    }
+}
+@keyframes redpack5{
+    0%{
+        transform:rotate(0);
+    }
+    100%{
+        transform:rotate(2370deg);
+    }
+}
+
+@-webkit-keyframes redpack5{
+    0%{
+        -webkit-transform:rotate(0);
+    }
+    100%{
+        -webkit-transform:rotate(2370deg);
+    }
+}
+
+@keyframes redpack6{
+    0%{
+        transform:rotate(0);
+    }
+    100%{
+        transform:rotate(2430deg);
+    }
+}
+
+@-webkit-keyframes redpack6{
+    0%{
+        -webkit-transform:rotate(0);
+    }
+    100%{
+        -webkit-transform:rotate(2430deg);
+    }
+}
+
+@keyframes redpack7{
+    0%{
+        transform:rotate(0);
+    }
+    100%{
+        transform:rotate(2475deg);
+    }
+}
+
+@-webkit-keyframes redpack7{
+    0%{
+        -webkit-transform:rotate(0);
+    }
+    100%{
+        -webkit-transform:rotate(2475deg);
+    }
+}
+
+.redpack-page .redpack-offline{
+    position: fixed;
+    z-index: 10000;
+    top: 30%;
+    left:25%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+/** 2015-11-03 **/
+.redpack-page .vip_mask {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 5002;
+    display: none;
+}
+
+.redpack-page .vip_mask_rule {
+    position: relative;
+    top: 20%;
+}
+
+.redpack-page .modal-rules {
+    position: relative;
+}
+
+.redpack-page .modal-s1 {
+    width: 300px;
+    height: 240px;
+    background-color: #ffffff;
+    display: none;
+    border-radius: 10px;
+}
+
+.redpack-page .modal-rules .rules-title {
+    padding-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.redpack-page .vip_mask_div {
+    height: 185px;
+}
+
+.redpack-page .modal-rules .rules-cont {
+    width: 280px;
+    height: 185px;
+    margin: auto;
+    font-size: 13px;
+    line-height: 20px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.redpack-page .show_scroll {
+    overflow: auto!important;
+}
+
+.redpack-page .modal-rules .rules-cont p {
+    margin-bottom: 10px;
+}
+
+.redpack-page .modal-rules .rules-cont font{
+    color: rgb(255,102,0);
+    font-size: 15px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.redpack-page .vip_mask .rules-close{
+    position: absolute;
+    top: -30px;
+    right: -10px;
+    width: 25px;
+    height: 25px;
+    background: url("../../img/newIcon/redpack/close.png") 0 0 no-repeat;
+    background-size: contain;
+}
+
+
+.redpack-page #raffle-times{
+    text-indent: 10px;
+    margin-top: 20px;
+}
+
+.redpack-page #raffle-times span{
+    color: rgb(255,102,0);
+}
+
+
+.redpack-page .btn-rules{
+    width: 80px;
+    float: right;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 20px;
+    z-index: 1;
+}
+.redpack-page .btn-rules img{
+    width: 100%;
+}
+
+.redpack-page .news-redpack-con{
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    margin: 20px 10%;
+    border-radius: 15px ;
+    background-color:rgb(223,223,223) ;
+}
+
+.redpack-page .news-redpack-con .text{
+    float: left;
+    text-indent: 20px;
+    color: #3c3c3c;
+}
+
+.redpack-page .receive-btn{
+    float: right;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #6c6c6c;
+    color: #ffffff;
+}
+
+.redpack-page .receive-btn.active{
+    background-color: rgb(255,102,0);
+}
+
+.redpack-page .no-raffle-dialog{
+    display: none;
+}
+
+.redpack-page  .see-btn{
+    width: 68px;
+}
+
+.redpack-page .raffle-lost-dialog{
+    display: none;
+}
+
+.redpack-page .see-btn{
+    width: 68px;
+}
+
+.redpack-page .raffle-best-dialog{
+    display: none;
+}
+
+.redpack-page .raffle-lost-dialog .share-btn{
+    width: 80px;
+}
+
+.redpack-page .view-more-btn{
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    border-radius:15px ;
+    margin: 10px 10%;
+    text-align: center;
+    color: #3c3c3c;
+    background-color: rgb(255,216,0)
+}
+
+.redpack-page .raffle-stop-dialog{
+    display: none;
+}

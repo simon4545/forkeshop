@@ -1,0 +1,134 @@
+<%- include('./header.html')%>
+<link href="/javascripts/datepicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <h3 class="page-title">
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a id="mainModule" href="homepage">首页</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="#">我的首页</a></li>
+                    <li class="pull-right no-text-shadow" style="display: none">
+                        <div id="dashboard-report-range"
+                             class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive" data-tablet=""
+                             data-desktop="tooltips" data-placement="top"
+                             data-original-title="Change dashboard date range">
+                            <i class="icon-calendar"></i>
+                            <span></span>
+                            <i class="icon-angle-down"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <% if(locals.userRole=='管理员' || locals.userName=='test1'){%>
+        <div>
+            筛选时间：<input id="todayTimePicker" class="Wdate" type="text" value="<%=date%>" readonly style="cursor: pointer">
+        </div>
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span4 responsive" data-tablet="span4" data-desktop="span4">
+                    <div class="dashboard-stat blue">
+                        <div class="visual">
+                            <i class="icon-comments"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                <%=totalPriceNum%>元
+                            </div>
+                            <div class="desc">
+                                总订单金额
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4 responsive" data-tablet="span4" data-desktop="span4">
+                    <div class="dashboard-stat blue">
+                        <div class="visual">
+                            <i class="icon-comments"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                <%=totalGoodsNum%>元
+                            </div>
+                            <div class="desc">
+                                总商品价值
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4 responsive" data-tablet="span4" data-desktop="span4">
+                    <div class="dashboard-stat green">
+                        <div class="visual">
+                            <i class="icon-shopping-cart"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number"><%=goodsNum%></div>
+                            <div class="desc">总销量</div>
+                        </div>
+                        <!--<a class="more" href="#">-->
+                        <!--查看详情 <i class="m-icon-swapright m-icon-white"></i>-->
+                        <!--</a>-->
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+
+
+                <div class="span4 responsive" data-tablet="span4" data-desktop="span4">
+                    <div class="dashboard-stat purple">
+                        <div class="visual">
+                            <i class="icon-globe"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number"><%=orderNum%></div>
+                            <div class="desc">总订单量</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span4 responsive" data-tablet="span4" data-desktop="span4">
+                    <div class="dashboard-stat red">
+                        <div class="visual">
+                            <i class="icon-bar-chart"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number"><%=single%></div>
+                            <div class="desc">客单价</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <%}%>
+    </div>
+</div>
+<script src="template/assets/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="/javascripts/datepicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/javascripts/utils/common.js"></script>
+<script>
+
+    function selectHomeDataByDate(){
+        layer.load();
+        window.location.replace("homepage?date=" + $dp.cal.getNewDateStr());
+    }
+
+    $("#todayTimePicker").click(function () {
+        WdatePicker({
+            isShowWeek: true,
+            dateFmt: 'yyyy-MM-dd',
+            onpicked:selectHomeDataByDate
+        });
+    });
+
+</script>
+<%- include('footer.html')%>

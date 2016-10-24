@@ -1,0 +1,68 @@
+<div data-page="reBackOn9" class="page no-toolbar no-swipeback reBackOn9">
+    <div class="navbar ">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back icon-only"> <i class="icon icon-back"></i></a>
+            </div>
+            <div class="center">申请退货</div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="content-block" style="margin-top: 10px;margin-bottom: 0;">
+            <div class="row reBackFlexWarp">
+                请确认待退回的商品数量
+            </div>
+        </div>
+        <div class="list-block media-list">
+            <ul id="goodsListReBackOn9">
+
+            </ul>
+        </div>
+
+        <div class="content-block" style="margin: 25px 0">
+            <div class="row reBackFlexWarp">
+                <div class="reBackLeftTitle">退货原因</div>
+                <div class="reBackRightInput">
+                    <input type="text" readonly id="backReason" class="reBackInputText"/>
+                </div>
+            </div>
+        </div>
+        <div class="content-block" style="margin: 25px 0">
+            <div class="row reBackFlexWarp">
+                <div class="reBackLeftTitle h-lh-50">退货理由</div>
+                <div class="reBackRightInput">
+                    <textarea id="backReason2" class="reBackTextArea"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block" style="margin: 25px 0">
+            <div class="row reBackFlexWarp">
+                <div class="reBackLeftTitle h-lh-50">上传拍照</div>
+                <div class="reBackRightInput" style="position: relative;">
+                    <form id="imgForm" enctype="multipart/form-data" role="form" method="post" action="javascript:;">
+                        <div class="addImgBtn"></div>
+                        <input id="addImgFile" type="file" name="files" class="addImgFile"/>
+                    </form>
+                    <div class="h-lh-50" style="margin-left: 60px;">(最多三张)</div>
+                </div>
+            </div>
+        </div>
+        <div id="imgWarpReBackOn9" class="content-block imgWarp" style="border:0;height:70px;margin:0 25px;padding:0;">
+        </div>
+        <div class="content-block">
+            <div class="row">
+                <div id="reBackCommit" class="col-100 reBackCommit">
+                    提交申请
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-100 reBackCommit" style="background-color: rgb(231,231,231)">
+                    <a style="display: block;color:#5c5c5c;" href="page/reBackDesc.html" >退货说明</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

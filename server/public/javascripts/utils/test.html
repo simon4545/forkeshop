@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../template/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../template/assets/css/metro.css" rel="stylesheet"/>
+    <link href="../../template/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="test1"></div>
+<button onclick="console.log(1)">asdfasdf</button>
+<script type="text/javascript" src="../../template/assets/jquery-validation/lib/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="nc.table.js"></script>
+<script>
+    var t = new NCTable(
+            {
+                cols: [
+                    {title: '编号', alias: 'id', visible: true, editable: false},
+                    {title: '规则', alias: 'filterConfig', visible: true, editable: true},
+                    {title: '商品SKU', alias: 'skuid', visible: true, editable: true},
+                    {title: '售价', alias: 'sellPrice',type:'number', visible: true, editable: true},
+                    {title: '供货价', alias: 'supplyPrice',type:'number', visible: true, editable: true},
+                    {title: '库存', alias: 'stock',type:'number', visible: true, editable: true},
+                ],
+                container: '#test1',
+                headerClassName: '',
+                itemClassName: '',
+                className: '',
+                op:true,
+                id:'test',
+                onDeleteItem:function(id){
+                    console.log(id)
+                },
+                onUpdateItem:function(id,key,value){
+                    console.log(2);
+                }
+            }
+    );
+    t.refresh([
+        {
+            id: '1111',
+            filterConfig: 'filterConfig',
+            'skuid': 'skuid'
+        },
+        {
+            id: '22222',
+            filterConfig: 'filterConfig',
+            'skuid': 'skuid',
+            sellPrice: '1',
+            supplyPrice: '1'
+        },
+        {
+            id: '22222',
+            filterConfig: 'filterConfig',
+            'skuid': 'skuid',
+            sellPrice: '1',
+            supplyPrice: '1'
+        },
+        {
+            id: '22222',
+            filterConfig: 'filterConfig',
+            'skuid': 'skuid',
+            sellPrice: '1',
+            supplyPrice: '1'
+        },
+        {
+            id: '22222',
+            filterConfig: 'filterConfig',
+            'skuid': 'skuid',
+            sellPrice: '1',
+            supplyPrice: '1'
+        },
+        {
+            id: '22222',
+            filterConfig: 'filterConfig',
+            'skuid': 'skuid',
+            sellPrice: '1',
+            supplyPrice: '1'
+        },
+        {
+            id: '22222',
+            filterConfig: 'filterConfig',
+            'skuid': 'skuid',
+            sellPrice: '1',
+            supplyPrice: '1'
+        },
+        {
+            id: '22222',
+            filterConfig: 'filterConfig',
+            'skuid': 'skuid',
+            sellPrice: '1',
+            supplyPrice: '1'
+        },
+        {
+            id: '22222',
+            filterConfig: 'filterConfig',
+            'skuid': 'skuid',
+            sellPrice: '1',
+            supplyPrice: '1'
+        },
+        {
+            id: '22222',
+            filterConfig: 'filterConfig',
+            'skuid': 'skuid',
+            sellPrice: '1',
+            supplyPrice: '1',
+            stock: '2'
+        }
+    ])
+    //t.getData();
+</script>
+</body>
+</html>

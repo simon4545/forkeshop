@@ -1,0 +1,167 @@
+.bottom-fix-bar .bottom-fix-bar-left .bar-left-row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.bottom-fix-bar .bottom-fix-bar-left .bar-left-row .row1 {
+    font-size: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.bottom-fix-bar .bottom-fix-bar-left .bar-left-row .row2 {
+    font-size: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.orderconfirm-page .list-block .item-after.color-org1 {
+    color: #f60;
+}
+
+.orderconfirm-page .goods-logo {
+    width: 1.8em;
+}
+
+.orderconfirm-page .list-block .item-inner.logotitle {
+    margin-left: 0.5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.orderconfirm-page .goodsthumb {
+    width: 4em;
+}
+
+.orderconfirm-page .item-subtitle-left {
+    display: inline-block;
+    color: #D1D1D1;
+}
+
+.orderconfirm-page .item-subtitle-right {
+    display: inline-block;
+    float: right;
+}
+
+.orderconfirm-page .pay-logo {
+    width: 2em;
+}
+
+.orderconfirm-page .addresslogo {
+    width: 1em;
+}
+
+.orderconfirm-page .goods-procost {
+    color: #D1D1D1;
+    text-decoration: line-through;
+}
+
+.orderConfirmCoupon {
+    width: 310px;
+    height: 83px;
+    background-image: url(../../img/ico/icon_23.png);
+    background-size: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-top: 10px;
+}
+
+.orderConfirmCouponFlag {
+    position: absolute;
+    top: 33px;
+    left: 248px;
+}
+
+.orderConfirmCouponContent {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    width: 210px;
+    height: 78px;
+}
+
+.orderConfirmCouponTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+}
+
+.orderConfirmCouponVal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 35px;
+    color: #f60;
+    height: 35px;
+}
+
+.orderConfirmCouponRes {
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    font-size: 16px;
+    color: #606060;
+    height: 35px;
+}
+
+.orderConfirmCouponTime {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    border-top: #808080 dashed 1px;
+}
+
+.orderconfirm-page .couponbtn {
+    display: inline-block;
+    border: 1px #fd0 solid;
+    border-radius: 8px;
+    color: #fd0;
+    font-size: 0.8em;
+    padding: 1px 5px;
+    margin-left: 10px;
+}
+#orderConfirmDisCount{
+    color:#000;
+}
+
+#orderConfirmTextArea{
+  height: 3em;
+  font-size: 1em;
+  background: #EFEFF4;
+}
+#orderConfirmCoupons {
+    margin-top: 0;
+}
+#orderConfirmCoupons li{
+    background: #F2F2F2;
+}
+#orderConfirmCoupons li .item-after{
+    margin-top: 20px;
+}
+.close-X{
+    background-image:url(../../img/newIcon/close.png);
+    background-size: 100% 100%;
+    width: 20px;
+    height: 20px;
+}
+.fs-max{
+    font-size: 32px;
+}
+.fs-mid{
+    font-size: 18px;
+}
+.fs-min{
+    font-size: 12px;
+}
+
+.orderconfirm-page .paytypelab{
+    width:25px;
+    height:25px;
+}

@@ -1,0 +1,197 @@
+<%- include('../header.html')%>
+<style>
+    #listTBody td {
+        vertical-align: middle;
+    }
+
+    #listTBody td img {
+        width: 100px;
+        height: 80px;
+    }
+
+    .btn.mini {
+        margin-left: 5px;
+    }
+
+    .portlet-title {
+        border: 0 !important;
+    }
+</style>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <h3 class="page-title">
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a id="mainModule">商家管理</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box blue tabbable">
+                        <div class="portlet-title">
+                            <h4>
+                                <i class="icon-reorder"></i>
+                                <span class="hidden-480">用户信息</span>
+                                &nbsp;
+                            </h4>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="tabbable portlet-tabs">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="portlet_tab1">
+                                        <div action="#" class="form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">用户名</label>
+
+                                                <div class="controls">
+                                                    <input id="usernameInput" type="text"
+                                                           value="<%=account.AccountName%>"
+                                                           required="true" placeholder=""
+                                                           class="m-wrap large"/>
+                                                    <span class="help-inline"
+                                                          style="display: none;color: red">*此项为必填项</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">密码</label>
+
+                                                <div class="controls">
+                                                    <input id="passwordInput" type="text"
+                                                           value="<%=account.AccountPass%>"
+                                                           required="true" placeholder=""
+                                                           class="m-wrap large"/>
+                                                    <span class="help-inline"
+                                                          style="display: none;color: red">*此项为必填项</span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="control-group">
+                                                <label class="control-label">状态</label>
+
+                                                <div class="controls">
+                                                    <select id="stateInput">
+                                                        <% if(account.AccountState == 1) {%>
+                                                        <option value="1" selected>正常</option>
+                                                        <option value="2">冻结</option>
+                                                        <%} else if(account.AccountState == 2) {%>
+                                                        <option value="1">正常</option>
+                                                        <option value="2" selected>冻结</option>
+                                                        <%}%>
+                                                    </select>
+                                                    <span class="help-inline"
+                                                          style="display: none;color: red">*此项为必填项</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions">
+                                                <button id="btnConfirm" type="button" class="btn blue"><i
+                                                        class="icon-ok"></i>保存
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../footer.html')%>
+<script type="text/javascript" src="/javascripts/utils/common.js"></script>
+<script type="text/javascript" src="../javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="../javascripts/config.js"></script>
+<script>
+    function validateForm() {
+        var pass = true;
+        $("input").each(function () {
+            if (!$(this).val() && $(this).attr("required")) {
+                $(this).siblings(".help-inline").show();
+                pass = false;
+                layer.alert("请将信息填写完整后再提交。");
+            } else {
+                $(this).siblings(".help-inline").hide();
+            }
+        });
+        return pass;
+    }
+    $("#btnConfirm").click(function () {
+        var result = validateForm();
+        if (result) {
+            sendUser();
+        }
+    });
+
+    /**
+     * 添加/编辑用户
+     * @param user
+     * @returns {*}
+     */
+    function sendUser() {
+        var url = "/user/edit";
+        var body = {
+            data: {
+                password: $('#passwordInput').val(),
+                username: $('#usernameInput').val(),
+                state: $('#stateInput').val()
+            },
+            url: url,
+            type: 'POST',
+            success: function (res) {
+                if (200 === res.code) {
+                    layer.alert("操作完成", {closeBtn: false}, function () {
+                        window.location.reload();
+                    });
+                } else {
+                    layer.alert(res.data);
+                }
+            },
+            error: function (err) {
+                console.error(err, "与服务器通信发生错误。");
+                layer.alert("与服务器通信发生错误。");
+            }
+        };
+        if (common.QueryString('id')) {
+            body.data.id = common.QueryString('id');
+        }
+        $.ajax(body);
+    }
+
+    /**
+     * 删除用户
+     * @param userId
+     * @returns {*}
+     */
+    function deleteUser(userId) {
+        $.ajax({
+            url: AppConfig.URL.USER_DELETE + "/" + userId,
+            type: 'POST',
+            dataType: 'JSON',
+            success: function (res) {
+                if (200 === res.code) {
+                    layer.alert("操作完成", {closeBtn: false}, function () {
+                        window.location.reload();
+                    });
+                } else {
+                    layer.alert(res.data);
+                }
+            },
+            error: function (err) {
+                layer.alert("与服务器通信发生错误。");
+            }
+        });
+    }
+
+</script>

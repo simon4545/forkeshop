@@ -1,0 +1,206 @@
+/***
+blue theme
+***/
+
+/***
+Reset and overrides  
+***/
+body { 
+  background-color:#1570a6 !important;
+}
+
+/***
+Page header
+***/
+.header .navbar-inner {
+  filter:none !important;
+  background-image: none !important;
+  background-color: #1b2e44 !important;
+}
+
+.header .btn-navbar {  
+  background-color: #1b2e44 !important;
+} 
+
+.header .nav .dropdown-toggle:hover, 
+.header .nav .dropdown.open .dropdown-toggle {
+  background-color: #101e2f !important;
+}
+
+.header .nav li.dropdown .dropdown-toggle i {
+  color: #4f6a89 !important;
+}
+
+/***
+Page sidebar
+***/
+.page-sidebar > ul > li > a {
+  border-top: 1px solid #2682b9 !important;
+  color: #fff !important;
+}
+
+.page-sidebar > ul > li:first-child > a {
+   border-top: 1px solid transparent !important;
+}
+
+.page-sidebar > ul > li:last-child > a {
+   border-bottom: 1px solid transparent !important;
+}
+
+.page-sidebar > ul > li a i {
+   color: #3d98ce !important;
+}
+
+.page-sidebar > ul > li.has-sub.open > a, 
+.page-sidebar > ul > li >a:hover, 
+.page-sidebar > ul > li:hover>a {  
+  background: #0e4686;
+}
+
+.page-sidebar > ul > li.active > a{
+  background: #0e4686 !important;
+  border-top-color: transparent !important;
+  color:#fff !important;
+}  
+
+.page-sidebar > ul > li > ul.sub  {
+  margin: 0px;
+  padding: 4px 0px;  
+  background: #1b579b;
+}
+
+.page-sidebar > ul > li > ul.sub > li > a {
+  color: #fff;
+  margin-left:0px;  
+  padding-left: 50px; 
+  display: block;  
+}
+
+.page-sidebar > ul > li > ul.sub > li:first-child > a {
+  border-top: 0px !important;
+}
+
+.page-sidebar > ul > li > ul.sub > li.active > a, 
+.page-sidebar > ul > li > ul.sub > li > a:hover {
+  color: #fff !important;
+  background: #2361a6 !important;  
+}
+
+.page-sidebar .sidebar-search input {
+  background-color: #1570a6  !important;  
+  color: #3d98ce;
+}
+
+.page-sidebar .sidebar-search input::-webkit-input-placeholder {
+   color: #3d98ce !important;
+}
+
+.page-sidebar .sidebar-search input:-moz-placeholder  {
+   color: #3d98ce !important;
+}
+
+.page-sidebar .sidebar-search input:-ms-input-placeholder {
+   color: #3d98ce !important;
+}
+
+.page-sidebar .sidebar-search .input-box {
+  border-bottom-color: #3a99d2  !important;
+}
+
+.page-sidebar .sidebar-search .submit {
+  background-image: url(../img/search-icon-blue.png);
+}
+
+/***
+Sidebar toggler
+***/
+.sidebar-toggler {  
+  background-image: url(../img/sidebar-toggler-blue.jpg);
+  background-color: #1570a6;
+}
+
+/* search box bg color on expanded */
+.sidebar-closed .page-sidebar .sidebar-search.open {
+  background-color: #1570a6 !important;
+}
+
+.sidebar-closed .page-sidebar .sidebar-search.open .remove {  
+  background-image: url("../img/sidebar-search-close-blue.png");
+}
+
+/* sub menu bg color on hover menu item */
+.sidebar-closed .page-sidebar > ul > li.has-sub:hover .sub {
+  background-color: #1570a6;
+}
+
+/***
+Gritters
+***/
+.gritter-top {
+	background:url(../gritter/images/gritter-blue.png) no-repeat left -30px !important;
+}
+
+.gritter-bottom {
+	background:url(../gritter/images/gritter-blue.png) no-repeat left bottom !important;
+}
+
+.gritter-item {
+	display:block;
+	background:url(../gritter/images/gritter-blue.png) no-repeat left -40px !important;
+}
+
+.gritter-close {
+	background:url(../gritter/images/gritter-blue.png) no-repeat left top !important;
+}
+
+.gritter-title {
+	text-shadow:none !important; /* Not supported by IE :( */
+}
+
+/* for the light (white) version of the gritter notice */
+.gritter-light .gritter-item,
+.gritter-light .gritter-bottom,
+.gritter-light .gritter-top,
+.gritter-light .gritter-close {
+    background-image: url(../gritter/images/gritter-light.png) !important;
+}
+
+
+/***
+Landscape phone to portrait tablet
+***/
+@media (max-width:979px) { 
+  /***
+  page sidebar
+  ***/
+  .page-sidebar {
+    background-color: #0d4687 !important;
+  }
+
+  .page-sidebar > ul > li > a {
+    border-top: 1px solid #195dab !important;
+  }
+
+  .page-sidebar > ul > li:first-child > a {
+    border-top: 0 !important;
+  }
+
+  .page-sidebar > ul > li:last-child > a {
+    border-bottom: 0 !important;
+  }
+
+  .page-sidebar > ul > li.has-sub.open > a, 
+  .page-sidebar > ul > li >a:hover, 
+  .page-sidebar > ul > li:hover>a {  
+    background: #0e4686;
+  }
+
+
+  .page-sidebar .sidebar-search input{
+    background-color: #0d4687  !important;  
+  }
+
+  .header .nav li.dropdown .dropdown-toggle i {
+    color: #b6cbd8 !important;
+  }
+}

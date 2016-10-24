@@ -1,0 +1,23 @@
+
+.chosen-page.page{
+    background: rgb(242,242,242);
+}
+
+.chosen-page .content-block{
+    background: #ffffff;
+}
+
+
+.chosen-page .chosen-Box{
+    background: rgb(242,242,242);
+    margin:  0;
+    padding: 0 3px;
+}
+
+.chosen-page .index-infinite-preloader{
+    text-align: center;
+    color: grey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: none;
+}

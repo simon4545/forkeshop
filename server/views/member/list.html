@@ -1,0 +1,132 @@
+<%- include('../header.html')%>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a id="mainModule" href="/member/list">用户管理</a>
+                        <i class="icon-angle-right"></i>
+                        <a href="javascript:void(0);">用户列表</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12">
+            <div class="portlet box blue tabbable">
+                <div class="portlet-title">
+                    <div class="row-fluid">
+                            <div style="display: inline-block"><span> 用户名 </span>
+                                <input id="dev_member_search">
+                            </div>
+                            <div style="display: inline-block">
+                                <button id="btn_search" class="btn primary"><i class="icon-search"></i> 检索 </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portlet box blue tabbable">
+                <div class="portlet-title">
+                    <h4>
+                        <i class="icon-reorder"></i>
+                        <span class="hidden-480">用户列表管理</span>
+                        &nbsp;
+                    </h4>
+                </div>
+                <div class="portlet-body form">
+                    <div class="tabbable portlet-tabs">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="portlet_tab1">
+
+                                <div id="couponDetail_Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+
+                                    <div class="modal-body">
+                                        <table class="table table-striped table-bordered table-advance table-hover" style="margin-top: 10px">
+                                            <thead>
+                                            <td>序号</td>
+                                            <td style="width: 150px;">名称</td>
+                                            <td>金额</td>
+                                            <td>限额</td>
+                                            <td>过期日期</td>
+                                            <td>状态</td>
+                                            <td>获取时间</td>
+                                            </thead>
+                                            <tbody id="memberCouponList">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+                                    </div>
+                                </div>
+
+                                <div class="page-container row-fluid">
+                                    <div class="portlet-body">
+                                        <table class="table table-striped table-hover table-bordered">
+                                            <thead style="text-align: center">
+                                            <tr>
+                                                <th>CID</th>
+                                                <th>用户名</th>
+                                                <th>用户状态</th>
+                                                <th>注册时间</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="dev_table_info">
+
+                                            </tbody>
+                                        </table>
+                                        <div class="row-fluid">
+                                            <div class="span12">
+                                                <div class="dataTables_paginate paging_bootstrap pagination">
+                                                    <ul>
+                                                        <li class="pre"><a id="btnFirstPage" href="javascript:viod(0)">首页</a>
+                                                        </li>
+                                                        <li class="prev"><a id="btnPrePage" href="javascript:viod(0)">← 上一页</a>
+                                                        </li>
+                                                        <li>
+                                                            <select id="pagingSelect">
+
+                                                            </select>
+                                                        </li>
+                                                        <li class="next" id="btnNextPage"><a href="javascript:viod(0)">下一页 → </a>
+                                                        </li>
+                                                        <li class="disabled"><a href="javascript:viod(0)">共 <span
+                                                                id="totalPageNum"
+                                                                style="color: #005580"></span> 页</a></li>
+                                                        <li class="next"><a id="btnLastPage" href="javascript:viod(0)">末页</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../footer.html')%>
+<script type="text/javascript" src="/javascripts/config.js"></script>
+<script type="text/javascript" src="/javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="/javascripts/datepicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/javascripts/utils/common.js"></script>
+<script type="text/javascript" src="/javascripts/utils/pagingControl.js"></script>
+<script type="text/javascript" src="/javascripts/utils/ejs.js"></script>
+<script type="text/javascript" src="/javascripts/utils/dateFormater.js"></script>
+<script type="text/javascript" src="/javascripts/member/list.js"></script>
+<script type="text/javascript">
+    var memberList = new member_list();
+    memberList.init();
+</script>

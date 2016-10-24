@@ -1,0 +1,170 @@
+<%- include('../header.html')%>
+<style>
+    .downloadFile {
+        position: relative;
+        left: -21px;
+        top: -70px;
+        padding: 0px 3px;
+    }
+    .img_thumbnailDiv {
+        display: inline-block;
+    }
+    .img_thumbnail {
+        width: 150px;
+        padding: 5px;
+        border: 1px solid #e5e5e5
+    }
+    .portlet-title {
+        border: 0 !important;
+    }
+</style>
+<script type="text/javascript">
+    var skuStr = '<%-skuInfoStr%>';
+</script>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <h3 class="page-title">
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a id="mainModule" href="">商品管理</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="#">商品修改库存</a></li>
+                </ul>
+            </div>
+        </div>
+            <div id="dashboard">
+                <div id="detail_container" class="row-fluid">
+                    <div class="span12">
+                        <div class="portlet box blue tabbable">
+                            <div class="portlet-title">
+                                <h4 class="span10">
+                                    <i class="icon-reorder"></i>
+                                    <span class="hidden-480">商品信息</span>
+                                </h4>
+                            </div>
+                            <div class="portlet-body form">
+                                <div class="tabbable portlet-tabs">
+                                    <div class="tab-content" style="margin: 0px !important;">
+                                        <div class="tab-pane active" id="portlet_tab1">
+                                            <div action="#" class="form-horizontal" style="margin-top: 10px !important;">
+                                                <div class="control-group">
+                                                    <label class="control-label" style="color: #ff0000">商品信息：</label>
+
+                                                    <div id="flowStateTip" class="controls"
+                                                         style="padding-top: 7px;font-size: 14px;color: #ff0000">
+
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">商品分类</label>
+
+                                                    <div class="controls">
+                                                        <input id="categoryInput" type="text" value="<%=result.CategoryTitle%>"
+                                                               class="infoInput m-wrap large" disabled="disabled"/>
+                                                    </div>
+                                                </div>
+
+                                                <!--<div class="control-group">
+                                                    <label class="control-label">所属品牌</label>
+
+                                                    <div class="controls">
+                                                        <input id="brandInput" type="text" value="<%=result.BrandTitle%>"
+                                                               class="infoInput m-wrap large" disabled="disabled"/>
+                                                    </div>
+                                                </div>-->
+
+                                                <div class="control-group">
+                                                    <label class="control-label">商品名称</label>
+
+                                                    <div class="controls">
+                                                        <input id="goodsGroupTitleInput" type="text" value="<%=result.GoodsGroupTitle%>"
+                                                               class="infoInput m-wrap large" disabled="disabled"/>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">商品编码</label>
+
+                                                    <div class="controls">
+                                                        <input id="outerIdInput" type="text" value="<%=result.Outeriid%>"
+                                                               class="infoInput m-wrap large" disabled="disabled"/>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">商品吊牌价</label>
+
+                                                    <div class="controls">
+                                                        <input id="priceInput" type="text" value="<%=result.GoodsPrice%>"
+                                                               class="infoInput m-wrap large" disabled="disabled"/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <label class="control-label" style="color: #ff0000">子商品：</label>
+
+                                                    <div class="controls" id="dev_sku_table">
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <label class="control-label" style="color: #ff0000">商品图片：</label>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <label class="control-label"> </label>
+
+                                                    <div class="controls">
+                                                        <div class="img_thumbnailDiv">
+                                                            <%for(var i=0;i<imgsPath.length;i++){%>
+                                                            <img src="<%=imgsPath[i].GoodsImgPath%>" class="img_thumbnail" style="width: 150px;height:150px;display: inline-block">
+                                                            <a href="<%=imgsPath[i].GoodsImgPath%>" class="btn icn-only downloadFile"><i class="icon-arrow-down"></i></a>
+                                                            <%}%>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <label class="control-label">商品详情</label>
+
+                                                    <div class="controls" id="detailEditor">
+                                                        <div id="summernote">
+                                                            <%-result.GoodsDetail%>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-actions">
+                                                    <button id="dev_commit" type="button" class="btn red"> 提交修改</button>
+                                                    <button onclick="cancel()" type="button" class="btn blue"> 取消</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+    </div>
+</div>
+</div>
+<%- include('../footer.html')%>
+<script type="text/javascript" src="../javascripts/utils/common.js"></script>
+<script type="text/javascript" src="../javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="../javascripts/utils/UUID.js"></script>
+<script type="text/javascript" src="../javascripts/utils/taffydb/taffy-min.js"></script>
+<script type="text/javascript" src="../javascripts/utils/nc.table.js"></script>
+<script type="text/javascript" src="../javascripts/goods/editGoodsCount.js"></script>
+<script type="text/javascript">
+    function cancel(){
+        window.location.href='/goods/list';
+    }
+</script>
+

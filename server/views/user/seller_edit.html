@@ -1,0 +1,387 @@
+<%- include('../header.html')%>
+<style>
+    .portlet-title {
+        border: 0 !important;
+    }
+
+    .img_thumbnailDiv {
+        display: inline-block;
+    }
+
+    .img_thumbnail {
+        width: 150px;
+        padding: 5px;
+        border: 1px solid #e5e5e5
+    }
+
+    #inputFile_sellerImg {
+        line-height: 25px;
+        opacity: 0;
+        margin-left: -160px;
+        cursor: pointer;
+    }
+
+    .deleteThumb {
+        position: relative;
+        left: -21px;
+        top: -70px;
+        padding: 0px 3px;
+    }
+
+    #detailEditor .btn-group {
+        margin: 5px 5px 5px 0 !important;
+    }
+
+    .checkbox input[type="checkbox"] {
+        margin-left: 0;
+    }
+</style>
+<script type="text/javascript" src="/javascripts/utils/dateFormater.js"></script>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <h3 class="page-title">
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a id="mainModule" >基本信息</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="dashboard">
+            <div id="add_edit_container" class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box blue tabbable">
+                        <div class="portlet-title">
+                            <h4 class="span10">
+                                <i class="icon-reorder"></i>
+                                <span class="hidden-480">商家信息</span>
+                            </h4>
+                            <a id="btnEdit" href="#" class="btn red start"
+                               style="display: none;margin-top: -2px;color: #ffffff;text-decoration: none">
+                                <i class="icon-pencil icon-white"></i>
+                                <span>编辑</span>
+                            </a>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="tabbable portlet-tabs">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="portlet_tab1">
+                                        <div action="#" class="form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label" style="color: #ff0000">商家基本信息：</label>
+
+                                                <div id="flowStateTip" class="controls"
+                                                     style="padding-top: 7px;font-size: 14px;color: #ff0000">
+
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">公司名称</label>
+
+                                                <div class="controls">
+                                                    <input id="companyNameInput" type="text" value="<%=seller.Company%>" placeholder=""
+                                                           class="infoInput m-wrap large"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">经营范围</label>
+
+                                                <div class="controls">
+                                                    <input id="businessScopeInput" type="text" value="<%=seller.BusinessScope%>" placeholder=""
+                                                           class="infoInput m-wrap large"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">公司地址</label>
+
+                                                <div class="controls">
+                                                    <input id="companyAddressInput" type="text" value="<%=seller.Address%>" placeholder=""
+                                                           class="infoInput m-wrap large"/>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">公司电话</label>
+
+                                                <div class="controls">
+                                                    <input id="companyPhoneInput" type="text" value="<%=seller.Phone%>" placeholder=""
+                                                           class="infoInput m-wrap large"/>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">传真</label>
+
+                                                <div class="controls">
+                                                    <input id="faxInput" type="text" value="<%=seller.Fax%>" placeholder=""
+                                                           class="infoInput m-wrap large"/>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">入驻时间</label>
+
+                                                <div class="controls">
+                                                    <input id="createTimeInput" value="<%=seller.CreateTime%>" type="text" placeholder=""
+                                                           class="m-wrap large"  disabled="disabled"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label" style="color: #ff0000">退换货信息：</label>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">收件人</label>
+
+                                                <div class="controls">
+                                                    <input id="returnUsername" value="<%=seller.ReturnUsername%>" type="text" placeholder=""
+                                                           class="m-wrap large" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">收件人电话</label>
+
+                                                <div class="controls">
+                                                    <input id="returnUserPhone" value="<%=seller.ReturnUserPhone%>" type="text" placeholder=""
+                                                           class="m-wrap large" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">收件人地址</label>
+
+                                                <div class="controls">
+                                                    <input id="returnAddress" value="<%=seller.ReturnAddress%>" type="text" placeholder=""
+                                                           class="m-wrap large" />
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label" style="color: #ff0000">业务联系人信息：</label>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">姓名</label>
+
+                                                <div class="controls">
+                                                    <input id="contactorNameInput" value="<%=seller.Contactor%>" type="text" placeholder=""
+                                                           class="infoInput m-wrap large"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">电话</label>
+
+                                                <div class="controls">
+                                                    <input id="contactorPhoneInput"  value="<%=seller.ContactorPhone%>" type="text" placeholder=""
+                                                           class="infoInput m-wrap large"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">其它联系方式</label>
+
+                                                <div class="controls">
+                                                    <textarea id="ContactorDetailInput" type="text"
+                                                              class="infoInput m-wrap large"><%=seller.ContactorDetail%></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label" style="color: #ff0000">证照图片：</label>
+
+                                                <div id="certificateTip" class="controls"
+                                                     style="padding-top: 7px;font-size: 14px;color: #ff0000">
+                                                    请上传合同、营业执照、商标证书、授权书、质检报告扫描件或复印件图片
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"> </label>
+
+                                                <div class="controls">
+                                                    <div id="thumbContainer">
+                                                        <% for(var i=0;i<seller.images.length;i++){%>
+                                                        <div class="img_thumbnailDiv">
+                                                            <img src="<%=seller.images[i]%>" class="img_thumbnail"
+                                                                 style="width: 150px;height:150px;display: inline-block">
+                                                            <a href="javascript:;" class="btn icn-only deleteThumb" style="display: inline-block;"><i class="icon-remove"></i></a>
+                                                        </div>
+                                                        <%}%>
+                                                    </div>
+                                                    <div id="uploadContainer" style="margin-top: 10px;">
+                                                        <form id="formUploadSellerImg" enctype="multipart/form-data"
+                                                              role="form" method="post" action="javascript:;"
+                                                              style="display: inline-block">
+                                                            <span class="btn green fileinput-button"
+                                                                  style="cursor: auto;overflow: hidden">
+                                                                <i class="icon-plus icon-white"></i>
+                                                                <span>上传图片</span>
+                                                                <input id="inputFile_sellerImg" name="files" type="file"
+                                                                       accept=".jpg,.jpeg,.png,.bmp,.gif">
+                                                            </span>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions">
+                                                <button id="btnConfirm" type="button" class="btn blue"><i
+                                                        class="icon-ok"></i>保存
+                                                </button>
+                                                <% if(seller.State!='2'){%>
+                                                <button id="btnSubmitCheck" type="button"
+                                                        class="btn red"><i class="icon-ok"></i>提交审核
+                                                </button>
+                                                <%}%>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../footer.html')%>
+<script type="text/javascript" src="/javascripts/utils/common.js"></script>
+<script type="text/javascript" src="../javascripts/utils/layer/layer.js"></script>
+<script>
+    function getSellerInfo(){
+        var sellerObj={};
+        sellerObj.Company = $("#companyNameInput").val();
+        sellerObj.BusinessScope = $("#businessScopeInput").val();
+        sellerObj.Address = $("#companyAddressInput").val();
+        sellerObj.Phone = $("#companyPhoneInput").val();
+        sellerObj.Fax = $("#faxInput").val();
+        sellerObj.Contactor = $("#contactorNameInput").val();
+        sellerObj.ContactorPhone = $("#contactorPhoneInput").val();
+        sellerObj.ContactorDetail = $("#ContactorDetailInput").val().trim();
+        sellerObj.ReturnUsername=$("#returnUsername").val().trim();
+        sellerObj.ReturnUserPhone=$("#returnUserPhone").val().trim();
+        sellerObj.ReturnAddress=$("#returnAddress").val().trim();
+        var images='';
+        $("#thumbContainer img").each(function (i, img) {
+            images+=img.src+'^';
+        });
+        sellerObj.Images = images;
+        return sellerObj;
+    }
+    function bindCommands(){
+        $("#btnConfirm").click(function () {
+
+            sendSeller(getSellerInfo()).done(function (result) {
+                if (result) {
+                    layer.alert("提交成功！", {closeBtn:false} ,function () {
+                        window.location.reload();
+                    });
+                }
+            });
+        });
+
+        $("#btnSubmitCheck").click(function(){
+            sendSeller(getSellerInfo()).done(function (result) {
+                if (result) {
+                    layer.alert("提交成功！", {closeBtn:false} ,function () {
+                        window.location.reload();
+                    });
+                }
+            });
+        });
+
+
+        $("#thumbContainer").on("click", ".deleteThumb", function () {
+            $(this).parent().remove();
+        });
+
+        $("#inputFile_sellerImg").on('change', function () {
+            var loadId = layer.load();
+            //这里往云端传图片后获取到一个地址
+            uploadFile("formUploadSellerImg").done(function (fileUrl) {
+                layer.close(loadId);
+                var imgThumb = $('<div class="img_thumbnailDiv">' +
+                '<img src="' + fileUrl + '" class="img_thumbnail" style="width: 150px;height:150px;display: inline-block">' +
+                '<a href="javascript:;" class="btn icn-only deleteThumb"><i class="icon-remove"></i></a>' +
+                '</div>');
+                $("#thumbContainer").append(imgThumb);
+            });
+        });
+    }
+    /**
+     * 添加/编辑商家基本信息
+     * @param sellerObj
+     * @returns {*}
+     */
+    function sendSeller(sellerObj) {
+        var def = $.Deferred();
+        var url;
+        if(common.QueryString('id')){
+            url = "/seller/"+common.QueryString('id');
+        }
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: JSON.stringify(sellerObj),
+            dataType: 'JSON',
+            contentType: 'application/json',
+            success: function (res) {
+                if (200 === res.code) {
+                    console.log(res.data);
+                    def.resolve(res.data);
+                } else {
+                    console.log(res.data);
+                    layer.alert(res.data);
+                    def.resolve(null);
+                }
+            },
+            error: function (err) {
+                console.error(err, "与服务器通信发生错误。");
+                layer.alert("与服务器通信发生错误。");
+                def.resolve(null);
+            }
+        });
+        return def.promise();
+    }
+    /**
+     * @param formId 文件上传form元素id
+     * @return obj {code: 200, msg: url}
+     * @return obj {code: 300, err: "文件上传失败"}
+     */
+    function uploadFile(formId) {
+        var def = $.Deferred();
+        var formData = new FormData($("#" + formId)[0]);
+        $.ajax({
+            url: '/upload',
+            type: 'POST',
+            data: formData,
+            async: true,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+                if (200 === res.code) {
+                    console.log("上传成功。");
+                    def.resolve(res.msg);
+                } else {
+                    console.log(res.msg);
+                    layer.alert(res.msg);
+                    def.resolve(null);
+                }
+            },
+            error: function (err) {
+                console.error(err, "与服务器通信发生错误。");
+                layer.alert("与服务器通信发生错误。");
+                def.resolve(null);
+            }
+        });
+        return def.promise();
+    }
+    bindCommands();
+</script>

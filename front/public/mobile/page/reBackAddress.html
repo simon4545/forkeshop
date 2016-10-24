@@ -1,0 +1,98 @@
+<div data-page="reBackAddress" class="page no-toolbar no-swipeback reBackAddress">
+    <div class="navbar ">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back icon-only"> <i class="icon icon-back"></i></a>
+            </div>
+            <div class="center">申请退款</div>
+            <div class="right">
+                <!--<a href="page/reBackDesc.html" class="link color-80"><i class="icon icon-bars-blue">退款说明</i></a>-->
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="content-block reBackTipsWarp" >
+            <p style="font-size: 1.1em;font-weight: bold;">卖家退货信息：</p>
+            <p id="sellerAddress">&nbsp;</p>
+        </div>
+        <div class="content-block" style="margin: 25px 0">
+            <div class="row reBackFlexWarp">
+                <div class="reBackLeftTitle" >物流公司</div>
+                <div class="reBackRightInput" >
+                    <input type="text" readonly id="backExpressName" class="reBackInputText" />
+                </div>
+            </div>
+        </div>
+        <div class="content-block" style="margin: 25px 0">
+            <div class="row reBackFlexWarp">
+                <div class="reBackLeftTitle" >物流单号</div>
+                <div class="reBackRightInput" >
+                    <input type="text" id="backExpressCode" class="reBackInputText" />
+                </div>
+            </div>
+        </div>
+        <div id="ZFBAccountWarp" class="content-block" style="margin: 25px 0;display: none;">
+            <div class="row reBackFlexWarp">
+                <div class="reBackLeftTitle" >支付宝账号</div>
+                <div class="reBackRightInput" >
+                    <input type="text" id="ZFBAccount" class="reBackInputText" />
+                </div>
+            </div>
+        </div>
+        <div id="ZFBNameWarp" class="content-block" style="margin: 25px 0;display: none;">
+            <div class="row reBackFlexWarp">
+                <div class="reBackLeftTitle" >认证姓名</div>
+                <div class="reBackRightInput" >
+                    <input type="text" id="ZFBName" class="reBackInputText" />
+                </div>
+            </div>
+        </div>
+        <div id="ZFBFeeWarp" class="content-block" style="margin: 25px 0;display: none;">
+            <div class="row reBackFlexWarp">
+                <div class="reBackLeftTitle" >物流费用</div>
+                <div class="reBackRightInput" >
+                    <input type="text" id="ZFBFee" class="reBackInputText" />
+                </div>
+            </div>
+        </div>
+        <div class="content-block" style="margin: 25px 0">
+            <div class="row reBackFlexWarp">
+                <div class="reBackLeftTitle h-lh-50">上传凭证</div>
+                <div class="reBackRightInput" style="position: relative;">
+                    <form id="imgFormReAddress" enctype="multipart/form-data" role="form" method="post" action="javascript:;">
+                        <div class="addImgBtn"></div>
+                        <input id="addImgReAddress" type="file" name="files" class="addImgFile"/>
+                        <div class="h-lh-50" style="margin-left: 60px;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="imgWarpReBackAddress" class="content-block imgWarp" style="border:0;height:70px;margin:0 25px;padding:0;">
+        </div>
+        <div class="content-block" style="margin-top: 10px;">
+            <div class="row">
+                <div id="reBackCommitAddress" class="col-100 reBackCommit" >
+                    提交申请
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-100 reBackCommit" style="background-color: rgb(231,231,231)" >
+                    <a style="display: block;color:#5c5c5c;" href="page/reBackDesc.html" class="external">退货说明</a>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-100 reBackCommit" style="background-color: rgb(231,231,231)" >
+                    <a style="display: block;color:#5c5c5c;" href="tel:4000782000" class="external">客服热线:4000782000</a>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-100 reBackCommit" style="background-color: rgb(231,231,231)" >
+                    <a id="cancelReBackAddress" style="display: block;color:#5c5c5c;" >撤销申请</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

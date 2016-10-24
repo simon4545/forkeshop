@@ -1,0 +1,222 @@
+<div data-page="detail" class="page no-toolbar  no-swipeback detail-page">
+    <div class="navbar">
+        <div class="navbar-inner navbar-shortRight">
+            <div class="left">
+                <a href="#" class="link back icon-only" >
+                    <i class="icon icon-back"></i>
+                </a>
+                <a href="page/index.html" class="link  icon-only"   >
+                    <i class="icon icon-main"></i>
+                </a>
+            </div>
+            <!--<div class="center sliding main-name" data-i18n="app.name">
+                <div class="brand-logo"></div>
+            </div>-->
+            <div class="right" >
+                <a  href="page/shoppingCart2.html" class="link  icon-only">
+                    <span class="cart-time">
+                        <span class="B_Minute">00</span>
+                        <span>:</span>
+                        <span class="B_Second">00</span>
+                    </span>
+                    <i class="icon icon-cart" style="margin-left: 0px"></i>
+                    <div class="cart-num">0</div>
+                </a>
+                <a href="#" class="link  icon-only share-icon" style="margin-right: -8px;display:none">
+                    <i class="icon icon-share"></i>
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <div class="gotop" onclick="_scrollTop(0,10);return false;" style="display: none"></div>
+    <div class="page-content infinite-scroll" data-distance="0">
+        <div class="testZan" flag="0">
+            <img  class="testZanImg" src="./img/923/nozan.png"/>
+            <span  class="testZanSpan">1024</span>
+        </div>
+        <div class="swiper-container">
+            <div class="mark-time">
+                商品将保留
+                <span class="cart-time">
+                        <span class="B_Minute">00</span>
+                        <span>:</span>
+                        <span class="B_Second">00</span>
+                </span>
+            </div>
+            <div class="mark-page"><font></font></div>
+
+            <div class="swiper-wrapper" style="min-height: 120px;text-align: center;">
+                <div class="swiper-slide">
+                    <a >
+                        <img style="margin: 20px auto;width: 80px" src="img/loading.png">
+                    </a>
+                </div>
+            </div>
+          <!--  <div class="swiper-pagination color-gray">
+
+            </div>-->
+        </div>
+        <div class="content-block good-detail" id="gooddetailbox">
+
+        </div>
+        <div class="content-block good-detail clear">
+            <div class="row no-gutter">
+                <div class="col-100 good-title">
+
+                </div>
+
+            </div>
+            <div class="row no-gutter" style="margin-top: 10px">
+                <div class="col-50">
+                    <div class="yuan">免</div>
+                    <div class="flag">全场包邮</div>
+                </div>
+            </div>
+        </div>
+        <div class="content-block good-detail" id="good-flag-con">
+            <div class="row no-gutter">
+                <div class="col-90 good-flag" style="width: 93%">
+                    <div class="row">
+                        <div class="col-33">
+                            <div class="row no-gutter">
+                                 <div class="col-100 dflag">
+                                     &nbsp;100%正品
+                                 </div>
+                                <!-- <div class="col-80">&nbsp;正品100%</div>-->
+                            </div>
+                        </div>
+                        <div class="col-33">
+                            <div class="row no-gutter">
+                                <div class="col-100 dflag">
+                                    &nbsp;口碑信赖
+                                </div>
+                               <!-- <div class="col-80">&nbsp;口碑信赖</div>-->
+                            </div>
+                        </div>
+                        <div class="col-33">
+                            <div class="row no-gutter">
+                                <div class="col-100 dflag">
+                                    &nbsp;金牌服务
+                                </div>
+                                <!--<div class="col-80">&nbsp;金牌服务</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block good-jian good-detail " style="display: none">
+            <div class="row no-gutter">
+                <div class="col-10">
+                        <div class="yuan-jian">减</div>
+                </div>
+                <div class="col-90">
+                    <div class="discount-title">满100减20</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="top-ex-ad" class="content-block good-detail last" style="padding:10px 0;">
+
+        </div>
+
+        <div class="list-block media-list go-select-info">
+            <ul>
+                <li id="go-select-btn" class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title-row">
+                            <div class="item-title">选择颜色、尺码</div>
+                            <div class="item-after">&nbsp;</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="top-con-ad" style="width: 100%;min-height: 80px;margin-top: 10px"></div>
+
+        <div class="content-block detail-info-tag">
+            <div class="row no-gutter">
+                <div class="col-100">继续拖动，查看图文详情</div>
+            </div>
+        </div>
+        <div class="content-block detail-thumnailList">
+            <div class="row">
+                <div class="col-100" style="height: 40px; line-height: 45px;text-indent: 15px">商品详情</div>
+                <div class="col-100 thumbnail-box">
+
+                </div>
+            </div>
+        </div>
+
+        <input type="hidden" val="" id="actionIdBox">
+        <input type="hidden" val="" id="groupIdBox">
+        <input type="hidden" val="" id="IdBox">
+
+    </div>
+
+    <div class="content-block btn-box">
+        <div class="row no-gutter">
+            <div class="col-50">
+                <div class="addcart">
+                    加购物车
+                </div>
+            </div>
+            <div class="col-50">
+                <div class="buynow">
+                    立即购买
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-block color-size-box">
+        <div class="row  good-info">
+            <div class="col-20 imgbox">
+                <img src="img/loading.png">
+            </div>
+            <div class="col-65 des-info">
+                <div class="row no-gutter">
+                    <div class="col-100 title ellipse">
+                    </div>
+                </div>
+                <div class="row no-gutter" style="margin-top: 5px">
+                    <div class="col-30 price">¥129.00</div>
+                    <div class="col-70 count">(库存<font>100</font>件)</div>
+                </div>
+            </div>
+            <div class="col-15 close">
+                <img src="img/newIcon/close.png">
+            </div>
+        </div>
+        <div class="row color-info">
+            <div class="col-100 des-t">颜色</div>
+
+        </div>
+        <div class="row size-info">
+            <div class="col-100 des-t">尺码</div>
+
+        </div>
+        <div class="row no-gutter num-info">
+            <div class="num-text" style="width: 40px;height: 30px;line-height: 30px;float: left">数量</div>
+            <div class="min-btn btn" ></div>
+            <div class="good-num" >1</div>
+            <div class="add-btn btn btn-l"></div>
+            <div class="col-60"></div>
+        </div>
+    </div>
+
+    <div class="content-block  popup-btn">
+        <div class="row no-gutter">
+            <div class="col-100">
+                <div class="gopay">付款</div>
+            </div>
+        </div>
+    </div>
+    <div id="popup-mask"></div>
+    <div class="animation_box">
+    </div>
+</div>
+

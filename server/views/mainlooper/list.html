@@ -1,0 +1,292 @@
+<%- include('../header.html')%>
+<style>
+    #inputFile_brandLogo {
+        line-height: 25px;
+        opacity: 0;
+        margin-left: -160px;
+        cursor: pointer;
+    }
+</style>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="color-panel hidden-phone">
+                    <div class="color-mode-icons icon-color-close"></div>
+                    <div class="color-mode">
+                        <p>THEME COLOR</p>
+                        <ul class="inline">
+                            <li class="color-black current color-default" data-style="default"></li>
+                            <li class="color-blue" data-style="blue"></li>
+                            <li class="color-brown" data-style="brown"></li>
+                            <li class="color-purple" data-style="purple"></li>
+                            <li class="color-white color-light" data-style="light"></li>
+                        </ul>
+                        <label class="hidden-phone">
+                            <input type="checkbox" class="header" checked value=""/>
+                            <span class="color-mode-label">Fixed Header</span>
+                        </label>
+                    </div>
+                </div>
+                <h3 class="page-title"></h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a id="mainModule" href="/homepage">轮播广告</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="/edb/merchant/list">列表</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <button class="btn red" data-dismiss="modal" aria-hidden="true" style="float: right"
+                    onclick="return _modelShow()">新增广告
+            </button>
+            <div id="couponDetail_Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <p id="couponDetail_Modal_title">广告信息</p>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped table-bordered table-advance table-hover"
+                           style="margin-top: 10px">
+                        <tr style="display: none">
+                            <td><input name="id" id="ad_id"></td>
+                        </tr>
+                        <tr>
+                            <td>名称</td>
+                            <td><input type="text" id="ad_title" name="title"></td>
+                        </tr>
+                        <tr>
+                            <td>App图片</td>
+                            <td><input type="hidden" id="ad_appImageUrl" name="appImageUrl">
+
+                                <form id="formUploadBrandLogo" enctype="multipart/form-data" role="form" method="post"
+                                      action="javascript:;" style="display: inline-block">
+                               <span class="btn green fileinput-button" style="cursor: auto;overflow: hidden">
+                                   <i class="icon-plus icon-white"></i>
+                                   <span>上传图片</span>
+                                    <input id="inputFile_brandLogo" name="files" type="file"
+                                           accept=".jpg,.jpeg,.png,.bmp,.gif">
+                                 </span>
+                                </form>
+                                <br/>
+                                <img src id="show_ad_img" style="max-width: 300px">
+                        </tr>
+                        <tr>
+                            <td>跳转链接</td>
+                            <td><textarea id="ad_redirectUrl" name="redirectUrl"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>排序</td>
+                            <td><input type="text" id="ad_adSort" name="adSort"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn red" onclick="return _saveAdd()">保存
+                    </button>
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+                </div>
+            </div>
+
+            <table class="table table-striped table-bordered table-advance table-hov">
+                <thead>
+                <tr>
+                    <th style="width: 10px;"><input type="checkbox" class="checkbox122" id="check_all"/>
+                    </th>
+                    <th style="width: 50px;"><i class="icon-flag"></i> 序号</th>
+                    <th><i class="icon-star"></i> 名称</th>
+                    <th><i class="icon-picture"></i> APP图片</th>
+                    <th><i class="icon-signal"></i> 跳转链接</th>
+                    <th style="max-width: 150px"><i class="icon-time"></i> 创建时间</th>
+                    <th><i class="icon-dashboard"></i> 排序</th>
+                    <th style="width: 150px"><i class="icon-pencil"></i> 操作</th>
+                </tr>
+                </thead>
+                <% for(var i=0;i
+                <list.length
+                ;i++){%>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><%=i+1%></td>
+                    <td><%=list[i]['Title']%></td>
+                    <td><img src="<%=list[i]['AppImageUrl']%>" style="max-height: 200px"/></td>
+                    <td><a href="<%=list[i]['RedirectUrl']%>" target="_blank"><%=list[i]['RedirectUrl']%></a></td>
+                    <td><%=list[i]['CreateTime']%></td>
+                    <td><%=list[i]['AdSort']%></td>
+                    <td><a href="javascript:void(0)" onclick="return _modelShow('<%=list[i]['Id']%>')"
+                           class="btn mini blue"><i class="icon-list-alt"></i> 编辑</a> <a href="javascript:void(0)"
+                                                                                         onclick="return _delAd('<%=list[i]['Id']%>')"
+                                                                                         class="btn mini red"><i
+                            class="icon-list-alt"></i>删除</a></td>
+                </tr>
+                <% }%>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('../footer.html')%>
+<script type="text/javascript" src="/javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript">
+
+    $("#inputFile_brandLogo").on('change', function () {
+        var loadId = layer.load();
+        uploadFile("formUploadBrandLogo").done(function (fileUrl) {
+            layer.close(loadId);
+            $('#show_ad_img').attr('src', fileUrl);
+            $('#ad_appImageUrl').val(fileUrl);
+        });
+    });
+
+    function _delAd(_id) {
+        layer.confirm('确定要删除吗？', function () {
+            _delAdAjax({id: _id});
+        });
+    }
+    function _modelShow(_id) {
+        if (_id) {
+            _getAdd(_id).done(function (data) {
+                $('#ad_id').val(data[0]['Id']);
+                $('#ad_title').val(data[0]['Title']);
+                $('#ad_appImageUrl').val(data[0]['AppImageUrl']);
+                $('#show_ad_img').attr('src', data[0]['AppImageUrl']);
+                $('#ad_redirectUrl').val(data[0]['RedirectUrl']);
+                $('#ad_adSort').val(data[0]['AdSort']);
+            });
+            $('#couponDetail_Modal').modal();
+        } else {
+            $('#ad_id').val('');
+            $('#ad_title').val('');
+            $('#ad_appImageUrl').val('');
+            $('#show_ad_img').attr('src', '');
+            $('#ad_redirectUrl').val('');
+            $('#ad_adSort').val('');
+            $('#couponDetail_Modal').modal();
+        }
+    }
+
+    function _saveAdd() {
+        var args = {
+            id: $('#ad_id').val(),
+            title: $('#ad_title').val(),
+            appImageUrl: $('#ad_appImageUrl').val(),
+            redirectUrl: $('#ad_redirectUrl').val(),
+            adSort: $('#ad_adSort').val()
+        };
+        console.log(args);
+        if(args.appImageUrl == '' || args.redirectUrl == '') {
+            layer.alert('请补全数据', {icon: 5, title: '警告'});
+        } else {
+            _saveAdAjax(args);
+        }
+    }
+
+    function _saveAdAjax(args) {
+        var def = $.Deferred();
+        $.ajax({
+            url: '/mainlooper/save',
+            type: 'POST',
+            data: JSON.stringify(args),
+            dataType: "JSON",
+            contentType: 'application/json',
+            success: function (res) {
+                if (200 === res.code) {
+                    layer.alert('保存成功', {icon: 1, title: '提示'},function(){
+                        window.location.reload();
+                    });
+                } else {
+                    layer.alert("保存失败，请重试~", {icon: 5, title: '警告'});
+                    def.resolve(null);
+                }
+            },
+            error: function (err) {
+                layer.alert("保存失败，请重试~", {icon: 5, title: '警告'});
+                def.resolve(null);
+            }
+        });
+        return def.promise();
+    }
+
+    function _delAdAjax(args) {
+        var def = $.Deferred();
+        $.ajax({
+            url: '/mainlooper/del',
+            type: 'POST',
+            data: JSON.stringify(args),
+            dataType: "JSON",
+            contentType: 'application/json',
+            success: function (res) {
+                if (200 === res.code) {
+                    layer.alert('删除成功', {icon: 1, title: '提示'},function(){
+                        window.location.reload();
+                    });
+                } else {
+                    layer.alert("删除失败，请重试~", {icon: 5, title: '警告'});
+                    def.resolve(null);
+                }
+            },
+            error: function (err) {
+                layer.alert("删除失败，请重试~", {icon: 5, title: '警告'});
+                def.resolve(null);
+            }
+        });
+        return def.promise();
+    }
+
+    function _getAdd(_id) {
+        var def = $.Deferred();
+        var args = {id: _id};
+        $.ajax({
+            url: '/mainlooper/query',
+            type: 'POST',
+            data: JSON.stringify(args),
+            dataType: "JSON",
+            contentType: 'application/json',
+            success: function (res) {
+                if (200 === res.code) {
+                    def.resolve(res.data);
+                } else {
+                    def.resolve(null);
+                }
+            },
+            error: function (err) {
+                layer.alert("查询失败，请重试~", {icon: 5, title: '警告'});
+                def.resolve(null);
+            }
+        });
+        return def.promise();
+    }
+
+    function uploadFile(formId) {
+        var def = $.Deferred();
+        var formData = new FormData($("#" + formId)[0]);
+        $.ajax({
+            url: '/upload',
+            type: 'POST',
+            data: formData,
+            async: true,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+                if (200 === res.code) {
+                    console.log("上传成功。");
+                    def.resolve(res.msg);
+                } else {
+                    console.log(res.msg);
+                    layer.alert(res.msg);
+                    def.resolve(null);
+                }
+            },
+            error: function (err) {
+                console.error(err, "与服务器通信发生错误。");
+                layer.alert("与服务器通信发生错误。");
+                def.resolve(null);
+            }
+        });
+        return def.promise();
+    }
+</script>

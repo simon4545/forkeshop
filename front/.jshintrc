@@ -1,0 +1,17 @@
+{
+  "node": true,
+  "nonew":true,
+  "noarg":true,
+  "forin":true,
+  "noempty":true,
+  "eqeqeq":true,
+  "undef":true,
+  "bitwise":true,
+  "sub":true,
+  "globals": {
+    "require": true,
+    "exports": true,
+    "console": true
+  }
+
+}

@@ -1,0 +1,208 @@
+<%- include('../header.html')%>
+<style>
+    #listTBody td {
+        vertical-align: middle;
+    }
+
+    #listTBody td img {
+        width: 100px;
+        height: 80px;
+    }
+
+    .btn.mini {
+        margin-left: 5px;
+    }
+
+    .portlet-title {
+        border: 0 !important;
+    }
+</style>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <h3 class="page-title">
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a id="mainModule">商家管理</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box blue tabbable">
+                        <div class="portlet-title">
+                            <h4>
+                                <i class="icon-reorder"></i>
+                                <span class="hidden-480">修改密码</span>
+                                &nbsp;
+                            </h4>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="tabbable portlet-tabs">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="portlet_tab1">
+                                        <div action="#" class="form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">用户名</label>
+
+                                                <div class="controls">
+                                                    <input id="usernameInput" type="text"
+                                                           value="<%=account.AccountName%>"
+                                                           class="m-wrap large" disabled/>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">当前密码</label>
+
+                                                <div class="controls">
+                                                    <input id="oldPass" type="password"
+                                                           required="true" placeholder="请输入当前密码"
+                                                           class="m-wrap large"/>
+                                                    <span id="cur_pass" class="help-inline"
+                                                          style="display: none;color: red">*当前密码错误</span>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">新密码</label>
+
+                                                <div class="controls">
+                                                    <input id="newPass" type="password"
+                                                           required="true" placeholder="请输入新密码"
+                                                           class="m-wrap large"/>
+                                                    <span id="new_pass" class="help-inline"
+                                                          style="display: none;color: red">*请输入新密码</span>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">再次确认新密码</label>
+
+                                                <div class="controls">
+                                                    <input id="newPass2" type="password"
+                                                           required="true" placeholder="请输入确认密码"
+                                                           class="m-wrap large"/>
+                                                    <span id="check_same" class="help-inline"
+                                                          style="display: none;color: red">*密码输入不一致</span>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <div class="controls">
+                                                    <span class="help-inline"
+                                                          style="display: none;color: red">*密码确认两次输入不一致</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-actions">
+                                                <button id="btnConfirm" type="button" class="btn blue"><i
+                                                        class="icon-ok"></i>提交
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../footer.html')%>
+<script type="text/javascript" src="/javascripts/utils/common.js"></script>
+<script type="text/javascript" src="../javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="../javascripts/config.js"></script>
+<script>
+    var sellerId = common.QueryString('id');
+    function validateForm() {
+        var pass = true;
+        $("input").each(function () {
+            if (!$(this).val() && $(this).attr("required")) {
+                $(this).siblings(".help-inline").show();
+                pass = false;
+                layer.alert("请将信息填写完整后再提交。");
+            }
+        });
+        return pass;
+    }
+    $("#btnConfirm").click(function () {
+        var result = validateForm();
+        var check = checkSame();
+        if (result && check) {
+            sendUser();
+        }
+    });
+
+    /**
+     * 添加/编辑用户
+     * @param user
+     * @returns {*}
+     */
+    function sendUser() {
+        var url = "/seller/changepwd";
+        var body = {
+            data: {
+                username: $("#usernameInput").val(),
+                newPass: $('#newPass').val(),
+                newPass2: $("#newPass2").val(),
+                oldPass: $('#oldPass').val(),
+                sellerId: sellerId
+            },
+            url: url,
+            type: 'POST',
+            success: function (res) {
+                if (200 === res.code) {
+                    layer.alert(res.msg, {closeBtn: false}, function () {
+                        window.location.href = '/goods/list';
+                    });
+                }else if(300==res.code){
+                    $("#cur_pass").show();
+                    layer.alert(res.msg);
+                } else if(301==res.code) {
+                    $("#check_same").show();
+                    layer.alert(res.msg);
+                }else{
+                    layer.alert(res.msg);
+                }
+            },
+            error: function (err) {
+                console.error(err, "与服务器通信发生错误。");
+                layer.alert("与服务器通信发生错误。");
+            }
+        };
+        if (sellerId) {
+            body.data.id = sellerId;
+        }
+        $.ajax(body);
+    }
+
+    $("#newPass2").on('blur', function () {
+        checkSame();
+    });
+    function checkSame() {
+        var newPass = $("#newPass").val();
+        var newPass2 = $("#newPass2").val();
+        if (newPass && newPass2 && newPass == newPass2) {
+            return true;
+        } else {
+            $("#check_same").show();
+            return false;
+        }
+    }
+
+    $("#oldPass").on('focus',function(){
+        $("#cur_pass").hide();
+    });
+    $("#newPass").on('focus',function(){
+        $("#new_pass").hide();
+    });
+    $("#newPass2").on('focus',function(){
+        $("#check_same").hide();
+    });
+
+</script>

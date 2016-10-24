@@ -1,0 +1,36 @@
+
+.aboutUs-page .versionDiv{
+    margin-top: 0.8em;
+    padding:15px 10px;
+    position: relative;
+}
+
+.aboutUs-page .versionLogo{
+    width: 150px;
+    height:150px;
+    position: relative;
+    background-image:url(../../img/logo_v.png);
+    background-size: 100% 100%;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aboutUs-page .versionWord{
+    color:#5c5c5c;
+}
+
+.aboutUs-page .versionWord p{
+    margin-top: 20px;
+    text-indent: 1.6rem;
+    text-align: left;
+    font-size: .8rem;
+    color:#666;
+}
+.aboutUs-page .versionWord span{
+    margin-top: 5px;
+    text-align: left;
+    font-size: .8rem;
+    display: block;
+    color: #666;
+}

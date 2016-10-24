@@ -1,0 +1,81 @@
+<div data-page="orderConfirm" class="page no-swipeback orderconfirm-page  no-toolbar ">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back icon-only"> <i class="icon icon-back"></i></a>
+            </div>
+            <div class="center color-40">订单确认</div>
+        </div>
+    </div>
+    <div class="page-content page-toolpadding">
+
+
+
+        <div class="list-block media-list">
+            <ul>
+                <li>
+                    <div class="item-content">
+                        <div class="item-media">
+                            <img class="addresslogo" src="img/cart/getaddress.png">
+                        </div>
+                        <div id="orderConfirmAddress" class="item-inner inner-oneline">
+                            <div id="orderConfirmAddressDiv" class="item-title ">请填写收货地址</div>
+                            <div class="item-after gt">&nbsp;</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="orderConfirmlist" class="list-block media-list">
+
+        </div>
+
+        <div class="list-block media-list">
+            <ul id="payTypeUl">
+                <li eq="1" class="weixin-pay">
+                    <div class="item-content">
+                        <div class="item-media">
+                            <img class="pay-logo" src="img/cart/weixinpay.png">
+                        </div>
+                        <div class="item-inner inner-oneline">
+                            <div class="item-title">微信支付</div>
+                            <div class="item-after">
+                                <label id="paytype1" class="round-checkbox2 paytypelab selected"></label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li eq="0" class="android-pay">
+                    <div class="item-content">
+                        <div class="item-media">
+                            <img class="pay-logo" src="img/cart/zhifubaopay.png">
+                        </div>
+                        <div class="item-inner inner-oneline">
+                            <div class="item-title ">支付宝支付</div>
+                            <div class="item-after">
+                                <label id="paytype0" class="round-checkbox2 paytypelab"></label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="bottom-fix-bar">
+        <div class="bottom-fix-bar-left">
+            <div class="bar-left-row">
+                <p id="orderConfirmTotal" class="color-org1 row1">合计：￥0.00</p>
+
+                <p id="orderConfirmDiscount" class="color-gray1 row2">已优惠：￥0.00</p>
+            </div>
+        </div>
+        <div class="bottom-fix-bar-right">
+            <a id="orderconfirmgotopay" class="btn-yellow">
+                支付
+            </a>
+        </div>
+    </div>
+</div>

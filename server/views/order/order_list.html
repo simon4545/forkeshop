@@ -1,0 +1,580 @@
+<%- include('../header.html')%>
+<style>
+    #listTBody td {
+        vertical-align: middle;
+    }
+
+    #listTBody td img {
+        width: 100px;
+        height: 80px;
+    }
+
+    .modal, .modal-lg {
+        width: 1000px;
+        /*overflow: auto;*/
+        max-height: 500px;
+    }
+
+    #infoContainer {
+        padding: 10px;
+    }
+
+    .btn.mini {
+        margin-left: 5px;
+    }
+
+    .portlet-title {
+        border: 0 !important;
+    }
+
+    .pagination ul > li {
+        float: left;
+    }
+
+    #pagingSelect {
+        width: 100px;
+    }
+
+    #listTBody_detailGoods img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #listTBody_detailGoods tr td, .table tr th, #order_list_tab tr td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    #order_op_bar button {
+        margin-right: 10px;
+        float: right;
+    }
+
+    #expressInfo div {
+        display: initial;
+        border: 1px solid;
+        border-radius: 25px !important;
+        background-color: #F3F0F0;
+        padding: 5px;
+        position: relative;
+        margin-right: 10px;
+    }
+
+    #expressInfo div i {
+        display: block;
+        background-color: #F5E9E9;
+        width: 17px;
+        height: 17px;
+        position: absolute;
+        top: -9px;
+        right: -8px;
+        border-radius: 9px;
+        font-style: normal;
+        border: 1px solid #968282;
+        text-align: center;
+        cursor: pointer;
+        color: #F31D1D;
+    }
+
+</style>
+<link href="/javascripts/utils/artDialog-master/css/ui-dialog.css" rel="stylesheet"/>
+
+<div class="page-content">
+<div class="container-fluid">
+<div class="row-fluid">
+    <div class="span12">
+        <h3 class="page-title">
+        </h3>
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home"></i>
+                <a id="mainModule" href="javascript:void(0);">订单管理</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="dashboard">
+<div id="orderDetail_listModal" style="left:38%;display: none" class="modal fade bs-example-modal-lg"
+     role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                        style="position: absolute;width: 15px;height: 15px;right: 0px;top: 5px;"></button>
+            </div>
+            <div id="infoContainer" style="max-height: 465px;overflow: auto;margin-top: 15px;">
+            </div>
+            <div class="form-actions" style="margin-top: 0;  padding: 15px; margin-bottom: 0;"
+                 id="order_op_bar">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="query_container" class="row-fluid">
+    <div class="span12">
+        <div class="portlet box blue tabbable">
+            <div class="portlet-title">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div style="display: inline-block"><span> 订单状态 </span>
+                            <select id="orderState_query" style="margin-bottom: 0">
+                                <option value="0">全部</option>
+                                <option value="1">待付款</option>
+                                <option value="2">待配货</option>
+                                <option value="3">发货中</option>
+                                <option value="4">待签收</option>
+                                <option value="5">待退款</option>
+                                <option value="9">交易成功</option>
+                                <option value="19">已退款</option>
+                                <option value="99">交易取消</option>
+                            </select>
+                        </div>
+                        <div style="display: inline-block"><input id="orderCode_query"
+                                                                  placeholder="交易号、订单号、收件人、联系号码"/>
+                        </div>
+                        <div style="display: inline-block">
+                            <button id="btnQuery" class="btn primary"><i class="icon-search"></i> 查询</button>
+                        </div>
+
+                        <div style="display: inline-block;position: absolute;right: 110px;"><input
+                                id="agent_query" placeholder="代理商名称"/>
+                        </div>
+                        <div style="display: inline-block;float: right;">
+                            <button id="btnQuery_agent" class="btn primary"><i class="icon-search"></i> 查询</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="list_container" class="row-fluid">
+    <div class="span12">
+        <div class="portlet box blue tabbable">
+            <div class="portlet-title">
+                <div class="portlet-title">
+                    <h4 class="span10" style="width: 150px;">
+                        <i class="icon-reorder"></i>
+                        <span class="hidden-480">订单列表</span>
+                        &nbsp;
+                    </h4>
+
+                    <div id="orderOperateDiv" class="btn-group" style="margin-top: -5px !important">
+                        <button class="btn btn-info">操作</button>
+                        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="order_status" style="min-width: 98px">
+                            <li><a data-target="3" data-msg="确定订单有效吗?" href="javascript:void(0);">确认订单</a>
+                            </li>
+                            <li><a data-target="4" data-msg="确定可以发货吗?" href="javascript:void(0);">确认发货</a>
+                            </li>
+                            <li><a data-target="9" data-msg="确定订单交易成功吗?" href="javascript:void(0);">确认签收</a>
+                            </li>
+                            <!--<li><a data-target="5" data-msg="确定要退款吗?" href="javascript:void(0);">申请退款</a>-->
+                            <!--</li>-->
+                            <!--<li><a data-target="19" data-msg="确定已退款完成了吗?"-->
+                                   <!--href="javascript:void(0);">确认退款</a>-->
+                            <!--</li>-->
+                        </ul>
+                    </div>
+
+                    <div style="float: right;" class="btn-group">
+                        <button class="btn btn-info red" id="btnExportOrder">导出订单</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="portlet-body" style="margin-top: -5px;">
+                <table class="table table-striped table-bordered table-advance table-hover"
+                       id="order_list_tab">
+                    <thead>
+                    <tr>
+                        <th style="width: 10px;"><input type="checkbox" class="checkbox122" id="check_all"/>
+                        </th>
+                        <th style="width: 50px;"><i class="icon-flag"></i> 序号</th>
+                        <th><i class="icon-star"></i> 订单号</th>
+                        <th><i class="icon-picture"></i> 商品图片</th>
+                        <th><i class="icon-shopping-cart"></i> 订单金额</th>
+                        <th><i class="icon-user"></i> 收件人</th>
+                        <th><i class="icon-signal"></i> 联系号码</th>
+                        <th><i class="icon-retweet"></i> 订单状态</th>
+                        <th><i class="icon-time"></i> 下单时间</th>
+                        <th><i class="icon-user"></i> 商家</th>
+                        <th><i class="icon-pencil"></i> 操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="listTBody">
+
+                    </tbody>
+                </table>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="dataTables_paginate paging_bootstrap pagination">
+                            <ul>
+                                <li class="pre"><a id="btnFirstPage" href="javascript:void(0);">首页</a></li>
+                                <li class="prev"><a id="btnPrePage" href="javascript:void(0);">← 上一页</a>
+                                </li>
+                                <li>
+                                    <select id="pagingSelect">
+
+                                    </select>
+                                </li>
+                                <li class="next" id="btnNextPage"><a href="javascript:void(0);">下一页 → </a>
+                                </li>
+                                <li class="disabled">
+                                    <a href="javascript:void(0);">共
+                                        <span id="totalPageNum" style="color: #005580">1</span>页
+                                    </a>
+                                </li>
+                                <li class="next"><a id="btnLastPage" href="javascript:void(0);">末页</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="add_edit_container" class="row-fluid" style="display: none">
+    <div class="span12">
+        <div class="portlet box blue tabbable">
+            <div class="portlet-title">
+                <h4>
+                    <i class="icon-reorder"></i>
+                    <span class="hidden-480">品牌信息</span>
+                    &nbsp;
+                </h4>
+            </div>
+            <div class="portlet-body form">
+                <div class="tabbable portlet-tabs">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="portlet_tab1">
+                            <div class="form-horizontal" style="margin-top: 10px !important;">
+                                <div class="control-group">
+                                    <label class="control-label">品牌名称</label>
+
+                                    <div class="controls">
+                                        <input id="brandTitleInput" type="text" required="true"
+                                               placeholder="" class="m-wrap large"/>
+                                                    <span class="help-inline"
+                                                          style="display: none;color: red">*此项为必填项</span>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">品牌描述</label>
+
+                                    <div class="controls">
+                                        <input id="brandInfoInput" type="text" required="true"
+                                               placeholder="" class="m-wrap large"/>
+                                                    <span class="help-inline"
+                                                          style="display: none;color: red">*此项为必填项</span>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">品牌Logo</label>
+
+                                    <div class="controls">
+                                        <form id="formUploadBrandLogo" enctype="multipart/form-data"
+                                              role="form" method="post" action="javascript:;"
+                                              style="display: inline-block">
+                                                    <span class="btn green fileinput-button"
+                                                          style="cursor: auto;overflow: hidden">
+                                                        <i class="icon-plus icon-white"></i>
+                                                        <span>上传图片</span>
+                                                        <input id="inputFile_brandLogo" name="files" type="file"
+                                                               accept="image/*">
+                                                    </span>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">Logo图片预览</label>
+
+                                    <div class="controls" id="thumbContainer">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button id="btnConfirm" type="button" class="btn blue"><i
+                                            class="icon-ok"></i>保存
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<%- include('../footer.html')%>
+<script type="text/javascript" src="../javascripts/utils/ejs.js"></script>
+<script type="text/javascript" src="../javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="../javascripts/utils/common.js"></script>
+<script type="text/javascript" src="../javascripts/utils/summernote.js"></script>
+<script type="text/javascript" src="../javascripts/utils/summernote-zh-CN.js"></script>
+<script type="text/javascript" src="../javascripts/utils/pagingControl.js"></script>
+<script type="text/javascript" src="../javascripts/config.js"></script>
+<script type="text/javascript" src="/javascripts/utils/artDialog-master/dist/dialog-min.js"></script>
+<script type="text/javascript" src="/javascripts/utils/artdialog.js"></script>
+<script type="text/javascript" src="/javascripts/datepicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/javascripts/utils/taffydb/taffy-min.js"></script>
+<script type="text/javascript" src="/javascripts/order/order_list.js"></script>
+
+<script type="text/html" id="dev_order_template">
+    <tr>
+        <td><input type="checkbox" value="' + orders[i].Id + '" name="check_item"/></td>
+        <td>((curPageIndex - 1) * AppConfig.PAGING_CONFIG.pageSize + i + 1)</td>
+        <td>orders[i].OrderCode</td>
+        <td><img src='orders[i].OrderImage'/></td>
+        <td>orders[i].OrderTotalPrice</td>
+        <td>orders[i].ConsigneeName</td>
+        <td>orders[i].ConsigneeMobile</td>
+        <td>orders[i].OrderProgressInfo</td>
+        <td>orders[i].CreateTime.replace("T", " ").replace(".000Z", "")</td>
+        <td>
+            <!--<a href="javascript:void(0);" class="btn mini blue btnOrdersDetail"><i class="icon-list-alt"></i> 详情</a>-->
+            <!--<a href="/service/add?id=orders[i].Id" class="btn mini blue btnOrdersDetail"><i class="icon-list-alt"></i> 详情</a>-->
+        </td>
+    </tr>
+</script>
+
+<script type="text/html" id="dev_orderInfo_template">
+    <table class="table table-striped table-bordered table-advance table-hover"
+           style="margin-top: 10px" id="order_detail_div">
+        <tbody>
+        <tr>
+            <td class="span2">会员名称：</td>
+            <td>[%=detailInfo.MemberAccount%]</td>
+        </tr>
+        <tr>
+            <td class="span2">交易流水号：</td>
+            <td style="color:orange">[%=detailInfo.tradeCode%]</td>
+        </tr>
+        <tr>
+            <td class="span2">订单编号：</td>
+            <td style="color: darkgreen">[%=orderInfo.OrderCode%]
+                <!--<button type="button" class="red" style="float: right"
+                        onclick='return send_oos_msg("[%=detailInfo.Id%]","[%=orderInfo.OrderCode%]","[%=detailInfo.ConsigneeMobile%]")'>
+                    订单缺货提醒
+                </button>-->
+            </td>
+        </tr>
+        <tr>
+            <td class="span2">下单时间：</td>
+            <td>[%=orderInfo.CreateTime.replace("T", " ").replace(".000Z", "")%]</td>
+        </tr>
+        <tr>
+            <td class="span2">支付时间：</td>
+            <td>[%=detailInfo.PayTime.replace("T", " ").replace(".000Z", "")%]</td>
+        </tr>
+        <tr>
+            <td class="span2">更新时间：</td>
+            <td>[%=orderInfo.OrderTime.replace("T", " ").replace(".000Z", "")%]</td>
+        </tr>
+        <tr>
+            <td class="span2">订单金额：</td>
+            <td style="color: #CC0000;">￥[%=orderInfo.OrderTotalPrice%]</td>
+        </tr>
+        <tr>
+            <td class="span2">商品总额：</td>
+            <td style="color: #33AAAA">￥[%=orderInfo.GoodsTotalPrice%]</td>
+        </tr>
+        <tr>
+            <td class="span2">订单状态：</td>
+            <td style="color: green;">[%=orderInfo.OrderProgressInfo%]</td>
+        </tr>
+        <tr>
+            <td class="span2">支付方式：</td>
+            <td style="color: green;">[%=orderInfo.OrderPayInfo%]</td>
+        </tr>
+        <tr>
+            <td class="span2">订单备注：</td>
+            <td style="color: orange">
+                [%if(orderInfo.Remarks == null){%]
+                [%}else{%]
+                [%=orderInfo.Remarks%]
+                [%}%]
+            </td>
+        </tr>
+
+        <tr>
+            <td class="span2">收件人：</td>
+            <td>[%=detailInfo.ConsigneeName%]</td>
+        </tr>
+        <tr>
+            <td class="span2">联系电话：</td>
+            <td>[%=detailInfo.ConsigneeMobile%]</td>
+        </tr>
+        <tr>
+            <td class="span2">收件地址：</td>
+            <td>
+                [%=detailInfo.Province%] [%=detailInfo.City%] [%=detailInfo.County%] [%=detailInfo.Address%]
+                &nbsp;&nbsp;
+                <div onclick='return editOrderConsigneeAddress("[%=detailInfo.Id%]")'
+                     style='color: #ed9c28;display: inline-block;cursor: pointer;'>
+                    <span><i class='icon-edit'></i>修改</span></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="span2">快递信息：</td>
+            <td id="expressInfo" style="color: green; font-weight: normal;">
+                [%for(var i=0;i<detailInfo.Express.length;i++){%]
+                <div>
+                    <span onclick="return showExpressDetail('[%=detailInfo.Express[i].Id%]')">[%=detailInfo.Express[i].ExpressName%]:[%=detailInfo.Express[i].ExpressCode%]</span>
+                    <i class="btn_delExpress" data-val="[%=detailInfo.Express[i].Id%]"
+                       onclick="return delOrderExpress('[%=detailInfo.Express[i].Id%]')">X</i>
+                </div>
+                [%}%]
+                &nbsp;<i class='icon-plus' id="btnBlurAddEx"
+                         style='color: rgba(181, 44, 44, 0.86);display: inline-block;cursor: pointer;'
+                         onclick='return addOrderExpress("[%=orderInfo.Id%]")'> 添加</i>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-striped table-bordered table-advance table-hover">
+        <thead>
+        <tr>
+            <th style="width: 120px;">商品编号</th>
+            <th style="width: 152px;">商品图片</th>
+            <th style="width: 220px;">商品名称</th>
+            <th style="width: 60px;">商品金额</th>
+            <th style="width: 40px;">件数</th>
+            <th style="width: 150px;">操作</th>
+            <th style="width: 100px;">物流</th>
+        </tr>
+        </thead>
+        <tbody id="listTBody_detailGoods">
+
+        [%for(var i=0;i
+        <detailInfo.Goods.length
+        ;i++){%]
+        <tr>
+            <td>[%=detailInfo.Goods[i].Skuid%]</td>
+            <td><img src="[%=detailInfo.Goods[i].GoodsImgPath%]"></td>
+            <td>[%=detailInfo.Goods[i].GoodsTitle%]</td>
+            <td>￥[%=detailInfo.Goods[i].GoodsSalePrice%]</td>
+            <td>[%=detailInfo.Goods[i].GoodsNum%]</td>
+
+            <td>
+                [%if(orderInfo.OrderProgressState==2){%]
+                <button onclick="oi.change.clickEvents('[%=orderInfo.OrderCode%]','[%=detailInfo.Goods[i].Skuid%]',
+            '[%=detailInfo.Goods[i].GoodsNum%]','[%=detailInfo.Goods[i].GoodsSalePrice%]')">
+                    <i class="icon-barcode">修改</i></button>
+                <br/>
+                [%}%]
+            </td>
+            [%if(detailInfo.Goods[i].ExpressCode){%]
+            <td>[%=detailInfo.Goods[i].ExpressName%]：[%=detailInfo.Goods[i].ExpressCode%]</td>
+            [%}else{%]
+            <td>暂无</td>
+            [%}%]
+        </tr>
+        [%}%]
+        </tbody>
+    </table>
+</script>
+
+<script type="text/html" id="dev_orderInfo_btns_template">
+    <button type="button" class="btn" data-dismiss="modal">关闭</button>
+    <!--<a class='btn green' href="/saleAfter/bbxRemind?oCode=[%=OrderCode%]&mId=[%=MerchantId%]">异常跟踪</a>-->
+    [%if(userRole!= "delivery"){%]
+        [%if(status==1){%]
+        <button type='button' class='btn yellow' onclick='return orderChangeConfirm("确定取消交易吗?",99,"[%=id%]")'>交易取消</button>
+        [%}%]
+
+        [%if(status==2){%]
+            <!--<a class='btn blue' href="/saleAfter/addSaleAfter?oid=[%=OrderCode%]&mid=[%=MerchantId%]">售后补单</a>-->
+            <button type='button' class='btn blue' onclick='return orderChangeConfirm("确定订单有效吗?",3,"[%=id%]")'>确认订单</button>
+        [%}%]
+
+        [%if(status==3){%]
+    <!--<a class='btn blue' href="/saleAfter/addSaleAfter?oid=[%=OrderCode%]&mid=[%=MerchantId%]">售后补单</a>-->
+            <button type='button' class='btn blue' onclick='return orderChangeConfirm("确定可以发货吗?",4,"[%=id%]")'>订单发货</button>
+        [%}%]
+
+        [%if(status==4){%]
+    <!--<a class='btn blue' href="/saleAfter/addSaleAfter?oid=[%=OrderCode%]&mid=[%=MerchantId%]">售后补单</a>-->
+            <button type='button' class='btn red' onclick='return orderChangeConfirm("确定订单交易成功吗?",9,"[%=id%]")'>确认签收</button>
+        [%}%]
+
+        [%if(status==9){%]
+    <!--<a class='btn blue' href="/saleAfter/addSaleAfter?oid=[%=OrderCode%]&mid=[%=MerchantId%]">售后补单</a>-->
+        [%}%]
+
+        [%if(status==5){%]
+            <!--<button type='button' class='btn yellow' onclick='return orderChangeConfirm("确定已退款完成了吗?",19,"[%=id%]")'>完成退款</button>
+            <button type='button' class='btn blue' onclick='return orderChangeConfirm("确定要取消退款吗?",2,"[%=id%]")'>取消退款申请</button>-->
+        [%}%]
+
+    [%}%]
+
+    [%if(saleAfter){%]
+        <!--此订单已有售后单-->
+    [%}%]
+</script>
+
+<script type="text/html" id='dev_show_goods'>
+    <div style="max-height: 400px;overflow-y: auto;width: 600px;">
+        商品名称：[%=data[0].GoodsGroupTitle%]
+        <table class="table table-striped table-bordered table-advance table-hover">
+            <thead>
+            <tr>
+                <th>选择</th>
+                <th>商品编号</th>
+                <th>颜色</th>
+                <th>尺码</th>
+                <th>商品金额</th>
+                <th>库存</th>
+                <th>件数</th>
+            </tr>
+            </thead>
+            <tbody>
+            [%for(var i=0;i
+            <data.length
+            ;i++){%]
+            <tr>
+                <td>
+                    [%if(price==data[i].GoodsSalePrice){%]
+                    [%if(data[i].Id==oldGoodsId){%]
+                    <span style="color:red">--</span>
+                    [%}else{%]
+                    <input type="radio" name="dev_radio" orderid="[%=orderId%]"
+                           goodsid="[%=data[i].Id%]" oldgoodsid="[%=oldGoodsId%]"
+                           goodsConfig="[%=data[i].FilterConfig%]"/>
+                    [%}%]
+                    [%}else{%]
+                    --
+                    [%}%]
+                </td>
+                <td>[%=data[i].Skuid%]</td>
+                <td>[%=data[i].color%]</td>
+                <td>[%=data[i].size%]</td>
+                <td>￥[%=data[i].GoodsSalePrice%]</td>
+                <td>[%=data[i].MaxCount%]</td>
+                <td>[%=num%]</td>
+            </tr>
+            [%}%]
+            </tbody>
+        </table>
+    </div>
+</script>
+
+
+

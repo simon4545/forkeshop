@@ -1,0 +1,421 @@
+<%- include('../header.html')%>
+<style>
+    .portlet-title {
+        border: 0 !important;
+    }
+
+    .img_thumbnailDiv {
+        display: inline-block;
+    }
+
+    .img_thumbnail {
+        width: 150px;
+        padding: 5px;
+        border: 1px solid #e5e5e5
+    }
+
+    #inputFile_sellerImg {
+        line-height: 25px;
+        opacity: 0;
+        margin-left: -160px;
+        cursor: pointer;
+    }
+
+    .downloadFile {
+        position: relative;
+        left: -21px;
+        top: -70px;
+        padding: 0px 3px;
+    }
+
+    .div_goods_rel {
+        position: absolute;
+        right: 20px;
+        top: 325px;
+        font-weight: bold;
+        min-width: 400px;
+    }
+    .div_goods_rel table tr td {
+        border: 1px solid darkgreen;
+        padding: 8px;
+    }
+
+    .checkbox input[type="checkbox"] {
+        margin-left: 0;
+    }
+</style>
+<script type="text/javascript">
+    var checkSnapshot =<%=snapshots%>;
+    var mainSKuList ='<%-main.skuListStr%>';
+    var labelStr ='<%-main.labelListStr%>';
+    var mainChooseLabelStr = '<%-main.chooseLabelsStr%>';
+    var snapShotGroupInfo,ssSku,ssImg,ssLabel,ssLabelStr;
+
+    if(checkSnapshot){
+        snapShotGroupInfo='<%=snapshot.groupInfoStr%>';
+        ssSku='<%-snapshot.skuListStr%>';
+        ssImg='<%-snapshot.imgsPathStr%>';
+        ssLabelStr =  '<%-snapshot.chooseLabelsStr%>';
+    }
+</script>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <h3 class="page-title">
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a id="mainModule" href="/homepage">商品管理</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="dashboard">
+            <div id="add_edit_container" class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box blue tabbable">
+                        <div class="portlet-title">
+                            <h4 class="span10">
+                                <i class="icon-reorder"></i>
+                                <span class="hidden-480">商品信息</span>
+                            </h4>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="tabbable portlet-tabs">
+                                <div class="tab-content" style="margin: 0px !important;">
+                                    <div class="tab-pane active" id="portlet_tab1">
+                                        <div action="#" class="form-horizontal" style="margin-top: 10px !important;">
+                                            <div class="control-group" style="position: fixed">
+                                                <div class="controls" style="border: 1px red solid;margin-left: 0">
+                                                    <button type="button" id="mainControl" class="btn blue">主商品信息</button>
+                                                    <button type="button" id="snapshotControl" class="btn">快照商品信息</button>
+
+                                                    <button id="btnOtherOp" type="button" class="btn red">其他操作</button>
+                                                    <button id="btnCancel" type="button" class="btn">取消</button>
+                                                </div>
+                                            </div>
+                                            <div class="control-group" >
+                                                <div class="controls" style="min-height: 30px;">
+
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" style="color: #ff0000">商品信息：</label>
+
+                                                <div id="flowStateTip" class="controls" style="padding-top: 7px;font-size: 14px;color: #ff0000">
+                                                    <%=main.groupInfo.StateInfo%>
+                                                </div>
+
+                                            </div>
+                                            <div id="mainGoods">
+                                            <div style="float: right;"> <button id="btnMainPre" type="button" class="black btn">移动端详情预览</button></div>
+                                                <div class="div_goods_rel">
+                                                    商品属性：
+                                                    <table>
+                                                        <tr>
+                                                            <td>创建时间</td>
+                                                            <td><%= new Date(main.groupInfo.CreateTime)%></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>更新时间</td>
+                                                            <td><%=main.groupInfo.UpdateTime%></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>销售状态</td>
+                                                            <td><%if (main.groupInfo.GoodsSaleState == 1) {%>
+                                                                <span style="color: green;">可售</span>
+                                                                <%} else {%>
+                                                                <span style="color: red;">不可售</span>
+                                                                <%}%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>审核状态</td>
+                                                            <td><%=main.groupInfo.StateInfo%></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            <div class="control-group">
+                                                <label class="control-label">商品分类</label>
+
+                                                <div class="controls">
+                                                    <input id="categoryInput" type="text" placeholder="" values="<%=main.groupInfo.CategoryId%>"
+                                                           class="infoInput m-wrap large" disabled="disabled"/>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">所属品牌</label>
+
+                                                <div class="controls">
+                                                    <input id="brandInput" type="text" placeholder="" values="<%=main.groupInfo.BrandId%>"
+                                                           class="infoInput m-wrap large" disabled="disabled"/>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">商品名称</label>
+
+                                                <div class="controls">
+                                                    <input id="goodsGroupTitleInput" type="text" placeholder="" value="<%=main.groupInfo.GoodsGroupTitle%>"
+                                                           class="infoInput m-wrap large" disabled="disabled"/>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">商品编码</label>
+
+                                                <div class="controls">
+                                                    <input id="outerIdInput" type="text" placeholder="" value="<%=main.groupInfo.Outeriid%>"
+                                                           class="infoInput m-wrap large" disabled="disabled"/>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">快递费用</label>
+
+                                                <div class="controls">
+                                                    <input id="express_fee" type="text" placeholder="" value="<%=main.groupInfo.ExpressFee%>"
+                                                           class="infoInput m-wrap large" disabled="disabled"/>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">商品吊牌价</label>
+
+                                                <div class="controls">
+                                                    <input id="priceInput" type="text" placeholder="" value="<%=main.groupInfo.GoodsPrice%>"
+                                                           class="infoInput m-wrap large" disabled="disabled"/>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">商品标签：</label>
+
+                                                <div class="controls" id="dev_goodsLabel">
+
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" style="color: #ff0000">子商品：</label>
+
+                                                <div class="controls" id="dev_skus">
+
+                                                </div>
+                                                <%if(main.groupInfo.State==3){%>
+
+                                                <button style="float: right" onclick="goods.verify.changeGoodsPrice('main')" type="button"  class="btn blue">
+                                                    <i class="icon-ok"></i>提交</button>
+
+                                                <div style="float: right;margin-right: 20px;line-height: 32px;">提价百分比
+                                                    <input id="dev_main_batch" style="width: 40px;" type="number" min="1" max="100" value="10">%
+                                                    <button style="float: right;margin-left: 10px;" onclick="goods.verify.mainView.batchUpdateSupplyPrice()" type="button"  class="btn red">
+                                                        <i class="icon-ok"></i>修改</button>
+                                                </div>
+                                                <%}%>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">商品链接地址：</label>
+
+                                                <div class="controls">
+                                                    <input value="<%=main.groupInfo.GoodsLink%>" style="width:100%;">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" style="color: #ff0000">商品图片：</label>
+                                                <div class="img_thumbnailDiv">
+                                                    <%for(var i=0;i<main.imgsPath.length;i++){%>
+                                                    <img src="<%=main.imgsPath[i].GoodsImgPath%>" class="img_thumbnail" style="width: 150px;height:150px;display: inline-block">
+                                                    <a href="<%=main.imgsPath[i].GoodsImgPath%>" download="<%=main.imgsPath[i].GoodsImgPath%>" class="btn icn-only downloadFile"><i class="icon-arrow-down"></i></a>
+                                                    <%}%>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">商品详情</label>
+
+                                                <div class="controls" id="detailEditor">
+
+                                                    <div id="summernote">
+                                                        <%-main.groupInfo.GoodsDetail%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+
+                                            <div id="snapshotGoods" style="display: none">
+                                                <div style="float: right;"> <button id="btnSnapShotPre" type="button" class="black btn">移动端详情预览</button></div>
+                                                <div class="div_goods_rel">
+                                                    快照属性：
+                                                    <table>
+                                                        <tr>
+                                                            <td>创建时间</td>
+                                                            <td id="div_snap_createtime"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>审核状态</td>
+                                                            <td id="div_snap_flag"></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">商品分类</label>
+                                                    <div class="controls">
+                                                        <input id="categoryInput_snapshot" type="text" placeholder=""
+                                                               class="infoInput m-wrap large" disabled="disabled"/>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">所属品牌</label>
+
+                                                    <div class="controls">
+                                                        <input id="brandInput_snapShot" type="text" placeholder=""
+                                                               class="infoInput m-wrap large" disabled="disabled"/>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">商品名称</label>
+
+                                                    <div class="controls">
+                                                        <input id="goodsGroupTitleInput_snapshot" type="text" placeholder=""
+                                                               class="infoInput m-wrap large" disabled="disabled"/>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">商品编码</label>
+
+                                                    <div class="controls">
+                                                        <input id="outerIdInput_snapshot" type="text" placeholder=""
+                                                               class="infoInput m-wrap large" disabled="disabled"/>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">快递费用</label>
+
+                                                    <div class="controls">
+                                                        <input id="express_fee_snapshot" type="text" placeholder=""
+                                                               class="infoInput m-wrap large" disabled="disabled"/>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">商品吊牌价</label>
+
+                                                    <div class="controls">
+                                                        <input id="priceInput_snapshot" type="text" placeholder=""
+                                                               class="infoInput m-wrap large" disabled="disabled"/>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">商品标签：</label>
+
+                                                    <div class="controls" id="dev_goodsLabel_snapshot">
+
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label" style="color: #ff0000">子商品：</label>
+
+                                                    <div class="controls" id="dev_skus_snapshot">
+
+                                                    </div>
+                                                    <%if(main.groupInfo.State==2||main.groupInfo.State==3){%>
+                                                    <button style="float: right" onclick="goods.verify.changeGoodsPrice('snapshot')" type="button"  class="btn blue">
+                                                        <i class="icon-ok"></i>提交</button>
+                                                    <div style="float: right;margin-right: 20px;line-height: 32px;">提价百分比
+                                                        <input id="dev_snapshot_batch" style="width: 40px;" type="number" min="1" max="100" value="10">%
+                                                        <button style="float: right;margin-left: 10px;" onclick="goods.verify.snapShotView.batchUpdateSupplyPrice()" type="button"  class="btn red">
+                                                            <i class="icon-ok"></i>修改</button>
+                                                    </div>
+                                                    <%}%>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <label class="control-label">商品链接地址：</label>
+
+                                                    <div class="controls">
+                                                        <input value="" id="dev_goodsLink" style="width:100%;">
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <label class="control-label" style="color: #ff0000">商品图片：</label>
+                                                    <div class="img_thumbnailDiv" id="imgs_snapshot">
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">商品详情</label>
+
+                                                    <div class="controls">
+                                                        <div id="summernote_snapshot">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions">
+                                                <%if(main.groupInfo.State==2||main.groupInfo.State==5){%>
+                                                <button id="btnCheckPass"  type="button"
+                                                        class="btn blue"><i class="icon-ok"></i>审核通过
+                                                </button>
+                                                <button id="btnCheckFail" type="button"
+                                                        class="btn red"><i class="icon-remove"></i> 审核不通过
+                                                </button>
+                                                <%}%>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<%- include('../footer.html')%>
+<script type="text/javascript" src="../javascripts/utils/common.js"></script>
+<script type="text/javascript" src="../javascripts/utils/ejs.js"></script>
+<script type="text/javascript" src="../javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="../javascripts/utils/nc.table.js"></script>
+<script type="text/javascript" src="../javascripts/utils/taffydb/taffy-min.js"></script>
+<script type="text/javascript" src="../javascripts/goods/verify.js"></script>
+<script type="text/javascript" src="/javascripts/utils/artDialog-master/dist/dialog-min.js"></script>
+<script type="text/javascript" src="/javascripts/utils/artdialog.js"></script>
+<link href="/javascripts/utils/artDialog-master/css/ui-dialog.css" rel="stylesheet"/>
+
+<style>
+    #div_main_detail_m img,#div_snap_detail_m img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+
+<div style="width: 100%; height: 100%;background-color: #4b4b4b;z-index: 8888;position: fixed;top: 0;display: none;" id="div_main_detail_m">
+    <div style="float: right"><button onclick="goods.verify.divHide('div_main_detail_m')">关闭</button></div>
+    <div style="width: 450px;margin: auto">
+        <div style="height: 48px;width: 100%;background-size: 100% 100%;background-image: url(http://eqxiu.com/assets/images/yulan_phone_top.png);background-repeat: no-repeat;"></div>
+        <div style="display: block!important;height: 40px;line-height: 40px;background: #000;color: #fff;text-align: center;border-left: 1px solid #F6F6F6;border-right: 1px solid #F6F6F6;">
+            <div style="min-width: 20px;font-size: 24px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">主商品详情</div>
+        </div>
+        <div style="height:650px;border: 0;overflow: auto;background: #d0d0d0;">
+            <%-main.groupInfo.GoodsDetail.replace(/(style|width|height|class)=\".*?\"/ig, '')%>
+        </div>
+        <div style="height: 45px; width: 100%;background-size: 100% 100%;background-image: url(http://eqxiu.com/assets/images/yulan_phone_bottom.png);background-repeat: no-repeat;text-align: center;"></div>
+    </div>
+</div>
+
+
+<div style="width: 100%; height: 100%;background-color: #4b4b4b;z-index: 8888;position: fixed;top: 0;display: none;" id="div_snap_detail_m">
+    <div style="float: right"><button onclick="goods.verify.divHide('div_snap_detail_m')">关闭</button></div>
+    <div style="width: 450px;margin: auto">
+        <div style="height: 48px;width: 100%;background-size: 100% 100%;background-image: url(http://eqxiu.com/assets/images/yulan_phone_top.png);background-repeat: no-repeat;"></div>
+        <div style="display: block!important;height: 40px;line-height: 40px;background: #000;color: #fff;text-align: center;border-left: 1px solid #F6F6F6;border-right: 1px solid #F6F6F6;">
+            <div style="min-width: 20px;font-size: 24px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">快照商品详情</div>
+        </div>
+        <div style="height:650px;border: 0;overflow: auto;background: #d0d0d0;" id="snap_div_detail">
+
+        </div>
+        <div style="height: 45px; width: 100%;background-size: 100% 100%;background-image: url(http://eqxiu.com/assets/images/yulan_phone_bottom.png);background-repeat: no-repeat;text-align: center;"></div>
+    </div>
+</div>

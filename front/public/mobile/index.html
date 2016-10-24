@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta property="qc:admins" content="44245733322061063757751016"/>
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+    <link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+    <!-- build:css -->
+    <link rel="stylesheet" type="text/css" href="/mobile/css/framework7/framework7.css?v1"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/framework7/framework7.themes.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/common.css?v1">
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/register.css?v2"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/coupon.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/myAddress.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/myapp.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/scene.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/collection.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/userCenter.css">
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/activity.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/detail.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/shoppingCart.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/orderdetail.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/shoppinglists.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/orderconfirm.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/resetPwd.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/version.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/aboutUs.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/welcomescreen.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/mycenter.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/redpack.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/searching.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/express.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/reback.css"/>
+    <link rel="stylesheet" type="text/css" href="/mobile/css/page/chosen.css"/>
+    <!-- endbuild -->
+    <title>百宝香-母婴场景电商</title>
+</head>
+<body>
+<div class="views">
+    <div id="mainView" class="view view-main">
+        <!--   <div class="statusbar-overlay"></div>-->
+        <div class="panel-overlay"></div>
+        <!-- Left panel -->
+        <div class="panel panel-left panel-cover side-bar">
+            <div class="list-block media-list">
+                <div class="0-content" id="userInfoLink">
+                    <div class="item-media fleft" id="headImgBox">
+                        <img id="headImg" width="44" height="44" style="border-radius:100%"
+                             src="img/newIcon/icon_14.png"></div>
+                    <div class="item-inner" style="overflow: inherit;padding-top:0;">
+                        <div class="item-title-row fleft">
+                            <div class="item-title" id="sideBarNickName">
+                                <div id="slideLogin" class="loginWarp close-panel">
+                                    <div class="btn loginBtn"></div>
+                                </div>
+                                <div id="slideReg" class="loginWarp close-panel">
+                                    <div class="btn registerBtn"></div>
+                                </div>
+                                <div id="userAccount" class="userAccount ellipse"
+                                     style="width:130px;display: none"></div>
+                            </div>
+                        </div>
+                        <!--<div class="item-subtitle">来自土豆的消息</div>-->
+                    </div>
+                </div>
+                <ul class="clear panel-list">
+                    <li class="item-divider"></li>
+                    <!--<li class="item-content">
+                        <div class="item-media"><i class="icon icon-f7 icon1"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title"><a href="">我的消息</a></div>
+                                <div class="item-after">&nbsp;</div>
+                            </div>
+                        </div>
+                    </li>-->
+                    <li id="slideMyCoupon" class="item-content">
+                        <div class="item-media"><i class="icon icon-f7 icon2"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title"><a href="">我的优惠券</a></div>
+                                <div class="item-after">&nbsp;</div>
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li class="item-content">
+                        <div class="item-media"><i class="icon icon-f7 icon3"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title"><a href="">我的收藏</a></div>
+                                <div class="item-after">&nbsp;</div>
+
+                            </div>
+                        </div>
+                    </li>-->
+                    <li id="slideMyAddress" class="item-content">
+                        <div class="item-media"><i class="icon icon-f7 icon4"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title"><a href="">我的收货地址</a></div>
+                                <div class="item-after">&nbsp;</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-divider"></li>
+
+                    <li id="slideOrderAll" class="item-content">
+                        <div class="item-media"><i class="icon icon-f7 icon18"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title"><a href="">全部订单</a></div>
+                                <div class="item-after">&nbsp;</div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li id="slideOrderToPay" class="item-content">
+                        <div class="item-media"><i class="icon icon-f7 icon5"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title"><a href="">待付款</a></div>
+                                <div class="item-after">&nbsp;</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="slideOrderToGet" class="item-content">
+                        <div class="item-media"><i class="icon icon-f7 icon6"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title"><a href="page/shoppinglists.html">待收货</a></div>
+                                <div class="item-after">&nbsp;</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="slideOrderToSend" class="item-content">
+                        <div class="item-media"><i class="icon icon-f7 icon7"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title"><a href="">退款中</a></div>
+                                <div class="item-after">&nbsp;</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="slideOrderToBack" class="item-content">
+                        <div class="item-media"><i class="icon icon-f7 icon8"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title"><a href="">已买到</a></div>
+                                <div class="item-after">&nbsp;</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-divider"></li>
+                    <li class="item-content">
+                        <div class="item-media"><i class="icon icon-f7 icon9"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title" style="width:100%">
+                                    <a id="telphoneCall" href="tel:4000782000" class="external"
+                                       style="width:100%;display: inline-block;">
+                                        客服电话
+                                    </a>
+                                </div>
+                                <div class="item-after">&nbsp;</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="setting" class="item-content">
+                        <div class="item-media"><i class="icon icon-f7 icon10"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title"><a href="#">设置</a></div>
+                                <div class="item-after">&nbsp;</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pages navbar-through">
+
+        </div>
+        <div class="toolbar tabbar tabbar-labels">
+            <div class="toolbar-inner">
+                <a href="#" content-href="page/index.html" class="tab-link">
+                    <i class="icon icon2"></i>
+                    <span class="tabbar-label">精选</span>
+                </a>
+                <a href="#" content-href="page/collection.html" class="tab-link">
+                    <i class="icon icon3"></i>
+                    <span class="tabbar-label">收藏</span>
+                </a>
+                <a href="#" content-href="page/shoppingCart2.html?v=1" class="tab-link">
+                    <i class="icon icon4"></i>
+                    <span class="tabbar-label">购物车</span>
+                </a>
+                <a href="#" content-href="page/mycenter.html" class="tab-link">
+                    <i class="icon icon5"></i>
+                    <span class="tabbar-label">我的</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main loading-mask"></div>
+<div class="vip_mask" id="inform" tag="hide">
+    <div class="vip_mask_rule">
+        <div class="modal-s1 modal-rules" style="display: block;margin: 0 auto;">
+            <div class="rules-title">重要通知</div>
+            <div class="vip_mask_div">
+                <div class="rules-cont scroll show_scroll" id="rulecontent" style="overflow: hidden;">
+                    <p>春节期间因多数物流公司、商家、消费者在享受假期，为确保交易顺利进行，同时为了让您更好地欢度新春佳节，百宝香对2016年春节期间<font>（2016年2月6日-2016年2月13日）订单</font>相关内容将做出以下调整：</p>
+
+                    <p class="text-title">一、发货、物流更新及申诉时间调整</p>
+
+                    <p>1）春节期间订单发货、物流更新调整</p>
+
+                    <p>春节期间的订单<font>（2016年2月1日0点至2016年2月15日23:59:59付款成功的订单）</font>，商家最迟在<font>2月17日24点前</font>发货，并在发货后24小时内需有快递公司揽件跟踪信息；如未在平台规定时间内完成发货或更新物流揽件信息，将按照《商家违规处罚规则》进行处罚。</p>
+
+                    <p>2）非春节期间订单发货物流更新要求</p>
+
+                    <p>非春节期间的订单，平台具体的发货和物流更新时效要求，详见《商家违规处罚规则》 中具体内容。如未在平台规定时间完成发货或者更新物流揽件信息，将按照《商家违规处罚规则》进行处罚。</p>
+
+                    <P>3）违规申诉</P>
+
+                    <p><font>2016年2月1日0点-2016年2月15日23:59:59</font>产生的违规处罚订单，申诉期统一延长至2月19日24点，逾期不支持申诉。</p>
+
+                    <p class="text-title">二、交易及售后举证调整</p>
+
+                    <p>（1）买家春节期间申请的<font>退货售后单</font>，系统确认收货时间从寄回退货后的7天统一延至<font>2月22日24点</font>；</p>
+
+                    <p>（2）买家春节期间申请的仅<font>退款或补寄售后单</font>，商家处理售后的时间，统一延至<font>2月17日24点</font>。</p>
+
+                    <p class="text-title">三、百宝香工作时间相关</p>
+
+                    <p><font>2016年2月1日至2月13日</font>，百宝香将暂停公司审核、品牌审核、品牌添加、商品审核、活动审核等相关事项，商家在此期间提交的相关内容将在<font>2月14日</font>正常上班后依次审核。2月14日正常上班，商家可正常通过在线或电话方式进行咨询。</p>
+
+                    <p class="text-title">感谢您对百宝香的支持，祝愿大家在新的一年里阖家欢乐，身体健康，万事如意！</p>
+
+                    <p class="signer">百宝香</p>
+                </div>
+            </div>
+            <!--<div class="rules-close"></div>-->
+            <div class="vip-ok-btn">知道了</div>
+        </div>
+
+    </div>
+
+</div>
+<!--<div class="guide-Box" style="display: none">
+    <a class="step step1 hidden"><img src="img/newIcon/step1.png"></a>
+    <a class="step step2 hidden"><img src="img/newIcon/step2.png"></a>
+    <a class="step step3 hidden"><img src="img/newIcon/step3.png"></a>
+    <a class="step step4 hidden"><img src="img/newIcon/step4.png"></a>
+</div>-->
+
+<div class="pop-dialog news-welcome-dialog">
+    <div class="dialog-con">
+        <div class="show-text">
+            新朋友，初次光临~<br>
+            略备薄礼<span class="result-coupon">88元新人专享红包</span>请笑纳
+        </div>
+        <div class="btn-con clearfix_after">
+            <div class="go-receive-btn btn">前往领取</div>
+        </div>
+        <div class="pop-dialog-close"></div>
+    </div>
+</div>
+
+<div class="pop-dialog show-collect-dialog">
+    <div class="dialog-con">
+        <img width="100%" src="img/newIcon/iscollect.png">
+    </div>
+</div>
+
+<script type="text/template" id="zhuantitemplate">
+    <div class="content-block zhuanti" contend-actionid="{ID}" title="{ACTIONTITLE1}" item-index="{index}"
+         action-imgUrl="{ACTIONIMGURL}">
+        <!-- <div class="row no-gutter" style="display: {display}">
+             <div class="col-50">
+                 <div class="row flag">
+                     <div class="col-100 flag-icon">
+                         专题特卖
+                     </div>
+                 </div>
+             </div>
+         </div>-->
+        <div class="row">
+            <div class="col-100 brandItem" style="position: relative">
+                <div class="action-img-con">
+                    <a href={href}>
+                        <img class="action-thumbnail" data-src="{imgUrl}" style="margin: 20px auto;width: 80px"
+                             src="img/loading.png">
+                    </a>
+
+                    <div class="discount-title">
+                        {discounttitle}
+                    </div>
+                </div>
+                <div class="actionflag" style="display: {flagdisplay}">
+                    <div class="time-show" style="">
+                        <span class="s_time" data-endtime="dateEndTime">00天00时00分00秒</span>后
+                    </div>
+                    <div class="flag_new">
+                        <img src="img/newIcon/flag_new.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutter brand-item-des">
+            <div class="col-60 price ellipse">
+                <span>{OFFCOMMENT}折起</span>
+                <font>{ACTIONTITLE2}</font>
+                <!-- <div class="col-20 discount">
+                     <div class="ps">2.9折</div>
+                     <img src="img/newIcon/7.png">
+                 </div>-->
+            </div>
+            <div class="col-40" style="height: 17px;line-height: 17px">
+                <span class="timeout">{showtime}</span>
+            </div>
+        </div>
+
+    </div>
+</script>
+<script type="text/template" id="goodsItemtemplate">
+    <div class="col-50 goods-item" contend-id="{ID}" contend-actionid="{ACTIONID}" contend-groupid="{GROUPID}"
+         item-index="{index}"
+         title="{title}">
+        <div class="row">
+            <div class="col-100 goodthumbnail">
+                <!-- <div class="discount" style="display: none">折</div>-->
+                <div class="mark" style="display: {display}"></div>
+                <div>
+                    <a href="{href}"><img data-src="{imgUrl}" style="margin: 30px auto;width: 80px"
+                                          class="good-thumbnail" src="img/loading.png"></a>
+                </div>
+                <div class="flag1">
+                    {good_tag_new}
+                    {good_tag_out}
+                </div>
+            </div>
+            <div class="gooddetail clear">
+                <div class="goodtitle">
+                    {title2}
+                </div>
+                <div class="price">
+                    <span>¥{GOODSPRICE}</span>
+                    <!--<span>¥{GOODSSALEPRICE}</span>
+                    <ins>¥{GOODSPRICE}</ins>-->
+                   <!-- <font>{discount}折</font>-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</script>
+
+<script type="text/template" id="detailinfotemplate">
+    <div class="row no-gutter" style="line-height: 30px">
+        <div class="sale-price" style="padding-right: 5px">
+            <ins>¥</ins>
+            <font>{GOODSSALEPRICE}&nbsp;</font>
+        </div>
+        <div class="tag-price">
+            <ins>¥</ins>
+            <font>{GOODSPRICE}&nbsp;</font>
+        </div>
+        <!--<div class="col-20 discount" style="width: 21.55%">
+            {GOODSDISCOUNT}折
+        </div>-->
+    </div>
+    <!--<div class="row no-gutter clear">
+        <div class="col-25 tag-price">
+            <ins>¥</ins>
+            <font>{GOODSPRICE}&nbsp;</font>
+        </div>
+        <div class="col-75" style="line-height: 14px;margin-top: 3px;">
+            &lt;!&ndash;<div class="time">
+                <div class="time-show">
+                    <span class="s_time" data-endtime="{dateEndTime}">04天00时06分55.<span class="t4">8</span>秒</span>
+                </div>
+                <div class="clock">
+                    <img src="img/ico/clock-black.png">
+                </div>
+            </div>&ndash;&gt;
+        </div>
+    </div>-->
+</script>
+
+<script type="text/template" id="orderconfirmtemplate">
+    <ul>
+        {{#each List}}
+        <li>
+            <div class="item-content">
+                <div class="item-media">
+                    <img class="goodsthumb" src="{{GOODSIMGPATH}}">
+                </div>
+                <div class="item-inner">
+                    <div class="item-title-row" style="width: 100%;">
+                        <div class="item-title" style="width: 75%;">{{GOODSGROUPTITLE}}</div>
+                        <div class="item-after goods-procost">￥{{GOODSPRICE}}</div>
+                    </div>
+                    <div class="item-subtitle">
+                        <div class="item-subtitle-left">{{FILTERCONFIG}}</div>
+                        <div class="item-subtitle-right">￥{{GOODSSALEPRICE}}</div>
+                    </div>
+                    <div class="item-subtitle">
+                        <div class="item-subtitle-right">×{{GOODSNUM}}</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+        <li>
+            <div class="item-content">
+                <div class="item-inner item-nomedia inner-oneline">
+                    <div class="item-title ">运费</div>
+                    <div class="item-after">全国包邮</div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <div class="item-inner item-nomedia inner-oneline">
+                    <div class="item-title">合计</div>
+                    <div class="item-after color-org1">￥{{GOODSTOTAL}}</div>
+                </div>
+            </div>
+        <li>
+            <div class="item-content">
+                <div class="item-inner inner-oneline">
+
+                    <textarea id="orderConfirmTextArea" placeholder="  订单备注..."></textarea>
+                </div>
+            </div>
+        </li>
+    </ul>
+</script>
+
+<script type="text/template" id="selectAddressTemplate">
+    <li eq="{{@index}}">
+        <div class="item-content">
+            <div class="item-inner item-addressSelect">
+                <div class="item-title">
+                    <p><a>{{CONSIGNEENAME}}</a><a>{{SHEILDMOBILE}}</a>{{defaulteFlag}}</p>
+
+                    <p class="color-gray wordsellip">{{PROVINCE}}{{CITY}}{{COUNTY}}{{ADDRESS}}</p>
+                </div>
+                <div class="item-after">
+                    <label id="addressSelectLab{{@index}}" class="round-checkbox2 addressForSelect"></label>
+                </div>
+            </div>
+        </div>
+    </li>
+</script>
+
+<script type="text/template" id="orderConfirmCoupons1">
+    <div class="list-block media-list" style="margin-bottom: 0.6em;">
+        <ul>
+            <li>
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title-row">
+                            <div class="item-title">
+                                <div class="item-subtitle fs-mid" style="font-size: 20px;">请选择优惠券</div>
+                            </div>
+                            <div class="item-after">
+                                <div class="close-X"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="orderConfirmCoupons" class="list-block media-list">
+        <ul>
+            {{#each List}}
+            <li eq="{{@index}}" >
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title-row">
+                            <div class="item-title" style="height:78px;">
+                                <div class="color-f60 fs-max">{{COUPONPAR}}<a class="fs-mid color-f60">元</a></div>
+                                <div class="fs-mid color-40">订单满{{MINPAR}}元</div>
+                                <div class="fs-min color-80">截止日期：{{EXPIREDATE}}</div>
+                            </div>
+                            <div class="item-after">
+                                <label id="coupons{{@index}}" class="round-checkbox2"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+            <li eq="{{ListLength}}" >
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title-row">
+                            <div class="item-title" style="height:78px;line-height: 78px;">
+                                暂不使用优惠券
+                            </div>
+                            <div class="item-after">
+                                <label id="coupons{{ListLength}}" class="round-checkbox2"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</script>
+
+<script type="text/template" id="orderdetailtemplate">
+    <div class="list-block media-list">
+        <ul>
+            {{#each List}}
+            <li class=""><a href="{{__HREF}}">
+                <div class="item-content">
+                    <div class="item-media">
+                        <img class="goodsthumb" src="{{GOODSIMGPATH}}">
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title-row" style="width: 100%;">
+                            <div class="item-title" style="width: 75%;">{{GOODSGROUPTITLE}}</div>
+                            <div class="item-after goods-procost">￥{{GOODSCOSTPRICE}}</div>
+                        </div>
+                        <div class="item-subtitle">
+                            <div class="item-subtitle-left">{{FILTERCONFIG}}</div>
+                            <div class="item-subtitle-right color-40">￥{{GOODSSALEPRICE}}</div>
+                        </div>
+                        <div class="item-subtitle">
+                            <div class="item-subtitle-right color-40">×{{GOODSNUM}}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            </li>
+            {{/each}}
+            <li>
+                <div class="item-content">
+                    <div class="item-inner item-nomedia">
+                        <div class="item-title">运费</div>
+                        <div class="item-after">全国包邮</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-inner item-nomedia">
+                        <div class="item-title ">满减优惠</div>
+                        <div class="item-after">￥-{{ORDERTOTALDISCOUNT}}</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-inner item-nomedia">
+                        <div class="item-title ">合计</div>
+                        <div class="item-after">￥{{ORDERTOTALPRICE}}</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title color-80">订单编号：{{ORDERCODE}}</div>
+                        <div class="item-after createtime">提交时间：{{CREATETIME}}</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="bginput">{{REMARKS}}</div>
+                    </div>
+                </div>
+            </li>
+            {{REMINDBTN}}
+        </ul>
+    </div>
+    <div class="list-block media-list">
+        <ul>
+            <li>
+                <div class="item-content">
+                    <div class="item-inner ">
+                        <div class="item-title ">百宝香无忧购服务保障</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="row">
+                            <div class="col-33 plprrela5">
+                                <img class="loginico" src="img/cart/qitian.png"/>
+                                <a class="color-gray">七天退货</a>
+                            </div>
+                            <div class="col-33 plprrela5">
+                                <img class="loginico" src="img/cart/baoyou.png"/>
+                                <a class="color-gray">全国包邮</a>
+                            </div>
+                            <div class="col-33 plprrela5">
+                                <img class="loginico" src="img/cart/zhengpin.png"/>
+                                <a class="color-gray">正品保障</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-inner item-nomedia">
+                        <div class="item-title ">客服电话 ：400-078-2000</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+</script>
+
+<script id="orderDetailReminderTpl" type="text/template7">
+    <li>
+        <div class="item-content">
+            <div class="item-inner item-nomedia">
+                <div class="item-title "></div>
+                <div class="item-after">
+                    <a class="smallBtn" href="page/reMinderOrder.html?orderCode={{ORDERCODE}}">催单</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</script>
+
+<script id="shoppingListTpl" type="text/template7">
+    <div class="list-block media-list">
+        <ul>
+            <li>
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title-row">
+                            <div class="item-title">订单编号：{{ORDERCODE}}</div>
+                            <div class="item-after order-status">{{ORDERPROGRESSINFO}}</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{ORDERDETAIL}}
+            <li>
+                <div class="item-content">
+                    <div class="item-inner item-nomedia inner-oneline">
+                        <div class="item-title">共{{ORDERTOTALNUM}}件</div>
+                        <div class="item-after color-org1">合计:￥{{ORDERTOTALPRICE}}</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="boxright">
+                        {{bottom}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</script>
+
+<script id="shoppingListInnerTpl" type="text/template7">
+    <li onclick='shoppingListsObj.gotoOrderList("{{ID}}")'>
+        <div class="item-content">
+            <div class="item-media">
+                <img class="goodsthumb" src="{{GOODSIMGPATH}}">
+            </div>
+            <div class="item-inner">
+                <div class="item-title-row" style="width: 100%;">
+                    <div class="item-title" style="width: 75%;">{{GOODSTITLE}}</div>
+                    <div class="item-after goods-procost">￥{{GOODSCOSTPRICE}}</div>
+                </div>
+                <div class="item-subtitle">
+                    <div class="item-subtitle-left">
+                        <span>{{GOODSFILTERCONFIG}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <div class="item-subtitle-right color-40">￥{{GOODSSALEPRICE}}</div>
+                </div>
+                <div class="item-subtitle">
+                    <div class="item-subtitle-right color-40">×{{GOODSNUM}}</div>
+                </div>
+            </div>
+        </div>
+    </li>
+</script>
+
+<script id="shoppingListHelper1Tpl" type="text/template7">
+    <div class="pay-btn"
+         onclick="shoppingListsObj.pendingPayment.inboundEvents('{{ORDERID}}')"><span style="color: #333">支付</span>
+    </div>
+</script>
+<script id="shoppingListHelper2Tpl" type="text/template7">
+    <div class="pay-btn white-btn"><span style="color: #333;">正在发货中</span></div>
+</script>
+<script id="shoppingListHelper2-1Tpl" type="text/template7">
+    <div class="pay-btn white-btn"><span style="color: #333;">正在配货中</span></div>
+    <div class="pay-btn" style="margin-right: 10px;"><span style="color: #333333"><a
+            onclick="shoppingListsObj.inbound.reBackEvents('{{ORDERID}}')"
+            style="color:#5c5c5c;">申请退款</a></span>
+    </div>
+</script>
+<script id="shoppingListHelper3Tpl" type="text/template7">
+    <div class="pay-btn"
+         onclick="shoppingListsObj.inbound.inboundEvents('{{ORDERID}}')"><span
+            style="color: #333333">确认收货</span></div>
+    {{saBtn}}
+</script>
+<script id="shoppingListHelper4Tpl" type="text/template7">
+    <div class="pay-btn"><span style="color: #333333"><a href="tel:4000782000" class="external" style="color:#5c5c5c;">联系客服</a></span>
+    </div>
+</script>
+<script id="shoppingListHelper5Tpl" type="text/template7">
+    <div class="pay-btn white-btn"
+         onclick="shoppingListsObj.hadBought.deleteEvents('{{ORDERID}}')"><span
+            style="color: #333333">删除订单</span></div>
+    {{saBtn}}
+</script>
+<script id="shoppingListHelper6Tpl" type="text/template7">
+    <div class="pay-btn white-btn"
+         onclick="shoppingListsObj.hadBought.deleteEvents('{{ORDERID}}')"><span
+            style="color: #333333">删除订单</span></div>
+</script>
+
+
+<script id="newCartV1_1Tpl" type="text/template">
+    <div class="list-block media-list">
+        <ul>
+         <!--   <li>
+                <div class="item-content">
+                    <div class="item-inner cartTitleSelect" style="padding-bottom: 0;">
+                        <label class="round-checkbox2 cartlabelG cartLSelect selected"></label>
+                        <a class="actionName">{{ACTIONTITLE}}</a>
+                    </div>
+                </div>
+            </li>-->
+            {{inner}}
+            <li>
+                <div class="item-content">
+                    <div id="cartTotalLi" class="item-inner " style="padding-bottom: 0;">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</script>
+
+<script id="newCartV1_1Helper1Tpl" type="text/template">
+    <div id="goodsSub_{{index}}" eqi="{{index}}" class="goodsnum-sub"></div>
+</script>
+
+<script id="newCartV1_1Helper2Tpl" type="text/template">
+    <div id="goodsSub_{{index}}" eqi="{{index}}" class="goodsnum-sub active"></div>
+</script>
+
+<script id="newCartV1_1Helper3Tpl" type="text/template">
+    <div id="goodsAdd_{{index}}" eqi="{{index}}" class="goodsnum-add"></div>
+</script>
+
+<script id="newCartV1_1Helper4Tpl" type="text/template">
+    <div id="goodsAdd_{{index}}" eqi="{{index}}" class="goodsnum-add active"></div>
+</script>
+
+<script id="newCartV1_1HelperTpl" type="text/template">
+    <li>
+        <div class="item-content">
+            <div class="item-media cartImgSelect " eqi="{{index}}">
+                <label id="cartSelect_{{index}}"
+                       class="round-checkbox2 cartlabelL cartLSelect selected"></label>
+                <img class="goodsthumb" src="{{GOODSIMGPATH}}"/>
+            </div>
+            <div class="item-inner">
+                <div class="item-title-row" style="width: 100%;">
+                    <div class="item-title" style="width: 75%;">{{GOODSGROUPTITLE}}</div>
+                    <div class="item-after goods-procost">￥{{GOODSPRICE}}</div>
+                </div>
+                <div class="item-subtitle">
+                    <div class="item-subtitle-left">{{FILTERCONFIG}}</div>
+                    <div class="item-subtitle-right">￥{{GOODSSALEPRICE}}</div>
+                </div>
+                <div class="item-text">
+                    <div class="item-text-left">
+
+                        {{goodsnum-sub}}
+                        <div class="goodsnum">
+                            <div class="goodsnumsup"></div>
+                            <div id="cartNum_{{index}}" goodsData="num">{{GOODSNUM}}</div>
+                            <div class="goodsnumsup"></div>
+                        </div>
+                        {{goodsnum-add}}
+                    </div>
+                    <div eqi="{{index}}" class="item-text-right cartDelete"><a
+                            class="goods-delete"></a></div>
+                </div>
+            </div>
+        </div>
+    </li>
+</script>
+
+<script id="newCartV1_1TOTAL1Tpl" type="text/template">
+    <div class="item-title goods-total">共<a id="cartallnum" class="color-40">{{ALLGOODNUM}}</a>件商品</div>
+    <div class="item-after money-total">合计:<a id="cartallprice" class="color-f60">￥{{REALTOTAL}}</a></div>
+</script>
+
+<script id="newCartV1_1TOTAL2Tpl" type="text/template">
+    <div id="gotoAct_{{index}}" class="item-title goods-total" style="line-height: initial;overflow: visible;">
+        <div style="font-size: 0.8em;">共<a id="cartallnum" class="color-40">{{ALLGOODNUM}}</a>件商品</div>
+        <div style="font-size: 0.8em;">
+            <div class="cartjian2">(满{{MINPAR}})-{{DISCOUNTPAR}}</div>
+        </div>
+    </div>
+    <div class="item-after money-total" style="height: 30px;line-height: 30px;">合计:<a id="cartallprice"
+                                                                                      class="color-f60">￥{{REALTOTAL}}</a>
+    </div>
+</script>
+
+<script id="newCartV1_1TOTAL3Tpl" type="text/template">
+    <div id="gotoAct_{{index}}" class="item-title goods-total" style="line-height: initial;overflow: visible;">
+        <div style="font-size: 0.8em;">共<a id="cartallnum" class="color-40">{{ALLGOODNUM}}</a>件商品</div>
+        <div style="font-size: 0.8em;">
+            <div class="cartjian">减</div>
+            <div class="cartjian2">再凑{{needMin}}可减{{canDis}}</div>
+        </div>
+    </div>
+    <div class="item-after money-total" style="height: 30px;line-height: 30px;">合计:<a id="cartallprice"
+                                                                                      class="color-f60">￥{{REALTOTAL}}</a>
+    </div>
+</script>
+
+<script id="wuliuTemplate" type="text/template">
+    <ul class="wuliulist">
+        {{wuliuHelper}}
+        <li>
+            <img class="addressinfo" src="img/cart/app.png">
+
+            <div class="item-inner color-40" style="width: 85%;">
+                <div class="item-subtitle addressWord">收货人：{{CONSIGNEENAME}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系电话：{{CONSIGNEEMOBILE}}</div>
+                <div class="item-subtitle addressWord" style="white-space: normal;">收货地址：{{CONSIGNEEADDRESS}}</div>
+            </div>
+        </li>
+    </ul>
+</script>
+
+<script id="wuliuTemplateHelper" type="text/template">
+    <li class="bg-FD0 goto-express" epinyin="{{EXPRESSPY}}" ename="{{EXPRESSNAME}}" ecode="{{EXPRESSCODE}}"
+        oId="{{ORDERID}}">
+        <div class="item-content">
+            <div class="item-inner" style="width: 90%;display: inline-block;">
+                <div class="item-title-row" style="width: 100%;">
+                    <div class="item-title " style="width: 75%;">{{EXPRESSNAME}}</div>
+                </div>
+                <div class="item-subtitle color-40">
+                    物流单号：{{EXPRESSCODE}}
+                </div>
+            </div>
+            <div style="width: 10%;display: inline-block;">
+                <img style="width:20%;margin-left: auto;margin-right: auto;" src="./img/newIcon/icon_10.png"/>
+            </div>
+        </div>
+    </li>
+</script>
+
+
+<script id="scenesListTpl" type="text/template">
+    {{#each List}}
+    <div class="content-block zhuanti" did="{{_id}}" LastAddGoodsTime="{{LastAddGoodsTime}}">
+        <div class="row">
+            <div class="col-100 brandItem" style="position: relative">
+                <div class="action-img-con">
+                    <img class="action-thumbnail" data-src="{{spectacleImage}}" style="margin: 90px auto;width: 80px"
+                         src="img/loading.png">
+                </div>
+                <div class="new-action-goods">
+                    <div class="JpImg-con">
+                        <img src="img/newIcon/newaddJP.png" width="100%">
+                    </div>
+
+                </div>
+                <div class="zan-show" _id="{{_id}}">
+                    <img class="zan-show-img" src="img/newIcon/nozan-index.png" width="100%">
+                </div>
+                <div class="actionflag">
+                    <div class="time-show timeshow923">
+                        <span class="s_time" data-endtime="dateEndTime">{{spectacleTitle}}</span>
+                    </div>
+                    <div class="flag_new flag923">
+                        <span><a style="color:#fd0;font-size: 12px;">{{listLength}}</a>件单品</span> | <span><a
+                            style="color:#fd0;font-size: 12px;" class="likeNum-text">{{likeNum}}</a>人收藏</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</script>
+
+<script id="scenesDetailTpl" type="text/template">
+    <div class="posRela scene-top-img-con">
+        <img class="width100 scene-top-img" src="{{spectacleImage}}"/>
+
+        <div class="testTips">
+            <img id="tipsImgZan" class="tipsImgZan" src="./img/923/noColl.png"/>
+            <span class="tipsSpanZan">&nbsp;收藏专场&nbsp;&nbsp;|</span><span class="tipsSpanZan2"><a id="slikeNum"
+                                                                                                  style="color:#fd0;">{{likeNum}}</a>人收藏</span>
+        </div>
+        <div class="headSaw"></div>
+    </div>
+    <div class="body-con">
+        <div class="sceneTitle">{{spectacleTitle}}</div>
+        <div class="titleSaw"><span class="titleSawInner"></span></div>
+        <div class="sceneDes">
+            {{spectacleDesc}}
+        </div>
+        <div>
+            <ul class="sceneUl">
+                {{helper1}}
+            </ul>
+        </div>
+    </div>
+</script>
+
+<script id="scenesDetailHelperTpl" type="text/template">
+    <li gotoUrl="{{link}}" index="{{@index}}" _groupId="{{groupId}}">
+        <div class="posRela">
+            <div>
+                <img id="goodsImgScene_{{@index}}" data-src="{{imgPath}}" src="img/loading.png" class="width100"
+                     style="margin: 90px auto;width: 80px"/>
+            </div>
+            {{helper2}}
+            <div class="testZan" index="{{@index}}" goodsGroupId="{{goodsGroupId}}">
+                <img id="testZanImg_{{@index}}" class="testZanImg"
+                     src="./img/923/nozan.png"/>
+                <span id="testZanSpan_{{@index}}" class="testZanSpan">{{collectionNum}}</span>
+            </div>
+            <div class="goldenBox">
+                <img src="img/newIcon/goldenBox.png">
+            </div>
+        </div>
+        <div class="sceneDetail">
+            <span class="scenePrice">￥{{goodsPrice}}</span><span class="sceneGoodsTitle">{{goodsTitle}}</span>
+
+            <p class="sceneGoodsDes">
+                {{goodsDesc}}
+            </p>
+        </div>
+        <div class="posRela">
+            <div class="processOut">
+                <div class="processIn" style="width:{{process}}%;"></div>
+            </div>
+            <div class="processWord">已售{{process}}%</div>
+            <div class="gotoDetail">查看详情</div>
+        </div>
+        <div class="dline"></div>
+    </li>
+</script>
+
+<script id="scenesDetailHelper2Tpl" type="text/template">
+    <div class="nogoodsMask"></div>
+    <div class="nogoodsFlag">
+        <img src="./img/newIcon/nogoods.png"/>
+    </div>
+</script>
+
+<script id="scenesCollectTpl" type="text/template">
+    <div class="col-100 brandItem goToScene" sceneId="{{sceneId}}" style="position: relative">
+        <div class="action-img-con ">
+            <img id="sceneCollection_{{@index}}" class="action-thumbnail" data-src="{{spectacleImage}}"
+                 style="margin: 90px auto;width: 80px"
+                 src="img/loading.png">
+        </div>
+        <div class="actionflag">
+            <div class="time-show timeshow923">
+                <span class="s_time" data-endtime="dateEndTime">{{spectacleTitle}}</span>
+            </div>
+            <div class="flag_new flag923" style="width: 200px">
+                <span><a style="color:#fd0;font-size: 12px;">{{listLength}}</a>件单品</span> | <span><a
+                    style="color:#fd0;font-size: 12px;">{{likeNum}}</a>人收藏</span>
+            </div>
+        </div>
+        <div scene="{{sceneId}}" class="deleScene">
+        </div>
+    </div>
+
+</script>
+
+<script id="goodsCollect1Tpl" type="text/template">
+    <div class="content-block">
+        <div class="row goods-container">
+            {{inner}}
+        </div>
+    </div>
+</script>
+
+<script id="goodsCollect2Tpl" type="text/template">
+    <div class="col-50 goods-item gotodetail" ct-id="{ID}" ct-actionid="{ACTIONID}" ct-groupid="{GROUPID}">
+        <div class="row">
+            <div class="col-100 goodthumbnail">
+                <div class="mark" style="display:block"></div>
+                <div>
+                    <a><img id="goodsCollectImg_{@index}" style="margin: 30px auto;width: 80px"
+                            class="good-thumbnail" src="img/loading.png"></a>
+                </div>
+                <div class="noStock" style="display:{noStock}"></div>
+                <div class="offLine" style="display:{offLine}"></div>
+                <div goods="{ID}" class="deleGoods">
+                </div>
+            </div>
+            <div class="gooddetail clear">
+                <div class="goodtitle">{goodsTitle}</div>
+                <div class="price">
+                    <span>¥{price}</span>
+                 <!--   <span>¥{salePrice}</span>
+                    <ins>¥{price}</ins>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="addressPCCTpl" type="text/template">
+    <li class="PCCitem" province="{name}">
+        <input type="text" placeholder="{name}" readonly/>
+
+        <div class="addressDec-after">&nbsp;</div>
+    </li>
+</script>
+
+<script id="addressPCCWarpTpl" type="text/template">
+    <div class="PCCitem" style="background: #fff;">
+        <span style="font-size:1.2em">{words}</span>
+
+        <div class="close-x"></div>
+    </div>
+    <ul class="list-block {classW} color-999" style="margin-top: 0;background: #f2f2f2;">{inner}</ul>
+</script>
+<script id="addressListLiTpl" type="text/template">
+    <li class="swipeout {{noAfter}}">
+        <div index="{{i}}" class="swipeout-content item-content">
+            <div class="item-inner">
+                <p><a>{{name}}</a><a>{{mobile}}</a>{{default}}</p>
+
+                <p class="color-gray wordsellip">{{address}}</p>
+            </div>
+        </div>
+        <div class="swipeout-actions-right">
+            <a href="#" class="swipeout-delete" index="{{i}}">删除</a>
+        </div>
+    </li>
+</script>
+<script id="expressTpl" type="text/template">
+    <ul>
+        <li class="h-line">
+            <div class="item-content" style="line-height: 3em;height: 1em;">
+                物流跟踪
+            </div>
+        </li>
+        {liHeadS}
+    </ul>
+</script>
+<script id="expressLi1Tpl" type="text/template">
+    <li>
+        <div class="item-content">
+            <div class="item-media">
+                <img class="express" src="./img/923/e1.png">
+            </div>
+            <div class="item-inner">
+                <div class="item-title">
+                    {info}
+                </div>
+                <div class="item-subtitle">
+                    {time}
+                </div>
+            </div>
+        </div>
+    </li>
+</script>
+<script id="expressLisTpl" type="text/template">
+    <li>
+        <div class="item-content">
+            <div class="item-media">
+                <img class="express" src="./img/923/e2.png">
+            </div>
+            <div class="item-inner">
+                <div class="item-title">{info}</div>
+                <div class="item-subtitle">{time}</div>
+            </div>
+        </div>
+    </li>
+</script>
+
+<script id="reBackImgTpl" type="text/template">
+    <img class="reBackUploadImg" src="{imgPath}"/>
+</script>
+
+<script id="reBackOn9GoodsTpl" type="text/template">
+    <li>
+        <div class="item-content">
+            <div class="item-media">
+                <img class="goodsthumb" src="{{goodsImg}}">
+            </div>
+            <div class="item-inner">
+                <div class="item-title-row" style="width: 100%;">
+                    <div class="item-title">{{name}}</div>
+                </div>
+                <div class="item-subtitle">
+                    <div class="item-subtitle-left">
+                        <span>{{filter}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                </div>
+                <div class="item-subtitle">
+                    <div class="item-subtitle-left " style="display: block;width: 100%;height: 2em;">
+                        <div class="numWarp">
+                            <div id="gdSubOn9_{{index}}" eq="{{index}}" class="goodsnum-sub active"></div>
+                            <div class="goodsnum">
+                                <div class="goodsnumsup"></div>
+                                <div id="gdNumOn9_{{index}}" class="numOn9" goodId="{{goodId}}">{{num}}</div>
+                                <div class="goodsnumsup"></div>
+                            </div>
+                            <div id="gdAddOn9_{{index}}" eq="{{index}}" class="goodsnum-add " maxData="{{num}}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?222a22e8ad324e27e43cd1bba9dd1b39";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--<script type="text/javascript" src="cordova.js"></script>-->
+<!--<script type="text/javascript" src="cordova_plugins.js"></script>-->
+<!-- build:js -->
+<!-- @if NODE_ENV='app' !>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="cordova_plugins.js"></script>
+<!-- @endif -->
+<script type="text/javascript" src="/mobile/js/page/framework7.js?v1.1"></script>
+<script type="text/javascript" src="/mobile/js/appconfig.js"></script>
+<script type="text/javascript" src="/mobile/js/page/util.js"></script>
+<script type="text/javascript" src="/mobile/js/page/index.js"></script>
+<script type="text/javascript" src="/mobile/js/page/couponlist.js"></script>
+<script type="text/javascript" src="/mobile/js/page/login.js"></script>
+<script type="text/javascript" src="/mobile/js/page/loginBind.js"></script>
+<script type="text/javascript" src="/mobile/js/page/user.js"></script>
+<script type="text/javascript" src="/mobile/js/page/components/networkStatus.js"></script>
+<script type="text/javascript" src="/mobile/js/page/components/camera.js"></script>
+<script type="text/javascript" src="/mobile/js/page/components/fileTransfer.js"></script>
+<script type="text/javascript" src="/mobile/js/page/userCenter.js"></script>
+<script type="text/javascript" src="/mobile/js/page/activity.js"></script>
+<script type="text/javascript" src="/mobile/js/page/detail.js"></script>
+<script type="text/javascript" src="/mobile/js/page/shoppinglists.js"></script>
+<script type="text/javascript" src="/mobile/js/page/shoppingCart2.js"></script>
+<script type="text/javascript" src="/mobile/js/page/orderConfirm.js"></script>
+<script type="text/javascript" src="/mobile/js/page/orderDetail.js"></script>
+<script type="text/javascript" src="/mobile/js/page/setting.js"></script>
+<script type="text/javascript" src="/mobile/js/page/mycenter.js"></script>
+<script type="text/javascript" src="/mobile/js/page/scenes.js"></script>
+<script type="text/javascript" src="/mobile/js/page/collection.js"></script>
+<script type="text/javascript" src="/mobile/js/page/addressList.js"></script>
+<script type="text/javascript" src="/mobile/js/page/addressAdd.js"></script>
+<script type="text/javascript" src="/mobile/js/page/addressUpdate.js"></script>
+<script type="text/javascript" src="/mobile/js/page/addressSelect.js"></script>
+<script type="text/javascript" src="/mobile/js/page/redpack.js"></script>
+<script type="text/javascript" src="/mobile/js/page/searching.js"></script>
+<script type="text/javascript" src="/mobile/js/page/expressInfo.js"></script>
+<script type="text/javascript" src="/mobile/js/page/reback2.js"></script>
+<script type="text/javascript" src="/mobile/js/page/reback9.js"></script>
+<script type="text/javascript" src="/mobile/js/page/reBackAddress.js"></script>
+<script type="text/javascript" src="/mobile/js/page/reBackChecking.js"></script>
+<script type="text/javascript" src="/mobile/js/page/reBackCheckFail.js"></script>
+<script type="text/javascript" src="/mobile/js/page/reBackDESC.js"></script>
+<script type="text/javascript" src="/mobile/js/page/reBackWaiting.js"></script>
+<script type="text/javascript" src="/mobile/js/page/reMinderOrder.js"></script>
+<script type="text/javascript" src="/mobile/js/page/chosen.js"></script>
+<!-- @if NODE_ENV='app' !>
+<script type="text/javascript" src="js/page/appPay.js"></script>
+<!-- @endif -->
+<!-- @if NODE_ENV='web' -->
+<script type="text/javascript" src="/mobile/js/page/webpay.js"></script>
+<!-- @endif -->
+<script type="text/javascript" src="/mobile/js/router.js"></script>
+<script type="text/javascript" src="/mobile/js/index.js"></script>
+<!-- endbuild -->
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</body>
+</html>

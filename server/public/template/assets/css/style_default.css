@@ -1,0 +1,161 @@
+/***
+default theme
+***/
+
+/***
+Reset and overrides  
+***/
+body { 
+  background-color:#3d3d3d !important;
+}
+
+/***
+Page header
+***/
+.header .navbar-inner {
+  filter:none !important;
+  background-image: none !important;
+  background-color: #1f1f1f !important;
+}
+
+.header .btn-navbar {  
+  background-color: #1f1f1f !important;
+} 
+
+.header .nav .dropdown-toggle:hover, 
+.header .nav .dropdown.open .dropdown-toggle {
+  background-color: #333 !important;
+}
+
+.header .nav li.dropdown .dropdown-toggle i {
+  color: #808080 !important;
+}
+
+/***
+Page sidebar
+***/
+.page-sidebar > ul > li > a {
+  border-top: 1px solid #595959 !important;
+  color: #fff !important;
+}
+
+.page-sidebar > ul > li:last-child > a {
+   border-bottom: 1px solid transparent !important;
+}
+
+.page-sidebar > ul > li:nth-child(3) > a {
+  border-top-color: transparent !important;
+}
+
+.page-sidebar > ul > li > a i {
+   color: #808080;
+}
+
+.page-sidebar > ul > li.has-sub.open >a, 
+.page-sidebar > ul > li >a:hover, 
+.page-sidebar > ul > li:hover>a {  
+  background: #313131;
+}
+
+.page-sidebar > ul > li.active > a {
+  background: #e02222 !important;  
+  border-top-color: transparent !important;
+  color:#fff;
+}  
+
+.page-sidebar > ul > li.active > a i {
+  color:#fff;
+}
+
+.page-sidebar > ul > li > a.open {
+  background: #313131;
+}
+
+.page-sidebar ul > li > a .arrow:before,
+.page-sidebar > ul > li > a .arrow.open:before {  
+   color: #919091 !important;
+}
+
+.page-sidebar ul > li.active > a .arrow:before,
+.page-sidebar > ul > li.active > a .arrow.open:before {  
+   color: #fff !important;
+}
+
+.page-sidebar > ul > li > ul.sub > li > a {
+  color: #fff;
+  margin-left:0px;  
+  padding-left: 5px; 
+}
+
+.page-sidebar > ul > li > ul.sub > li:first-child > a {
+  border-top: 0px !important;
+}
+
+.page-sidebar > ul > li > ul.sub > li.active > a, 
+.page-sidebar > ul > li > ul.sub > li > a:hover {
+  color: #fff !important;
+  background: #4b4b4b !important;  
+}
+
+.page-sidebar > ul > li > ul.sub > li > a:hover {
+  background: #4b4b4b !important;
+}
+
+.page-sidebar .sidebar-search input{
+  background-color: #3d3d3d  !important;  
+  color: #bababa !important;
+}
+
+.page-sidebar .sidebar-search .input-box {
+  border-bottom-color: #959595  !important;
+}
+
+.page-sidebar .sidebar-search .submit {
+  background-image: url(../img/search-icon.png);
+}
+
+/***
+Sidebar toggler
+***/
+.sidebar-toggler {  
+  background-image: url(../img/sidebar-toggler.jpg);
+  background-color: #333;
+}
+
+/* search box bg color on expanded */
+.sidebar-closed .page-sidebar .sidebar-search.open {
+  background-color: #3d3d3d !important;
+}
+
+.sidebar-closed .page-sidebar .sidebar-search.open .remove {  
+  background-image: url("../img/sidebar-search-close.png");
+}
+
+/* sub menu bg color on hover menu item */
+.sidebar-closed .page-sidebar > ul > li.has-sub:hover .sub {
+  background-color: #3d3d3d;
+}
+
+/***
+Landscape phone to portrait tablet
+***/
+@media (max-width:979px) { 
+  /***
+  page sidebar
+  ***/
+  .page-sidebar {
+    background-color: #232427 !important;
+  }
+
+  .page-sidebar > ul > li > a {
+    border-top: 1px solid #2c2d30 !important;
+  }
+
+  .page-sidebar > ul > li:last-child > a {
+    border-bottom: 0 !important;
+  }
+
+  .page-sidebar .sidebar-search input{
+    background-color: #232427  !important;  
+  }
+}

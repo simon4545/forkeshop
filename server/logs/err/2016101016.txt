@@ -1,0 +1,66 @@
+[2016-10-10 16:47:35.569] [ERROR] logErr - { [Error: ER_BAD_FIELD_ERROR: Unknown column 'ActionId' in 'field list']
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  index: 0 }
+Error: ER_BAD_FIELD_ERROR: Unknown column 'ActionId' in 'field list'
+    at Query.Sequence._packetToError (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\sequences\Sequence.js:51:14)
+    at Query.ErrorPacket (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\sequences\Query.js:83:18)
+    at Protocol._parsePacket (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\Protocol.js:280:23)
+    at Parser.write (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\Parser.js:74:12)
+    at Protocol.write (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\Protocol.js:39:16)
+    at Socket.<anonymous> (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\Connection.js:109:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:153:18)
+    at Socket.Readable.push (_stream_readable.js:111:10)
+    at TCP.onread (net.js:536:20)
+    --------------------
+    at Pool.query (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\Pool.js:197:23)
+    at Function.sync (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.0.2.5@sync\lib\sync.js:69:10)
+    at D:\Work\bbxcopy\branch\b2cfree\server\controller\goodsController.js:313:45
+    at D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.0.2.5@sync\lib\sync.js:178:22
+[2016-10-10 16:47:41.015] [ERROR] logErr - { [Error: ER_BAD_FIELD_ERROR: Unknown column 'ActionId' in 'field list']
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  index: 0 }
+Error: ER_BAD_FIELD_ERROR: Unknown column 'ActionId' in 'field list'
+    at Query.Sequence._packetToError (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\sequences\Sequence.js:51:14)
+    at Query.ErrorPacket (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\sequences\Query.js:83:18)
+    at Protocol._parsePacket (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\Protocol.js:280:23)
+    at Parser.write (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\Parser.js:74:12)
+    at Protocol.write (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\Protocol.js:39:16)
+    at Socket.<anonymous> (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\Connection.js:109:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:153:18)
+    at Socket.Readable.push (_stream_readable.js:111:10)
+    at TCP.onread (net.js:536:20)
+    --------------------
+    at Pool.query (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\Pool.js:197:23)
+    at Function.sync (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.0.2.5@sync\lib\sync.js:69:10)
+    at D:\Work\bbxcopy\branch\b2cfree\server\controller\goodsController.js:313:45
+    at D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.0.2.5@sync\lib\sync.js:178:22
+[2016-10-10 16:47:53.150] [ERROR] logErr - { [Error: ER_BAD_FIELD_ERROR: Unknown column 'ActionId' in 'field list']
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  index: 0 }
+Error: ER_BAD_FIELD_ERROR: Unknown column 'ActionId' in 'field list'
+    at Query.Sequence._packetToError (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\sequences\Sequence.js:51:14)
+    at Query.ErrorPacket (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\sequences\Query.js:83:18)
+    at Protocol._parsePacket (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\Protocol.js:280:23)
+    at Parser.write (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\Parser.js:74:12)
+    at Protocol.write (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\protocol\Protocol.js:39:16)
+    at Socket.<anonymous> (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\Connection.js:109:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:153:18)
+    at Socket.Readable.push (_stream_readable.js:111:10)
+    at TCP.onread (net.js:536:20)
+    --------------------
+    at Pool.query (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.2.11.1@mysql\lib\Pool.js:197:23)
+    at Function.sync (D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.0.2.5@sync\lib\sync.js:69:10)
+    at D:\Work\bbxcopy\branch\b2cfree\server\controller\goodsController.js:313:45
+    at D:\Work\bbxcopy\branch\b2cfree\server\node_modules\.0.2.5@sync\lib\sync.js:178:22

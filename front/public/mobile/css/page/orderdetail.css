@@ -1,0 +1,137 @@
+.orderdetail-page .list-block.media-list .item-title,.orderdetail-page .list-block li.media-item .item-title{
+    font-size: 0.8em;
+    line-height: 1.8em;
+}
+.orderdetail-page .goodsthumb{
+    width: 4em;
+}
+.orderdetail-page .goods-procost{
+    color: #D1D1D1;
+    text-decoration: line-through;
+}
+.orderdetail-page .item-subtitle-left {
+    display: inline-block;
+    color: #D1D1D1;
+}
+
+.orderdetail-page .item-subtitle-right {
+    display: inline-block;
+    float: right;
+}
+
+.order-first{
+    background: #FFF;
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+}
+
+.order-first::before{
+    content: " ";
+    background-image: url(../../img/newIcon/icon_18.png);
+    background-size: 100% 100%;
+    width: 1.4em;
+    height: 1.4em;
+    float: left;
+    position: relative;
+}
+.order-first-content{
+    margin-left: 2em;
+}
+.orderdetail-page .item-inner.item-nomedia{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.orderdetail-page .plprrela5{
+    padding-left: 5%;padding-right: 5%;
+}
+.orderdetail-page .plprrela5 img{
+    width: 4em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.orderdetail-page .plprrela5 a{
+    display: block;
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.orderdetail-page .goods-logo{
+    width:1.8em;
+    margin-right: 0.5em;
+}
+
+.orderdetail-page .list-block .item-inner.marginleft0{
+    margin-left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    font-size: 0.8em;
+}
+.orderdetail-page .createtime{
+    font-size: 0.8em;
+    line-height: 1.8em;
+    margin-left: 0;
+    color:#808080;
+}
+
+.bottom-fix-bar-left .content{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color:#808080;
+}
+.orderdetail-page .bginput{
+    background: #EFEFEF;
+    height: 2em;
+    padding: 5px;
+    color: #808080;
+}
+.orderdetail-page .addressinfo{
+    width: 1.1em;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 15px;
+    float: left;
+}
+.orderdetail-page  .addressWord{
+    padding-bottom: 2px;
+    padding-top: 2px;
+    font-size: 0.8em;
+}
+.orderdetail-page .wuliulist li:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #fff;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+.orderdetail-page .smallBtn{
+    background-color: #fd0;
+    border-radius: 15px;
+    width:50px;
+    text-align: center;
+    display: inline-block;
+    line-height: 24px;
+    height:24px;
+    font-size: 12px;
+    color:#8e8e93
+}
+
+
+

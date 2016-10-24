@@ -1,0 +1,168 @@
+
+.index-page.page{
+    background: rgb(242,242,242);
+}
+
+.index-page .navbar .cart-num{
+    right: 5px;
+}
+
+.index-page .content-block{
+    background: #ffffff;
+}
+
+.index-page .swiper-container .swiper-slide img{
+    width: 100%;
+}
+
+.index-page .type-tab{
+    margin:5px 0;
+    padding: 20px 15px 20px 15px;
+}
+.row .col-16_7{
+    width: 16.6666666%;
+    width: -webkit-calc((100% - 15px*5) / 6);
+    width: calc((100% - 15px*5) / 6);
+}
+.index-page .type-tab .tab-item{
+    text-align: center;
+    line-height: 21px;
+}
+.index-page .type-tab .tab-item img{
+    width: 80%;
+    margin: 0 10% 10px 10%;
+}
+.index-page .order-tab{
+    height: 44px;
+ /*   line-height: 44px;*/
+    font-size: 14px;
+    margin: 5px 0 0 0;
+    color: #808080;
+    padding: 0px;
+}
+
+.index-page .order-tab .bg-arrow{
+    background-image: url('../../img/newIcon/arrow.png');
+    background-repeat : no-repeat;
+    width:14px;
+    margin-left: 10px;
+    background-size: 36px;
+}
+.index-page .order-tab  .order-default{
+    /*color: #808080;*/
+}
+.index-page .order-tab  .order-desc,
+.index-page .order-tab  .order-asc
+{
+    color: #ff6600;
+}
+.index-page .order-tab  .order-default  .bg-arrow{
+ background-position : 1px 4px;
+ height: 16px;
+ /*margin-top: 5px;*/
+}
+.index-page .order-tab .order-desc  .bg-arrow{
+    background-position : -12px 4px;
+    height: 16px;
+    color: #ff6600;
+    /*margin-top: 5px;*/
+}
+.index-page .order-tab  .order-asc  .bg-arrow{
+    background-position : -27px 4px;
+    height: 16px;
+    color: #ff6600;
+    /*margin-top: 5px;*/
+}
+
+.index-page .order-tab .bottom-arrow{
+    background-position: 1px -5px;
+    height: 10px;
+    margin-top: 5px;
+}
+
+
+
+.index-page .order-tab .single{
+    background-image: url('../../img/newIcon/gray_none.png');
+    height: 18px;
+    background-repeat: no-repeat;
+    background-size:  auto 14px;
+    /*background-position: 3px 5px;*/
+    background-position: 3px 3px;
+    text-align: left;
+    text-indent: 1.5rem;
+   /* color: #808080;*/
+    margin: 0 auto;
+}
+.index-page .order-tab .single-l{
+    background-image: url('../../img/newIcon/orange_right.png');
+    color: #ff6600;
+}
+
+
+.index-page .order-tab .has{
+    text-align: right;
+    margin-top: 12px;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #e5e5e5;
+    border-style: none solid none none ;
+}
+.index-page .order-tab .price{
+    text-align: right;
+    margin-top: 12px;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #e5e5e5;
+    border-style: none solid none none ;
+}
+.index-page .order-tab .discount{
+    text-align: right;
+    margin-top: 12px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.index-page .order-tab  .arrow-btn-box{
+    height: 44px;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    top: -12px;
+    left: 0;
+}
+.index-page .order-tab  .arrow-btn-s{
+    height: 100%;
+}
+.index-page .order-tab  .arrow-btn{
+    height: 100%;
+}
+/*.index-page .order-tab  .arrow-btn-b{
+    height: 50%;
+}*/
+.index-page .classify-Box{
+    background: rgb(242,242,242);
+    margin:  0;
+    padding: 0 3px;
+}
+
+.index-page .index-infinite-preloader{
+    text-align: center;
+    color: grey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: none;
+}
+/** 2015-08-10 add**/
+.sexSelectBox{
+    position: relative;
+    z-index: 10000;
+    background-color: #ffffff;
+    margin-top: 15px;
+    display: none;
+    padding: 10px;
+}
+
+.sexSelectBox .sexItem:first-child{
+    border-bottom: 1px solid #e5e5e5;
+}

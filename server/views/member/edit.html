@@ -1,0 +1,197 @@
+<%- include('../header.html')%>
+<style>
+    #listTBody td {
+        vertical-align: middle;
+    }
+
+    #listTBody td img {
+        width: 100px;
+        height: 80px;
+    }
+
+    .btn.mini {
+        margin-left: 5px;
+    }
+
+    .portlet-title {
+        border: 0 !important;
+    }
+</style>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <h3 class="page-title">
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a href="/member/list" >用户管理</a>
+                        <i class="icon-angle-right"></i>
+                        <a href="javascript:void(0);" >编辑用户</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box blue tabbable">
+                        <div class="portlet-title">
+                            <h4>
+                                <i class="icon-reorder"></i>
+                                <span class="hidden-480">编辑用户</span>
+                                &nbsp;
+                            </h4>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="tabbable portlet-tabs">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="portlet_tab1">
+                                        <div action="#" class="form-horizontal">
+
+                                            <div class="control-group" style="display: none;">
+                                                <label class="control-label">Id</label>
+
+                                                <div class="controls">
+                                                    <input value="<%=Id%>" id="memberId" name="memberId" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">头像</label>
+
+                                                <div class="controls">
+
+                                                    <img src="<%=HeaderImage?HeaderImage:'/images/图片预览区.png'%>"  width="200px" height="200px">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="control-group">
+                                                <label class="control-label">用户名</label>
+
+                                                <div class="controls">
+                                                    <input id ="memberAccount" name="memberAccount" type="text"
+
+                                                           value="<%=MemberAccount?MemberAccount:''%>"
+                                                           class="m-wrap large"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">状态</label>
+
+                                                <div class="controls">
+
+                                                    <%if(MemberState==1){%>
+                                                    <input type="radio" name="memberState" value="1" checked />启用
+                                                    <input type="radio" name="memberState" value="0" />禁用
+                                                    <%}else{%>
+                                                    <input type="radio" name="memberState" value="1"  />启用
+                                                    <input type="radio" name="memberState" value="0" checked/>禁用
+                                                    <%}%>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">性别</label>
+
+                                                <div class="controls">
+                                                    <%if(MemberIden==1){%>
+                                                    <input type="radio" name="sex" value="1" checked />男
+                                                    <input type="radio" name="sex" value="0" />女
+                                                    <%}else{%>
+                                                    <input type="radio" name="sex" value="1"  />男
+                                                    <input type="radio" name="sex" value="0" checked/>女
+                                                    <%}%>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">昵称</label>
+
+                                                <div class="controls">
+                                                    <input id="memberName" name="memberName" type="text"
+                                                           required="required"
+                                                           value="<%=MemberName?MemberName:''%>"
+                                                           class="m-wrap large"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions">
+                                                <button id="btnConfirm" type="button" class="btn blue"><i
+                                                        class="icon-ok"></i>确定
+                                                </button>
+                                                <a href="/member/list">
+                                                    <button type="button" class="btn red"><i
+                                                            class="icon-remove"></i>取消
+                                                    </button>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../footer.html')%>
+<script type="text/javascript" src="/javascripts/utils/common.js"></script>
+<script type="text/javascript" src="../javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="../javascripts/config.js"></script>
+<script>
+    var memberId = $('#memberId').val();
+
+    function validateForm() {
+        if(!memberId){
+            layer.alert('信息不完整');
+            return false;
+        }
+
+        if($('#memberAccount').val()&&$('#memberName').val()){
+            return true;
+        }
+        return false;
+    }
+
+    $("#btnConfirm").click(function () {
+        var result = validateForm();
+        if (result) {
+            editUser();
+        }
+    });
+
+    function editUser() {
+        var url = "/member/edit";
+        var body = {
+            data: {
+                memberAccount: $('#memberAccount').val(),
+                memberState: $('input[name="memberState"]:checked').val(),
+                memberIden: $('input[name="sex"]:checked').val(),
+                memberName: $('#memberName').val(),
+                memberId: memberId
+            },
+            url: url,
+            type: 'POST',
+            success: function (res) {
+                if (200 === res.code) {
+                    layer.alert(res.msg, {closeBtn: false}, function () {
+                        window.location.href = '/member/list';
+                    });
+                }else{
+                    layer.alert(res.msg);
+                }
+            },
+            error: function (err) {
+                console.error(err, "与服务器通信发生错误。");
+                layer.alert("与服务器通信发生错误。");
+            }
+        };
+        $.ajax(body);
+    }
+</script>

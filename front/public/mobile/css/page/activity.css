@@ -1,0 +1,77 @@
+
+.activity-page.page{
+    background: rgb(242,242,242);
+}
+
+.activity-page .navbar{
+    height: 44px;
+    margin-top: 44px;
+}
+/*.activity-page .page-content{
+    padding-top: 16px;
+}*/
+.activity-page .navbar .center{
+    font-size: 18px;
+    color: rgb(92,92,92);
+}
+
+.activity-page .navbar .cart-num{
+    right: 5px;
+}
+
+.activity-page .content-block{
+    background: #ffffff;
+}
+.activity-page  .top-img-box{
+    padding: 0;
+    margin: 0;
+}
+.activity-page .top-img-box img{
+    width: 100%;
+}
+.activity-page .time-box{
+    margin: 15px 0 0 0;
+    background: rgb(242,242,242);
+}
+.activity-page .time-box .time{
+    width: 100%;
+    text-align: right;
+    font-size: 1em;
+    color: #999;
+}
+
+.activity-page .time-box .time img{
+    width: 1.3em;
+    height: 1.3em;
+    vertical-align: top;
+    padding-right: 3px;
+}
+.activity-page .time-box .time .clock{
+    width: 20px;
+    float: right;
+}
+.activity-page .time-box .time .time-show{
+    width: 120px;
+    text-align: right;
+    float: right;
+}
+
+
+.activity-page .activity-Box{
+    background: rgb(242,242,242);
+    margin: 10px 0;
+    padding: 0 3px;
+}
+
+/** 2015-09-04 **/
+.activity-page .discount-title{
+    background-color: rgba(127, 150, 156, 0.65);
+    color: #ffffff;
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 2px 10px;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 2;
+}

@@ -1,0 +1,285 @@
+
+.scene-page .testTips {
+    position: absolute;
+    padding-top: 7px;
+    bottom: 0px;
+    height: 45px;
+    width: 100%;
+    font-size: 10px;
+    color:#fff;
+    background: rgba(0,0,0,0.2);
+
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(rgba(0,0,0,0)), to(rgba(0,0,0,0.3)));/*谷歌*/
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.3)));      /* Safari 4-5, Chrome 1-9*/
+    background: -webkit-linear-gradient(top, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.3)));   /*Safari5.1 Chrome 10+*/
+}
+
+.scene-page .tipsImgZan{
+    width: 30px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.scene-page .tipsSpanZan{
+    display: inline-block;
+    line-height: 45px;
+    height: 50px;
+    position: absolute;
+    bottom:0;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.scene-page .tipsSpanZan2{
+    display: inline-block;
+    line-height: 45px;
+    height: 50px;
+    position: absolute;
+    bottom:0;
+    font-size: 12px;
+    margin-left: 72px;
+}
+
+
+.scene-page .testZan {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 15px;
+    height:24px;
+    width:50px;
+    padding: 2px 10px;
+    background: rgba(0,0,0,0.4);
+}
+
+.scene-page .testZanImg{
+    height:20px;
+    display: inline-block;
+    margin-right: 30px;
+    position: absolute;
+    top: 4px;
+    left: 9px;
+}
+
+.scene-page .testZanSpan{
+    display: inline-block;
+    line-height: 20px;
+    height: 20px;
+    position: absolute;
+    bottom:3px;
+    right:10px;
+    font-size: 12px;
+    color:#fff;
+    width: 27px;
+    text-align: center;
+}
+
+.scene-page .headSaw {
+    position: absolute;
+    bottom: -2px;
+    height: 9px;
+    background: url('../../img/923/saw_1.png');
+    background-size: 14px 9px;
+    width: 100%;
+    border: 0;
+}
+
+.scene-page .body-con {
+    background: url('../../img/923/saw_2.png')
+}
+
+.scene-page .sceneTitle {
+    text-align: center;
+    padding-top: 45px;
+    color: #333;
+    font-size: 18px;
+}
+
+.scene-page .titleSaw {
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 14px;
+}
+
+.scene-page .titleSawInner {
+    width: 55px;
+    height: 5px;
+    background: url('../../img/923/saw.png');
+    background-size: 100%;
+    display: inline-block;
+}
+
+.scene-page .sceneDes {
+    margin: 10px 9%;
+    color: #333;
+    line-height: 25px;
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.scene-page .sceneUl li {
+    padding: 0 10px 5px 10px;
+}
+
+.scene-page .posRela {
+    position: relative;
+}
+
+.scene-page .width100 {
+    width: 100%;
+}
+
+.scene-page .sceneDetail {
+    width: 100%;
+    margin-top: 10px;
+    padding-bottom: 13px;
+    position: relative;
+}
+
+.scene-page .sceneGoodsTitle{
+    font-size: 16px;
+    width:70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+}
+
+.scene-page .nogoodsMask{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.scene-page .nogoodsFlag{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -20%;
+    margin-top:-20%;
+    width: 40%;
+}
+
+.scene-page .nogoodsFlag img{
+    width: 100%;
+}
+
+.scene-page .scenePrice {
+    color: #f60;
+    font-size: 20px;
+    margin-right: 20px;
+    margin-left: -5px;
+}
+
+.scene-page .sceneGoodsDes {
+    color: #808080;
+    font-size: 14px;
+    line-height: 22px;
+    padding-top: 6px;
+    padding-bottom: 10px;
+}
+
+.scene-page .processOut {
+    display: inline-block;
+    width: 100px;
+    height: 10px;
+    background: #fff;
+    border: 1px #5c5c5c solid;
+    border-radius: 8px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+}
+
+.scene-page .processIn {
+    width: 10%;
+    height: 10px;
+    background: #fd0;
+    border-radius: 4px
+}
+
+.scene-page .processWord {
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 110px;
+}
+
+.scene-page .gotoDetail {
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
+    border:1px solid #5c5c5c;
+    border-radius: 15px;
+    text-align: center;
+    padding: 2px 12px;
+    position: absolute;
+    bottom: 1px;
+    right: 5px;
+}
+
+.scene-page .dline {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 1px;
+    background: #e0e0e0;
+}
+
+
+.scene-page #tipsImgZan.active{
+    animation: zan 1s;
+    -webkit-animation:zan 1s;
+}
+.scene-page .testZanImg.active{
+    animation: zan 1s;
+    -webkit-animation:zan 1s;
+}
+
+@keyframes zan{
+    0% {
+        transform:scale(1);
+        -webkit-transform:scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform:scale(5);
+        -webkit-transform:scale(5);
+        opacity: 0.1;
+    }
+}
+@-webkit-keyframes zan{
+    0% {
+        transform:scale(1);
+        -webkit-transform:scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform:scale(5);
+        -webkit-transform:scale(5);
+        opacity: 0.1;
+    }
+}
+
+/** 2015-11-18 zzsun add 1yuan**/
+.scene-page .goldenBox{
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    width: 35%;
+    display: none;
+}
+.scene-page .goldenBox.active{
+    -webkit-animation:shake2 0.4s infinite;
+    animation:shake2 0.4s infinite;
+    display: block;
+}
+.scene-page .goldenBox img{
+    width: 100%;
+}

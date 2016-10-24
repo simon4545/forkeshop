@@ -1,0 +1,141 @@
+<%- include('header.html')%>
+<style>
+    .ruleInput {
+        padding: 0 !important;
+        width: 50px;
+        border: 0 !important;
+    }
+
+    .colorInput {
+        margin-left: 20px;
+    }
+
+    .img_thumbnailDiv {
+        display: inline-block;
+    }
+
+    .img_thumbnail {
+        width: 150px;
+        padding: 10px;
+        border: 1px solid #e5e5e5
+    }
+
+    #inputFile_groupImg {
+        line-height: 25px;
+        opacity: 0;
+        margin-left: -160px;
+        cursor: pointer;
+    }
+
+    .deleteThumb {
+        position: relative;
+        left: -30px;
+        top: -72px;
+        padding: 3px 6px;
+    }
+
+    #detailEditor .btn-group {
+        margin: 5px 5px 5px 0 !important;
+    }
+
+    .checkbox input[type="checkbox"] {
+        margin-left: 0;
+    }
+</style>
+
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- BEGIN PAGE HEADER-->
+        <div class="row-fluid">
+            <div class="span12">
+                <!-- BEGIN STYLE CUSTOMIZER -->
+                <div class="color-panel hidden-phone">
+                    <!--div class="color-mode-icons icon-color"></div-->
+                    <div class="color-mode-icons icon-color-close"></div>
+                    <div class="color-mode">
+                        <p>THEME COLOR</p>
+                        <ul class="inline">
+                            <li class="color-black current color-default" data-style="default"></li>
+                            <li class="color-blue" data-style="blue"></li>
+                            <li class="color-brown" data-style="brown"></li>
+                            <li class="color-purple" data-style="purple"></li>
+                            <li class="color-white color-light" data-style="light"></li>
+                        </ul>
+                        <label class="hidden-phone">
+                            <input type="checkbox" class="header" checked value=""/>
+                            <span class="color-mode-label">Fixed Header</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- END BEGIN STYLE CUSTOMIZER -->
+                <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+                <h3 class="page-title">
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a id="mainModule" href="homepage">后台管理</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                </ul>
+                <!-- END PAGE TITLE & BREADCRUMB-->
+            </div>
+        </div>
+        <!-- END PAGE HEADER-->
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <!-- BEGIN SAMPLE FORM PORTLET-->
+                    <div class="portlet box blue tabbable">
+                        <div class="portlet-title">
+                            <h4>
+                                <i class="icon-reorder"></i>
+                                <span class="hidden-480">商家销售数据导入</span>
+                                &nbsp;
+                            </h4>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="tabbable portlet-tabs">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="portlet_tab1">
+                                        <!-- BEGIN FORM-->
+                                        <div action="#" class="form-horizontal"
+                                             style="margin-top: 10px !important;">
+                                            <div class="control-group">
+                                                <label class="control-label">商品组图片</label>
+
+                                                <div class="controls">
+                                                    <form id="formUploadGroupImg" enctype="multipart/form-data"
+                                                          role="form" method="post" action="javascript:;"
+                                                          style="display: inline-block">
+                    <span class="btn green fileinput-button" style="cursor: auto;overflow: hidden">
+                        <i class="icon-plus icon-white"></i>
+                        <span>导入</span>
+                        <input id="inputFile_groupImg" name="files" type="file" accept="excel/*">
+                    </span>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END FORM-->
+
+                                        <div class="page-container row-fluid">
+                                            <div class="portlet-body" id="dev_show_table">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END SAMPLE FORM PORTLET-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE CONTAINER-->
+</div>
+<%- include('footer.html')%>
+<script type="text/javascript" src="javascripts/config.js"></script>
+<script type="text/javascript" src="/javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="javascripts/exportGoodsImg.js"></script>

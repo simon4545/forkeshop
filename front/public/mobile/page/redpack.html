@@ -1,0 +1,170 @@
+<div data-page="redpack" class="page redpack-page no-toolbar ">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link back icon-only">
+                    <i class="icon icon-back"></i>
+                </a>
+            </div>
+            <div class="center sliding main-name" data-i18n="app.name">
+                幸运抢红包
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+       <!-- <div class="raffle-rule" style="display: none">
+           <h4>抽奖规则</h4>
+           <p>1、对象：全体买家用户</p>
+           <p>2、数量：每天100个幸运红包随机发放</p>
+           <p>3、详情：抽奖活动面向全体买家用户，每日会随机从下单用户中抽取部分幸运用户（第二日到该页面查看抽奖结果），更有机会获得神秘大礼~ </p>
+           <p>4、有效期：红包有效期7天 </p>
+        </div>-->
+
+        <div class="btn-rules"><img src="img/newIcon/redpack/rule.png"></div>
+
+
+        <div id="raffle-times"> 抽奖次数：<span>0</span></div>
+
+
+
+
+        <div class="rotate">
+            <div class="turnplate">
+                <img src="img/newIcon/redpack/turnplate.png">
+            </div>
+            <div class="pointer">
+                <img src="img/newIcon/redpack/pointer.png">
+            </div>
+        </div>
+
+
+        <div class="news-redpack-con">
+            <div class="text">新人专享红包</div><div class="receive-btn">领取</div>
+        </div>
+
+        <div class="content-block recommend-container">
+            <div style="text-indent: 5px;margin-bottom: 10px;color: #999999;">她们大都买了以下商品</div>
+            <div class="row goods-container">
+
+            </div>
+            <div class="view-more-btn">
+                查看更多
+            </div>
+        </div>
+
+
+    </div>
+    <div class="loading-mask-redpack"></div>
+
+    <div class="pop-dialog result-con-pop">
+        <div class="dialog-con">
+            <div class="show-text">
+                恭喜你获得<span class="result-coupon">***元优惠券</span>，赶紧去消费吧~
+            </div>
+            <div class="btn-con clearfix_after">
+                <div class="view-btn fleft btn"></div>
+                <div class="use-btn fleft btn"></div>
+            </div>
+            <!--<div class="pop-dialog-close"></div>-->
+        </div>
+    </div>
+
+
+    <div class="content-block redpack-offline">
+        <p>第一期红包活动已结束</p>
+        <p>下期更精彩！</p>
+    </div>
+
+    <div class="vip_mask" id="rule" tag="hide">
+        <div class="vip_mask_rule">
+            <div class="modal-s1 modal-rules" style="display: block;margin: 0 auto;">
+                <div class="rules-title">活动规则</div>
+                <div class="vip_mask_div">
+                    <div class="rules-cont scroll show_scroll" id="rulecontent" style="overflow: hidden;">
+                        <p>活动时间：2016.1.13-</p>
+                        <p>1.幸运抢红包活动面向百宝香全体用户。</p>
+                        <p>2.每个百宝香账号在活动期间每天均可免费获得<font>1次</font>抽奖机会，每个账号<font>每天</font>最多只能抽奖<font>1次</font>。</p>
+                        <p>3.抽奖获得的优惠券，均为全平台可用优惠券，在百宝香APP客户端、微信客户端均可使用。<br/>
+                            <font>3元幸运红包</font> -- 无门槛<br/>
+                            <font>5元幸运红包</font> -- 无门槛<br/>
+                            <font>10元幸运红包</font> -- 满69减10元<br/>
+                            <font>18元幸运红包</font> -- 满99元减18元<br/>
+                            <font>45元幸运红包</font> -- 满199元减45元<br/>
+                            <font>神秘大奖</font> -- 50元任性红包
+                        </p>
+                        <p>4.优惠券有效期为<font>3天</font>，逾期作废。</p>
+                        <p>5.幸运红包获得后，红包中的优惠券将在24小时内发放至您的账户内，请在“百宝香app客户端-我的-我的优惠券”或“微信客户端-我的-我的优惠券”查看，如遇发放延迟，请您耐心等待。</p>
+                        <p>6.活动抽奖为随机性抽奖，不能保证所有用户均能100%中奖。</p>
+                        <p>7.严禁利用以各种非法手段（包括但不仅限于马甲、注册机等方式）参与活动，如发现违规、作弊行为及由此产生的恶意订单，百宝香将有权取消所获红包及恶意订单。</p>
+                        <p>8.活动中有任何疑问，可关注百宝香公众号“百宝香”或“百宝香母婴场景电商”咨询反馈。</p>
+                        <p>9.活动最终解释权在法律规定的范围内归百宝香所有。</p>
+                    </div>
+                </div>
+                <div class="rules-close"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="pop-dialog no-raffle-dialog">
+        <div class="dialog-con">
+            <div class="show-text">
+                亲爱的香香会员~<br>
+                暂无抽奖机会<br>
+                虽然没有红包<br>
+                但有香香为您准备的促销~
+            </div>
+            <div class="btn-con clearfix_after">
+                <div class="see-btn btn">去逛逛</div>
+            </div>
+            <div class="pop-dialog-close"></div>
+        </div>
+    </div>
+
+    <div class="pop-dialog raffle-lost-dialog">
+        <div class="dialog-con">
+            <div class="show-text">
+                好可惜~<br>
+                差点就能抢到红包了<br>
+                虽然没有红包<br>
+                但有香香为您准备的促销~
+            </div>
+            <div class="btn-con clearfix_after">
+                <div class="see-btn btn">去逛逛</div>
+            </div>
+            <div class="pop-dialog-close"></div>
+        </div>
+    </div>
+
+    <div class="pop-dialog raffle-best-dialog">
+        <div class="dialog-con">
+            <div class="show-text">
+               哇！恭喜您获得千载难逢的<span>神秘大奖</span><br>
+                快跟好友分享你的喜悦吧~
+            </div>
+            <div class="btn-con clearfix_after">
+                <div class="share-btn btn">立即分享</div>
+            </div>
+            <div class="pop-dialog-close"></div>
+        </div>
+    </div>
+
+    <div class="pop-dialog raffle-stop-dialog">
+        <div class="dialog-con">
+            <div class="show-text">
+                抽奖活动已结束<br>
+                更多精彩活动稍后继续~
+            </div>
+            <div class="btn-con clearfix_after">
+                <div class="see-btn btn">去逛逛</div>
+            </div>
+            <div class="pop-dialog-close"></div>
+        </div>
+    </div>
+
+    <div class="share-pop">
+        <img src="img/newIcon/redpack/share-arrow.png" style="width: 100%">
+    </div>
+
+</div>

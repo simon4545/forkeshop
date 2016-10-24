@@ -1,0 +1,18 @@
+{
+    "customBaseDir" :"logs/",
+    "customDefaultAtt" :{
+        "type": "dateFile",
+        "absolute": false,
+        "alwaysIncludePattern": true
+    },
+    "appenders": [
+        {"type": "console", "category": "console"},
+        {"pattern": "debug/yyyyMMddhh.txt", "category": "logDebug"},
+        {"pattern": "info/yyyyMMddhh.txt", "category": "logInfo"},
+        {"pattern": "warn/yyyyMMddhh.txt", "category": "logWarn"},
+        {"pattern": "err/yyyyMMddhh.txt", "category": "logErr"},
+        {"pattern": "redis/redis.txt", "category": "logRedis"}
+    ],
+    "replaceConsole": false,
+    "levels":{ "logDebug": "LOG", "logInfo": "LOG", "logWarn": "LOG", "logErr": "LOG","logRedis":"LOG"}
+}

@@ -1,0 +1,247 @@
+
+.myAddressAdd-page .list-block li:after
+.myAddress-page .addressform .item-inner {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.myAddress-page .addressform .item-content {
+    padding-left: 0;
+}
+
+.myAddress-page .addressmarginbefore:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #c8c7cc;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+.myAddress-page .goodsaditem {
+    line-height: 3em;
+    background-color: #FEFFFF;
+    padding-left: 1.1em;
+}
+
+.myAddress-page .goodsaditem input {
+    font-size: 0.8em;
+    padding: 0;
+}
+
+.myAddress-page .goodsaditem:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #E6E6E6;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+.myAddress-page .noAfter:after {
+    height: 1px;
+}
+
+.myAddress-page .setDefaultAddress {
+    line-height: 3em;
+    font-size: 17px;
+    padding-left: 1.1em;
+    background-color: #FEFFFF;
+    position: relative;
+}
+
+.myAddress-page .abhcr1 {
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    right: 1.2em;
+}
+
+.myAddress-page .no-after-line:after {
+    height: 0;
+}
+
+.myAddress-page .pl11 {
+    padding-left: 1.1em;
+}
+
+.myAddress-page .pr12 {
+    padding-right: 1.2em;
+}
+
+.myAddress-page .mt07 {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.myAddressAdd-page .list-block {
+    margin-top: 10px;
+}
+
+.myAddressAdd-page .pl11 {
+    padding-left: 1.1em;
+}
+
+.myAddressAdd-page .pr12 {
+    padding-right: 1.2em;
+}
+
+.myAddressAdd-page .item-content {
+    padding-left: 1.1em;
+}
+
+.myAddressAdd-page .list-block .item-inner {
+    display: block;
+}
+
+.myAddressAdd-page .list-block .item-inner p {
+    margin: 0;
+    line-height: 1.2em;
+}
+
+.myAddressAdd-page .list-block .item-inner p a {
+    padding-right: 1em;
+    color: #000;
+}
+
+.myAddressAdd-page .list-block .item-inner .default-flag {
+    background-color: #F56F27;
+    display: inline-block;
+    color: #FFF;
+    padding: 1px 4px;
+    margin: 2px 4px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.myAddressAdd-page .list-block .item-inner p img {
+    margin: 0;
+    padding: 0;
+    width: 2em;
+    display: inline;
+}
+
+.myAddressAdd-page .list-block li:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #E6E6E6;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+.myAddressAdd-page .list-block .noAfter:after {
+    height: 0;
+}
+
+.myAddressAdd-page .list-block ul:after {
+    height: 0;
+}
+
+.myAddressAdd-page .wordsellip {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    font-size: 0.7em;
+}
+
+.myAddressAdd-page .noAddressPng {
+    width: 30%;
+}
+
+.myAddress-page .addressdefault{
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+/**************************地址选择页面单独使用**********************************/
+.myAddressAdd-page .list-block .item-inner.item-addressSelect{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+#addAddressProvince{
+    display: inline-block;
+    width:85%;
+}
+
+.myAddress-page .addressDec-after{
+    background-image: url('../../img/newIcon/icon_10.png');
+    background-repeat: no-repeat;
+    width: 8px;
+    background-size: 100%;
+    background-position-y: 5px;
+    font-size: 20px;
+    height: 21px;
+    line-height: 21px;
+    display: inline-block;
+    position: absolute;
+    top:0.4em;
+    right:1.2em;
+}
+
+.PCCitem {
+    line-height: 3em;
+    background-color: #eee;
+    padding-left: 1.1em;
+}
+
+.PCCitem input[type="text"]{
+    font-size: 0.8em;
+    padding: 0;
+    width: 70%;
+    display: inline-block;
+    background: #eee
+}
+
+.PCCitem .addressDec-after{
+    background-image: url('../../img/newIcon/icon_10.png');
+    background-repeat: no-repeat;
+    width: 8px;
+    background-size: 100%;
+    background-position-y: 5px;
+    font-size: 20px;
+    height: 21px;
+    line-height: 21px;
+    display: inline-block;
+    position: absolute;
+    top:0.6em;
+    right:1.2em;
+}
+.PCCitem .close-x {
+    background-image: url("../../img/newIcon/close.png");
+    background-size: 100% 100%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    margin-right: 1.2em;
+}
+.h400{
+    height: 400px;
+}

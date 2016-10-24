@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <title>福克商城 | 管理系统</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="renderer" content="webkit">
+    <link href="/template/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/template/assets/css/metro.css" rel="stylesheet"/>
+    <link href="/template/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link href="/template/assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/template/assets/css/style.css" rel="stylesheet"/>
+    <link href="/template/assets/css/style_responsive.css" rel="stylesheet"/>
+    <link href="/template/assets/css/style_default.css" rel="stylesheet" id="style_color"/>
+    <link rel="stylesheet" type="text/css" href="/template/assets/uniform/css/uniform.default.css"/>
+</head>
+<body class="fixed-top">
+<div class="header navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="/homepage">
+                <img src="/template/assets/img/logo.png" alt="logo" style="width: 100px;height: 30px;"/>
+            </a>
+            <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                <img src="/template/assets/img/menu-toggler.png" alt="">
+            </a>
+            <ul class="nav pull-right" style="line-height: 40px;margin-right: 20px;">
+                <a href="/login" style="color: #ffffff"><i class="icon-key"></i>退出</a>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="page-container row-fluid">
+    <div id="leftNavi" class="page-sidebar nav-collapse collapse" style="overflow-y: auto;max-width: 981px;">
+        <ul>
+            <li class="start" style="margin-top: 10px;">
+                <a href="/homepage">
+                    <i class="icon-home"></i>
+                    <span class="title">首页</span>
+                </a>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <i class="icon-table"></i>
+                    <span class="title">商品管理</span>
+                    <span class="arrow "></span>
+                </a>
+                <ul class="sub">
+                    <li ><a href="/goods/add">发布商品</a></li>
+                    <li><a href="/goods/list">商品列表</a></li>
+
+                    <li><a href="/goods/category">分类列表</a></li>
+                </ul>
+            </li>
+
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <i class="icon-table"></i>
+                    <span class="title">订单管理</span>
+                    <span class="arrow "></span>
+                </a>
+                <ul class="sub">
+                    <li><a href="/order/list?orderState=">全部订单</a></li>
+                    <li><a href="/order/list?orderState=1">待付款</a></li>
+                    <li><a href="/order/list?orderState=2">待配货</a></li>
+                    <li><a href="/order/list?orderState=3">发货中</a></li>
+                    <li><a href="/order/list?orderState=4">待签收</a></li>
+                    <li><a href="/order/list?orderState=9">已完成</a></li>
+                    <li><a href="/order/list?orderState=99">已取消</a></li>
+                </ul>
+            </li>
+
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <i class="icon-table"></i>
+                    <span class="title">用户管理</span>
+                    <span class="arrow "></span>
+                </a>
+                <ul class="sub">
+                    <li><a href="/member/list">用户列表</a></li>
+                </ul>
+            </li>
+
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <i class="icon-table"></i>
+                    <span class="title">轮播广告</span>
+                    <span class="arrow "></span>
+                </a>
+                <ul class="sub">
+                    <li><a href="/mainlooper/list">广告列表</a></li>
+                </ul>
+            </li>
+
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <i class="icon-table"></i>
+                    <span class="title">系统管理</span>
+                    <span class="arrow "></span>
+                </a>
+                <ul class="sub">
+                    <li><a href="/admin/cpwd?id=<%=locals.userId%>">修改密码</a></li>
+                    <li><a href="/admin/list">管理员管理</a></li>
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

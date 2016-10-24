@@ -1,0 +1,207 @@
+
+.reBackOn9 .goodsthumb {
+    width: 4.5em;
+    margin-left: 0.5em;
+}
+.reBackOn9 .item-subtitle-left {
+    display: inline-block;
+    color: #D1D1D1;
+}
+.reBackOn9 .item-subtitle-right {
+    display: inline-block;
+    float: right;
+}
+.reBackOn9 .goodsnum-sub {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    background-size: 99%;
+    background-repeat: no-repeat;
+    background-image: url(../../img/cart/-.png);
+}
+.reBackOn9 .goodsnum-sub.active {
+    background-image: url(../../img/cart/--.png);
+}
+.reBackOn9 .goodsnum-add {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    background-size: 99%;
+    background-repeat: no-repeat;
+    background-image: url(../../img/cart/+.png);
+}
+.reBackOn9 .goodsnum-add.active {
+    background-image: url(../../img/cart/++.png);
+}
+.reBackOn9 .goodsnum {
+    font-size: 0.9em;
+    line-height: 0.9em;
+    display: -webkit-box;
+    display: box;
+    text-align: center;
+    width: 2em;
+    color: #707070;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+}
+.reBackOn9 .goodsnumsup {
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+.reBackOn9 .goodsnumsub {
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+.reBackOn9 .numWarp{
+    display: -webkit-box;
+    display: box;
+    position: absolute;
+    bottom: 0;
+    width: 4.8em;
+}
+
+.reBackFlexWarp {
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+}
+
+.reBackLeftTitle {
+    height: 35px;
+    line-height: 35px;
+    width: 70px;
+}
+
+.reBackRightInput {
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+
+.reBackCommit {
+    height: 35px;
+    line-height: 35px;
+    background: rgb(255, 216, 0);
+    text-align: center;
+    border-radius: 17px;
+    color: #5c5c5c;
+}
+
+.reBackTipsWarp {
+    margin: 25px 0;
+    font-size: 0.9em;
+    color: #F60;
+    line-height: 20px;
+}
+
+.reBackTextArea {
+    width: 88%;
+    height: 60px;
+    line-height: 20px;
+    border-radius: 17px;
+    border: 0;
+    padding: 17px 17px;
+}
+
+.reBackInputText {
+    width: 88%;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 17px;
+    border: 0;
+    padding: 0 17px;
+}
+
+.addImgFile {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    filter: alpha(opacity:0);
+    opacity: 0;
+    padding: 0;
+}
+
+.addImgBtn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 25px;
+    padding: 0;
+    text-align: center;
+    line-height: 50px;
+    background: url(../../img/923/addImg.png);
+    background-size: 100% 100%;
+}
+
+.reBackFailBtn {
+    width: 65%;
+    text-align: center;
+    display: inline-block;
+    background-color: #fd0;
+    padding: 7px;
+    border-radius: 17px;
+    color: #808080;
+}
+
+.reBackFailTextArea {
+    width: 65%;
+    border: 0;
+    border-radius: 15px;
+    height: 70px;
+    padding: 15px;
+    color: #808080;
+    margin-top: 2em;
+}
+
+.reBackFailImg {
+    width: 48%;
+    padding-top: 15%;
+    min-height: 14em;
+}
+
+.reBackUploadImg {
+    width: 30%;
+    height: 70px;
+    display: inline-block;
+}
+
+.h-lh-50 {
+    height: 50px;
+    line-height: 50px;
+}
+
+.cancelReBackStart{
+    background: #fd0;
+    width: 48%;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.reBackDescWarp{
+    line-height: 30px;
+}
+
+.actions-modal-button{
+    line-height: 35px;
+}
+
+@media (min-width: 350px) {
+    .reBackFailImg {
+        min-height: 250px;
+    }
+    .actions-modal-button{
+        line-height: 49px;
+    }
+
+}

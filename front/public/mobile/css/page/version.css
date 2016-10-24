@@ -1,0 +1,25 @@
+
+
+.version-page .versionDiv{
+    margin-top: 0.8em;
+    padding:50px 0;
+    position: relative;
+    background: #fff;
+}
+
+.version-page .versionLogo{
+    width: 150px;
+    height:150px;
+    position: relative;
+    background-image:url(../../img/logo_v.png);
+    background-size: 100% 100%;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.version-page .versionWord{
+    margin-top: 15px;
+    text-align: center;
+    color:#5c5c5c;
+}

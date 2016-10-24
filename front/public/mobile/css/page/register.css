@@ -1,0 +1,233 @@
+/*@font-face {
+    font-family: BbxVip;
+    src:url(font.ttf) format('truetype');
+}*/
+body{
+    font-family:"BbxVip","STHeitiTC-Light","STHeiti SC",Helvetica,Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue��","Droid Sans Fallback","Heiti SC",sans-self;
+}
+.reg-from ul li input[type="button"] {
+    color: rgba(255, 255, 255, 1);
+}
+.button.reg-button{
+    background: rgb(209,209,209);
+    color:#FFF;
+    border: none;
+    line-height: 2.7em;
+    height: 2.7em;
+    font-size: 1em;
+}
+
+.page-login {
+    float: right;
+    color:rgb(145,145,145);
+    margin: 0.6em;
+    font-size: 0.7em;
+}
+.page-reg {
+    position: absolute;
+    bottom:1em;
+    left:45%;
+    color:#FFFFFF;
+    margin: 0.6em auto;
+    font-size: 0.8em;
+}
+.register-page{
+    background: rgb(247,247,247);
+}
+.register-page .list-block ul{
+    background: none;
+}
+.register-page .content-block{
+    margin: 0.5em 0;
+}
+.register-page .list-block{
+    margin:  0;
+    padding: 1em 0;
+}
+.register-page .list-block li{
+    margin: 0.45em 0;
+}
+.register-page .item-valid .button-valid{
+    position: absolute;
+    right: 1.8em;
+    top:0.7em;
+    color:#808080;
+    line-height: 2.3em;
+    width: 8em;
+    text-align: center;
+    font-size: 0.7em;
+    border-radius: 1.75em;
+    border: 1px solid rgb(231,231,231);
+    background-color: #FFF;
+    /*background: rgb(254,214,49);*/
+    display: block;
+}
+
+.register-page .list-block .item-input{
+    border-radius: 1.5em;
+    font-weight: normal;
+    border:1px solid rgb(231,231,231);
+    background-color: #FFF;
+    height: 2.5em;
+}
+.register-page .list-block input{
+    font-size: 0.9em;
+    /*text-indent: 1em;*/
+    padding-left: 2em;
+    /*height: 3.6em;*/
+    color: rgb(153,153,153);
+    /*line-height: 3.6em;*/
+}
+.navbar:after{
+    background-color: transparent;
+}
+
+.register-page .buttons-row .button{
+    background:none;
+    color:rgb(204,204,204);
+    border:none;
+    padding: 0;
+    margin: 0 0.6em;
+    font-weight: normal;
+    font-size: 1.0em;
+}
+.register-page .buttons-row .button.active{
+    background:none;
+    color:rgb(133,133,133);
+    border-radius: 0;
+    border-bottom:2px solid rgb(254,214,49) ;
+}
+/*.navbar{*/
+    /*background: #FFF;*/
+/*}*/
+.navbar .title{
+    color:rgb(133,133,133);
+}
+.views.blured {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+    -webkit-transform: translate3d(0, 0, 0) scale(1.3);
+    -moz-transform: translate3d(0, 0, 0) scale(1.3);
+    -ms-transform: translate3d(0, 0, 0) scale(1.3);
+    -o-transform: translate3d(0, 0, 0) scale(1.3);
+    transform: translate3d(0, 0, 0) scale(1.3);
+}
+::-webkit-input-placeholder {
+    color: rgb(153,153,153);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: rgb(153,153,153);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: rgb(153,153,153);
+}
+
+:-ms-input-placeholder {
+    color: rgb(153,153,153);
+}
+.side-bar{
+    background: #FFF;
+}
+
+.side-bar .list-block{
+    margin: 1em 0 1em 1em;
+}
+.side-bar .list-block .item-content{
+    padding-left:0;
+}
+.side-bar .list-block .item-title a{
+    font-size: 0.9em;
+
+    color: rgb(90,90,90);
+}
+.side-bar .list-block .item-divider, .list-block .list-group-title{
+    background:none;
+    margin-top:0;
+    padding:1px;
+
+}
+.side-bar .list-block .item-divider:before, .list-block .list-group-title:before{
+    background-color:rgb(235,235,235);
+}
+#sideBarNickName{
+    color: rgb(49,49,49);
+}
+
+
+/**************** yczhu add ***********************/
+.reg-statement{
+    font-size: 12px;
+}
+.register-page .item-valid .button-valid{
+    top: 0;
+    line-height: 3.5em;
+    right: 1.3em;
+}
+.register-page .list-block .item-inner .item-after{
+    width:6em;
+}
+.forgotpwd-page .item-valid .button-valid{
+    top: 0;
+    line-height: 3.5em;
+}
+.forgotpwd-page .list-block .item-inner .item-after{
+    width:6em;
+}
+.sidesrollline{
+    margin-left:1.1em;
+    margin-right: 1.2em;
+    display:-moz-box;
+    display:-webkit-box;
+    display:box;
+    -moz-box-orient:horizontal;
+    -webkit-box-orient:horizontal;
+    box-orient:horizontal;
+}
+.sidesrollline-left,.sidesrollline-right{
+    -moz-box-flex:1;
+    -webkit-box-flex:1;
+    box-flex:1;
+    position: relative;
+}
+.sidesrollline-line{
+    width: 90%;
+    position: absolute;
+    left:50%;
+    margin-left: -45%;
+    top:0;
+    height: 50%;
+    border-bottom: 1px #D1D1D1 solid;
+}
+.sidesrollline-center{
+    line-height: 1em;
+}
+
+.register-page .merge-login{
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+    text-align: center;
+}
+.register-page .plprrela5{
+    padding-left: 5%;padding-right: 5%;
+}
+.register-page .plprrela5 img{
+   width: 100%;
+}
+.register-page .plprrela5 a{
+    display: block;
+    margin-top: 0.5em;
+}
+.button.reg-button.act{
+    background: #FED731;
+}
+.button.reg-button:active{
+    background: #FED731;
+}
+.button.reg-button:hover{
+    background: #FED731;
+}
+.register-page .list-block li:after {
+    height:0;
+}

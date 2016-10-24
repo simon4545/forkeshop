@@ -1,0 +1,195 @@
+h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p{margin:0;padding:0;border:none;list-style-type:none;outline: none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+
+html.ios-gt-6.pixel-ratio-2 .coupon-page-top-line:after {
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+html.ios-gt-6.pixel-ratio-3 .coupon-page-top-line:after {
+    -webkit-transform: scaleY(0.33);
+    transform: scaleY(0.33);
+}
+.shoppinglists-page .buttons-row,
+.coupon-page .buttons-row{
+    border: none;
+}
+
+.shoppinglists-page .button,
+.coupon-page .button {
+    border:none;
+    color: #5c5c5c;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    border-radius: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: none;
+    padding: 0 10px;
+    margin: 0;
+    height: 44px;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8em;
+    font-family: inherit;
+    cursor: pointer;
+    line-height: 44px;
+}
+
+.shoppinglists-page .button.active,
+.coupon-page .button.active{
+    background-color: white;
+    color: #5A5A5A;
+    border-bottom: 4px solid #FFD800;
+}
+
+.shoppinglists-page .content-block,
+.coupon-page .content-block {
+    margin:0;
+    padding:55px 15px;
+    color: #6d6d72;
+    min-height:200px;
+    position:relative;
+}
+
+.shoppinglists-page .subnavbar,
+.coupon-page .subnavbar {
+    background: white;
+}
+
+.shoppinglists-page .coupon-page-top-line,
+.coupon-page .coupon-page-top-line{
+    height: 1px;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+}
+
+.shoppinglists-page .coupon-page-top-line:after,
+.coupon-page .coupon-page-top-line:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #E6E6E6;
+    display: block;
+    z-index: 21;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+
+}
+
+.shoppinglists-page .subnavbar:after,
+.coupon-page .subnavbar:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    display: block;
+    z-index: 21;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+.shoppinglists-page .coulist,
+.coupon-page .coulist{
+    position: relative;
+    height:103px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color:#ADADAD
+}
+
+.coupon-page .coulist-top{
+    width: 78%;
+    height: 52px;
+    margin-top: 15px;
+    position: absolute;
+}
+
+.coupon-page .coulist-top-left{
+    float: left;width:28px;height: 40px;
+}
+
+.coupon-page .coulist-top-middle{
+    float: left;
+    margin-left: 22px;
+    margin-right: 5px;
+}
+
+.coupon-page .coulist-top-middle-span{
+    font-size: 1.6em;color:#FF6600
+}
+.coupon-page .coulist-top-middle-span-b{
+    font-size: 2.4em;
+    color:#FF6600;
+    font-weight: 700;
+    vertical-align: initial;
+}
+.coupon-page .coulist-top-right{
+    float: left
+}
+
+.coupon-page .coulist-top-right-li-top{
+    height: 10px;
+}
+
+.coupon-page .coulist-top-right-li-middle{
+
+}
+
+.coupon-page .coulist-top-right-li-middle-span{
+    font-size: 0.5em;
+    display:inline-block;
+    -webkit-flex-shrink: 1;
+    -ms-flex: 0 1 auto;
+    flex-shrink: 1;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:108px;
+    max-width: 100%;
+}
+
+.coupon-page .coulist-top-right-li-bottom{
+    font-weight: bold;color:#ADADAD
+}
+
+
+.coupon-page .coulist-bottom{
+    width: 62%;
+    margin-left: 25px;
+    font-size: 0.5em;
+    border-top: 1px dotted #ADADAD;
+    position: absolute;
+    bottom: 10px;
+}
+
+.coupon-page .coulist-right{
+    float: right;
+    margin-top: 43px;
+    color:white;
+    text-align: center;
+    width: 26%;
+}
+
+.coupon-page .clear{
+    width: 100%;
+    height: 10px;
+}

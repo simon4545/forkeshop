@@ -1,0 +1,286 @@
+<%- include('../header.html')%>
+<link href="../stylesheets/font-awesome.min.css" rel="stylesheet"/>
+<link href="../template/assets/glyphicons/css/glyphicons.css" rel="stylesheet"/>
+<link href="../stylesheets/summernote.css" rel="stylesheet"/>
+<link href="../stylesheets/select2.css" rel="stylesheet"/>
+<style>
+    .ruleInput {
+        padding: 0 !important;
+        width: 80px;
+        border: 0 !important;
+    }
+
+    .colorInput {
+        margin-left: 20px;
+    }
+
+    .img_thumbnailDiv {
+        display: inline-block;
+    }
+
+    .img_thumbnail {
+        width: 150px;
+        padding: 5px;
+        border: 1px solid #e5e5e5
+    }
+
+    #inputFile_groupImg {
+        line-height: 25px;
+        opacity: 0;
+        margin-left: -160px;
+        cursor: pointer;
+    }
+
+    .deleteThumb {
+        position: relative;
+        left: 0px;
+        top: -70px;
+        padding: 0px 3px;
+    }
+
+    #detailEditor_edit .btn-group {
+        margin: 5px 5px 5px 0 !important;
+    }
+
+    .checkbox>input[type="checkbox"] {
+        margin-left: 0;
+    }
+
+    .radio>input[type="radio"]{
+        margin-left: 0;
+    }
+
+    .bordered{
+        border: solid #ff0000 3px;
+    }
+
+    .btnAddConfig{
+        padding: 0 5px;
+    }
+    .downloadFile {
+        position: relative;
+        left: 160px;
+        top: -21px;
+        padding: 0px 3px;
+    }
+</style>
+<script type="text/javascript">
+    var pageType='add';
+    var colorList ='<%-color%>';
+    var sizeList ='<%-size%>';
+    var skuListObj=[];
+    var labelListStr='<%-labelListStr%>';
+</script>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <h3 class="page-title">
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a id="mainModule" href="/goods/list">商品管理</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="javascript:void (0);">商品添加/编辑</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="dashboard">
+            <div id="add_edit_container" class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box blue tabbable">
+                        <div class="portlet-title" style="border: 0">
+                            <h4 class="span2">
+                                <i class="icon-reorder"></i>
+                                <span class="hidden-480">商品信息</span>
+                                &nbsp;
+                            </h4>
+                            <span class="span6"></span>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="tabbable portlet-tabs">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="portlet_tab1">
+                                        <div action="#" class="form-horizontal" style="margin-top: 10px !important;">
+                                            <div class="control-group">
+                                                <label class="control-label" style="color: #ff0000"> </label>
+
+                                                <div id="flowStateTip" class="controls"
+                                                     style="padding-top: 7px;font-size: 14px;color: #ff0000">
+
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">商品分类</label>
+
+                                                <div id="categoryDiv" class="controls">
+                                                    <select id="categorySelect" class="large m-wrap" tabindex="1">
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">商品名称</label>
+
+                                                <div class="controls">
+                                                    <input id="goodsGroupTitleInput_edit" type="text" required="true"
+                                                           placeholder="18个字以内，不能重复" class="m-wrap large"/>
+                                                    <span class="help-inline"
+                                                          style="display: none;color: red">*此项为必填项</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">商品编码</label>
+
+                                                <div class="controls">
+                                                    <input id="outerIdInput_edit" type="text" required="true" placeholder="字母+数字，同一品牌下不能重复"
+                                                           class="m-wrap large"/>
+                                                    <span class="help-inline"
+                                                          style="display: none;color: red">*此项为必填项</span>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">商品吊牌价</label>
+
+                                                <div class="controls">
+                                                    <input id="priceInput_edit" type="text" required="true" placeholder="数字格式"
+                                                           class="m-wrap large"/>
+                                                    <span class="help-inline"
+                                                          style="display: none;color: red">*此项为必填项</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">适用人群</label>
+                                                <div class="controls" id="targetPerson" curid="0">
+                                                    <label class="radio"><input type="radio" name="optionsRadios_sex" value="0" checked/>无性别区分</label>
+                                                    <label class="radio"><input type="radio" name="optionsRadios_sex" value="1"/>男童</label>
+                                                    <label class="radio"><input type="radio" name="optionsRadios_sex" value="2"/>女童</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">发布</label>
+                                                <div class="controls" id="publishState" curid="0">
+                                                    <label class="radio"><input type="radio" name="saleState" value="0" checked/>否</label>
+                                                    <label class="radio"><input type="radio" name="saleState" value="1"/>是</label>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">商品规则（颜色）</label>
+
+                                                <div id="category_color" class="controls">
+                                                    <%for(var i=0;i<colors.length;i++){%>
+                                                    <label class="checkbox">
+                                                        <input class="colorCheck" type="checkbox"/>
+                                                        <span style="display: inline-block;background-color:<%=colors[i].rgba%>;margin-top: 3px;width: 16px;height: 16px;position: absolute;"></span>
+                                                        <input type="text" oldvalue="<%=colors[i].color%>" value="<%=colors[i].color%>" onblur="goods.addAndEdit.skus.changeColor(this)"  class="ruleInput colorInput">
+                                                    </label>
+                                                    <%}%>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">商品规则（尺码）</label>
+
+                                                <div id="category_size" class="controls">
+                                                    <%for(var i=0;i<sizes.length;i++){%>
+                                                    <label class="checkbox">
+                                                        <input class="sizeCheck" type="checkbox" value=""/>
+                                                        <input type="text" oldvalue="<%=sizes[i]%>" value="<%=sizes[i]%>" onblur="goods.addAndEdit.skus.changeSize(this)" class="ruleInput">
+                                                    </label>
+                                                    <%}%>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">子商品</label>
+
+                                                <div class="controls" id="childrenGoods">
+                                                    <div id="infoContainer" style="max-height: 500px;overflow: auto;margin-top: 15px;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">商品图片</label>
+                                                <div class="controls">
+                                                    <div id="thumbContainer_edit">
+                                                        <div id="img_thumbnailDiv" class="gridly" style="min-height: 10px;">
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div style="margin-top: 10px">
+                                                        <form id="formUploadGroupImg" enctype="multipart/form-data" role="form" method="post" action="javascript:;" style="display: inline-block">
+                                                        <span class="btn green fileinput-button" style="cursor: auto;overflow: hidden">
+                                                            <i class="icon-plus icon-white"></i>
+                                                            <span>上传图片</span>
+                                                            <input id="inputFile_groupImg" name="files" type="file" multiple="multiple" accept=".jpg,.jpeg,.png,.bmp,.gif">
+                                                        </span>
+                                                        </form>
+                                                        <span class="help-inline" style="color: red">&nbsp 1.点击选中商品图片作为商品展示封面 &nbsp&nbsp 2.商品图片应小于200kb，大于50kb</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">商品详情</label>
+
+                                                <div class="controls" id="detailEditor_edit">
+                                                    <div id="summernote_edit">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions">
+                                                <button id="btnConfirm" type="button" class="btn blue"><i
+                                                        class="icon-ok"></i>保存
+                                                </button>
+                                                <button type="button" class="btn red" onclick="window.location.href='/goods/list'"><i class="icon-wrong" ></i>取消
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<%- include('../footer.html')%>
+<script type="text/javascript" src="../javascripts/utils/ejs.js"></script>
+<script type="text/javascript" src="../javascripts/utils/select2.js"></script>
+<script type="text/javascript" src="../javascripts/utils/common.js"></script>
+<script type="text/javascript" src="../javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="../javascripts/utils/summernote.js"></script>
+<script type="text/javascript" src="../javascripts/utils/summernote-zh-CN.js"></script>
+<script type="text/javascript" src="../javascripts/config.js"></script>
+<script type="text/javascript" src="../javascripts/utils/jsonTreeParser.js"></script>
+<script type="text/javascript" src="../javascripts/utils/UUID.js"></script>
+<script type="text/javascript" src="../javascripts/utils/taffydb/taffy-min.js"></script>
+<script type="text/javascript" src="../javascripts/utils/nc.table.js"></script>
+<script src="../javascripts/utils/draggle.move.js" type="text/javascript"></script>
+<script type="text/javascript" src="../javascripts/goods/edit.js"></script>
+<script>
+    draggleMove('img_thumbnailDiv');
+</script>
+<script type="text/html" id="dev_sku_template">
+    [%for(var i=0;i<data.length;i++){%]
+    <tr class="skuTr" goodsId="[%=data[i].goodsId%]" dbid="[%=data[i].id%]">
+        <td><label class="skuTitle" value="[%=data[i].color%],[%=data[i].size%]">[%=data[i].color%],[%=data[i].size%]</label></td>
+        <td><input class="skuId" onblur="goods.addAndEdit.skus.updateSku('[%=data[i].id%]',$(this).val(),this)" placeholder="字母+数字，不能重复" style="width: 150px" oldValue="[%=data[i].Skuid%]" value="[%=data[i].Skuid%]"></td>
+        <td><input class="sellPrice" onblur="goods.addAndEdit.skus.updatePrice('[%=data[i].id%]',$(this).val())" placeholder="数字" style="width: 100px" value='[%=data[i].GoodsSalePrice%]'></td>
+        <td><input class="sellCount" onblur="goods.addAndEdit.skus.updateMaxCount('[%=data[i].id%]',$(this).val())" placeholder="数字" style="width: 100px" value='[%=data[i].MaxCount%]'></td>
+        <td><a style="cursor: pointer" class="btn mini black btnDeleteSku" onclick="goods.addAndEdit.skus.deleteSku('[%=data[i].id%]')"><i class="icon-trash"></i> 删除</a></td>
+    </tr>
+    [%}%]
+</script>

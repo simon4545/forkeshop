@@ -1,0 +1,122 @@
+<%- include('../header.html')%>
+<style>
+    #listTBody td {
+        vertical-align: middle;
+    }
+
+    #listTBody td img {
+        width: 100px;
+        height: 80px;
+    }
+
+    .btn.mini {
+        margin-left: 5px;
+    }
+
+    .portlet-title {
+        border: 0 !important;
+    }
+</style>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <h3 class="page-title">
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a href="/member/list" >用户管理</a>
+                        <i class="icon-angle-right"></i>
+                        <a href="javascript:void(0);" >查看用户</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box blue tabbable">
+                        <div class="portlet-title">
+                            <h4>
+                                <i class="icon-reorder"></i>
+                                <span class="hidden-480">查看用户</span>
+                                &nbsp;
+                            </h4>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="tabbable portlet-tabs">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="portlet_tab1">
+                                        <div action="#" class="form-horizontal">
+
+                                            <div class="control-group">
+                                                <label class="control-label">头像</label>
+
+                                                <div class="controls">
+                                                    <img src="<%=HeaderImage%>">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="control-group">
+                                                <label class="control-label">用户名</label>
+
+                                                <div class="controls">
+                                                    <input type="text"
+                                                           value="<%=MemberAccount?MemberAccount:''%>"
+                                                           class="m-wrap large" disabled/>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">状态</label>
+
+                                                <div class="controls">
+                                                    <input id="newPass" type="text"
+                                                           value="<%=MemberState%>"
+                                                           class="m-wrap large" disabled/>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">性别</label>
+
+                                                <div class="controls">
+                                                    <input id="newPass2" type="text"
+                                                           value="<%=MemberIden=='1'?'男':'女'%>"
+                                                           class="m-wrap large" disabled/>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">昵称</label>
+
+                                                <div class="controls">
+                                                    <input type="text"
+                                                           value="<%=MemberName?MemberName:''%>"
+                                                           class="m-wrap large" disabled/>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions">
+                                                <a href="/member/list">
+                                                    <button type="button" class="btn blue"><i
+                                                            class="icon-ok"></i>取消
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../footer.html')%>
+<script type="text/javascript" src="/javascripts/utils/common.js"></script>
+<script type="text/javascript" src="../javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="../javascripts/config.js"></script>

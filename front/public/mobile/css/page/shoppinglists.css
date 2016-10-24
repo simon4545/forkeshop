@@ -1,0 +1,104 @@
+
+.shoppinglists-page .tabs-animated-wrap > .tabs{
+    margin-top: 40px;
+}
+
+.shoppinglists-page .list-block .item-link .item-inner{
+    padding-right: 0;
+    background-image: none;
+}
+.shoppinglists-page .subnavbar{
+    padding:0;
+}
+/***************** button 部分样式在coupons.css 中 *************************************/
+
+.shoppinglists-page.tabs-animated-wrap > .tabs{
+    margin-top: 40px;
+}
+
+.shoppinglists-page .goodsthumb {
+    width: 4em;
+}
+
+.shoppinglists-page .item-subtitle-left {
+    display: inline-block;
+    color: #D1D1D1;
+}
+.shoppinglists-page .item-subtitle-right {
+    display: inline-block;
+    float: right;
+}
+.shoppinglists-page .goods-procost {
+    color: #D1D1D1;
+    text-decoration: line-through;
+}
+.shoppinglists-page .color-org1{
+    color:#f60;
+}
+
+.shoppinglists-page .pay-btn{
+    width: 82px;
+    text-align: center;
+    background-color: #FFD800;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    height: 25px;
+    font-size: 13px;
+    line-height: 25px;
+    float:right;
+    border: 1px solid #FFD800;
+}
+.shoppinglists-page .white-btn{
+    background: #fff;
+    color: #808080;
+    border: 1px solid #808080;
+}
+
+.shoppinglists-page .order-status{
+    font-size: 0.8em;
+    line-height: 1.8em;
+    color: #f60;
+}
+
+.shoppinglists-page .index-infinite-preloader{
+    text-align: center;
+    color: grey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.shoppinglists-page .item-content .boxright{
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 7px;
+    min-height: 44px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/** 2015-11-14 zzsun add**/
+.shoppinglists-page .raffle-reminder-dialog{
+    display: none;
+}
+
+.shoppinglists-page .raffle-reminder-dialog .go-raffle-btn{
+    width: 80px;
+}
+
+.shoppinglists-page .loading-mask-shoppingList{
+    position: fixed;
+    left:0;
+    top: 0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    z-index:2;
+    background-color:#000000;
+    opacity: 0.8;
+    display: none;
+}

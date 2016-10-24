@@ -1,0 +1,234 @@
+<%- include('../header.html')%>
+<link href="../stylesheets/font-awesome.min.css" rel="stylesheet"/>
+<link href="../template/assets/glyphicons/css/glyphicons.css" rel="stylesheet"/>
+<link href="../stylesheets/summernote.css" rel="stylesheet"/>
+<link href="../stylesheets/select2.css" rel="stylesheet"/>
+<style>
+    .ruleInput {
+        padding: 0 !important;
+        width: 80px;
+        border: 0 !important;
+    }
+
+    .colorInput {
+        margin-left: 20px;
+    }
+
+    .btn.mini {
+        margin-left: 5px;
+    }
+
+    .modal, .modal-lg {
+        width: 900px;
+        /*overflow: auto;*/
+        max-height: 600px;
+    }
+
+    #infoContainer {
+        padding: 10px;
+    }
+
+    .portlet-title {
+        border: 0 !important;
+    }
+
+    .img_thumbnailDiv {
+        display: inline-block;
+    }
+
+    .img_thumbnail {
+        width: 150px;
+        padding: 5px;
+        border: 1px solid #e5e5e5
+    }
+
+    .downloadFile {
+        position: relative;
+        left: -21px;
+        top: -70px;
+        padding: 0px 3px;
+    }
+
+    #inputFile_excel {
+        width: 120px;
+        line-height: 25px;
+        opacity: 0;
+        margin-left: -80px;
+        cursor: pointer;
+    }
+
+    #inputFile_groupImg {
+        line-height: 25px;
+        opacity: 0;
+        margin-left: -160px;
+        cursor: pointer;
+    }
+
+    .deleteThumb {
+        position: relative;
+        left: -21px;
+        top: -70px;
+        padding: 0px 3px;
+    }
+
+    #detailEditor_edit .btn-group {
+        margin: 5px 5px 5px 0 !important;
+    }
+
+    .checkbox > input[type="checkbox"] {
+        margin-left: 0;
+    }
+
+    .radio > input[type="radio"] {
+        margin-left: 0;
+    }
+
+    .bordered {
+        border: solid #ff0000 3px;
+    }
+
+    .btnAddConfig {
+        padding: 0 5px;
+    }
+</style>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+
+                <h3 class="page-title">
+                </h3>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a id="mainModule" href="javascript:void(0);">商品管理</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="javascript:void(0)">商品列表</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="dashboard">
+            <div id="list_container" class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box blue tabbable">
+                        <div class="portlet-title">
+                            <div class="portlet-title">
+                                <h4 class="span2">
+                                    <i class="icon-reorder"></i>
+                                    <span class="hidden-480">商品列表</span>
+                                    &nbsp;
+                                </h4>
+                                <select id="flowState_query" class="span2" style="float: left">
+                                    <option value="-1">全部</option>
+                                    <option value="0">未上架</option>
+                                    <option value="1">已上架</option>
+
+                                </select>
+
+                                <div style="display: inline-block;width: 21%" class="span3">
+                                    <input id="queryKeyStr" placeholder="请输入商品名称" style="width: 120px">
+                                    <button onclick="goods.list.goodsSearch()" class="btn btn-primary" style="padding: 5px">查询</button>
+                                </div>
+                                <div style="display: inline-block;width: 10%" class="span2">
+                                    <a href="/goods/add" class="btn red start"
+                                       style="color: #ffffff;text-decoration: none;padding: 5px">
+                                        <i class="icon-plus icon-white"></i>
+                                        <span>添加商品</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body" style="margin-top: -5px;">
+                            <table class="table table-striped table-bordered table-advance table-hover">
+                                <tbody id="listTBody">
+
+                                </tbody>
+                            </table>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="dataTables_paginate paging_bootstrap pagination">
+                                        <ul>
+                                            <li class="pre"><a id="btnFirstPage" href="javascript:void(0)">首页</a></li>
+                                            <li class="prev"><a id="btnPrePage" href="javascript:void(0)">← 上一页</a></li>
+                                            <li>
+                                                <select id="pagingSelect">
+
+                                                </select>
+                                            </li>
+                                            <li class="next" id="btnNextPage"><a href="javascript:void(0)">下一页 → </a></li>
+                                            <li class="disabled"><a href="javascript:void(0)">共 <span id="totalPageNum" style="color: #005580">1</span> 页</a></li>
+                                            <li class="next"><a id="btnLastPage" href="javascript:void(0)">末页</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../footer.html')%>
+<script type="text/javascript" src="../javascripts/utils/select2.js"></script>
+<script type="text/javascript" src="../javascripts/utils/common.js"></script>
+<script type="text/javascript" src="../javascripts/utils/ejs.js"></script>
+<script type="text/javascript" src="../javascripts/utils/layer/layer.js"></script>
+<script type="text/javascript" src="../javascripts/config.js"></script>
+<script type="text/javascript" src="../javascripts/utils/dateFormater.js"></script>
+<script type="text/javascript" src="../javascripts/utils/pagingControl.js"></script>
+<script type="text/javascript" src="../javascripts/utils/jsonTreeParser.js"></script>
+<script type="text/javascript" src="../javascripts/utils/summernote.js"></script>
+<script type="text/javascript" src="../javascripts/utils/summernote-zh-CN.js"></script>
+<script type="text/javascript" src="../javascripts/goods/list.js"></script>
+
+
+<script type="text/html" id="goods_list_table">
+    [% for(var i=0;i<list.length;i++){%]
+    [%if((i+1)%4==1){%]
+    <div class="row-fluid">
+        [%}%]
+        <div class="span3">
+            <div class="item" style="border: 1px solid #cccccc;min-height: 300px" data-id="[%=list[i].Id%]">
+                <a class="fancybox-button  btnDetail" data-id="[%=list[i].Id%]" href="/goods/detail?goodsGroupId=[%=list[i].Id%]">
+                    <div class="zoom">
+                        <img src="[%=list[i].imgPaths[0]%]" alt="bbxvip"/>
+                    </div>
+                </a>
+
+                <div style="display: inline-block">
+                    <span class="icon"><i class="icon-paper-clip">[%=list[i].goodsGroupTitle%]</i></span>
+
+                    <br/>
+                    <span class="icon"><i class="icon-link">
+                        [%if(list[i].addedState==1){%]
+                        <span style="color: red">已上架</span>
+                        [%}else if(list[i].addedState==2){%]
+                        <span style="color: #ad6704">已下架</span>
+                        [%}else{%]
+                        <span style="color: green">未上架</span>
+                        [%}%]
+                    </i></span>
+
+                    <br/>
+                    <!--[% if(list[i].brand['BrandState'] == 3) {%]
+                    <a href="/goods/edit?goodsGroupId=[%=list[i].Id%]" data-id="[%=list[i].Id%]" class="btn mini purple btnEditGroup"><i class="icon-edit"></i>
+                    编辑</a>
+                    [%}else{%]
+                    <a class="btn mini purple" onclick="return goods.list.alertCannotEdit('[%=list[i].brand['BrandTitle']%]')"><i class="icon-edit"></i> 编辑</a>
+                    [%}%]-->
+                    <a href="/goods/edit?goodsGroupId=[%=list[i].Id%]" data-id="[%=list[i].Id%]" class="btn mini purple btnEditGroup"><i class="icon-edit"></i>
+
+                    <a href="/goods/editGoodsCount?goodsGroupId=[%=list[i].Id%]" data-id="[%=list[i].Id%]"
+                       class="btn mini black btnEditGroup"><i class="icon-edit"></i> 编辑库存</a>
+                    <a style="cursor: pointer" onclick="goods.list.deleteGoodGroup('[%=list[i].Id%]')"
+                       class="btn mini black btnEditGroup"><i class="icon-trash"></i> 删除</a>
+                </div>
+            </div>
+        </div>
+        [%if((i+1)%4==0){%]
+    </div>
+    [%}%]
+    [% }%]
+</script>

@@ -1,0 +1,7 @@
+.resetPwd-page .list-block .item-inner{
+     padding: 0;
+     margin: 0;
+ }
+.resetPwd-page .list-block .item-inner input[type="password"]{
+   font-size: 0.8em;
+}
